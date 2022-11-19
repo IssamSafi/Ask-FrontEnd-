@@ -31,7 +31,7 @@
     <div class="login-card">
   
       <div class="card-title">
-        <h1>Please Sign In</h1>
+        <h1 style="font-size:40px"><b>Login</b></h1>
       </div>
   
       <div class="content">
@@ -64,11 +64,14 @@
               <label for="checkbox"></label>
               <span>Remember me</span>
             </div>
-  
+
+            
+
             <a class="btn btn-link level-right" href="#">Forgot Password?</a>
           </div>
   
-          <button (click)="submit()" [disabled]="!email.valid||!password.valid"  class="btn btn-primary">Login</button>
+          <button (click)="submit()" [disabled]="!email.valid||!password.valid"  class="btn btn-dark">Login</button><br>
+          <p style="text-align: center;cursor: pointer;" (click)="goToReg()">Don't have an account? Create an account</p>
         </form>
       </div>
     </div>
