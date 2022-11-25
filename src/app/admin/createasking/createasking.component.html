@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Add Home</h2>
+<mat-dialog-content class="mat-typography">
+    <form  [formGroup]="create">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Its approve</mat-label>
+          <input type="number" matInput formControlName="itsapprove">
+
+          <mat-error *ngIf="create.controls['itsapprove'].hasError('required')">
+            Its approve is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+<br>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Messege</mat-label>
+            <input type="text" matInput formControlName="messege">
+  
+            <mat-error *ngIf="create.controls['messege'].hasError('required')">
+                messege is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+<br>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>User Id</mat-label>
+            <input type="number" matInput formControlName="userId">
+  
+            <mat-error *ngIf="create.controls['userId'].hasError('required')">
+                user Id is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+
+
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="saveData()">Save</button>
+</mat-dialog-actions>

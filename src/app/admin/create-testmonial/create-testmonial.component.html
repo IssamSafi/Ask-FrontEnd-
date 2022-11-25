@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Add Testmonial</h2>
+<mat-dialog-content class="mat-typography">
+    <form  [formGroup]="create">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name">
+
+          <mat-error *ngIf="create.controls['name'].hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Messege</mat-label>
+            <input type="text" matInput formControlName="messege">
+  
+            <mat-error *ngIf="create.controls['messege'].hasError('required')">
+                messege is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>user ID</mat-label>
+                <input type="number" matInput formControlName="userId">
+      
+                <mat-error *ngIf="create.controls['userId'].hasError('required')">
+                    userId is <strong>required</strong>
+                </mat-error>
+        </mat-form-field>
+
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="saveData()">Save</button>
+</mat-dialog-actions>

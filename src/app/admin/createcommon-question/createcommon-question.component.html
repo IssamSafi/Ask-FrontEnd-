@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Add Common Question</h2>
+<mat-dialog-content class="mat-typography">
+    <form  [formGroup]="create">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>question</mat-label>
+          <input type="text" matInput formControlName="question">
+
+          <mat-error *ngIf="create.controls['question'].hasError('required')">
+            question is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="saveData()">Save</button>
+</mat-dialog-actions>
