@@ -15,9 +15,14 @@ export class HomeService {
   Testmonial: any[] = [];
   Asking: any[] = [];
   CommonQuestion: any[] = [];
+  User: any[] = [];
+  Category: any[] = [];
+  Aboutus: any[] = [];
+  Contactus: any[] = [];
+
   display_image: any;
 
-  constructor(private http: HttpClient, private spinner: NgxSpinnerService, /* private toastr: ToastrService */) { }
+  constructor(private http: HttpClient, private spinner: NgxSpinnerService,  /* private toastr: ToastrService */ ) { }
 
   getAllHomes() {
     //show Spinner 
@@ -25,18 +30,18 @@ export class HomeService {
     //Hide Spinner
     //Resp=> Toastr 
 
-    // this.spinner.show();
+    this.spinner.show();
 
     this.http.get('https://localhost:44384/api/Home').subscribe((resp: any) => {
       this.Homes = resp;
       console.log(this.Homes);
 
-      //this.spinner.hide();
-    //  this.toastr.success('Data Retrieved!');
+     this.spinner.hide();
+    /*  this.toastr.success('Data Retrieved!'); */
 
     }, err => {
       this.spinner.hide();
-      //this.toastr.error(err.message, err.status);
+  /*     this.toastr.error(err.message, err.status); */
     })
   }
 
@@ -82,13 +87,13 @@ getAllTestmonial() {
   //Hide Spinner
   //Resp=> Toastr 
 
-  // this.spinner.show();
+   this.spinner.show();
 
   this.http.get('https://localhost:44384/api/Testimonial').subscribe((resp: any) => {
     this.Testmonial = resp;
     console.log(this.Testmonial);
 
-    //this.spinner.hide();
+    this.spinner.hide();
   //  this.toastr.success('Data Retrieved!');
 
   }, err => {
@@ -137,13 +142,13 @@ getAllAsking() {
   //Hide Spinner
   //Resp=> Toastr 
 
-  // this.spinner.show();
+  this.spinner.show();
 
   this.http.get('https://localhost:44384/api/Asking').subscribe((resp: any) => {
     this.Asking = resp;
     console.log(this.Asking);
 
-    //this.spinner.hide();
+    this.spinner.hide();
   //  this.toastr.success('Data Retrieved!');
 
   }, err => {
@@ -192,13 +197,13 @@ getAllCommonQuestion() {
   //Hide Spinner
   //Resp=> Toastr 
 
-  // this.spinner.show();
+   this.spinner.show();
 
   this.http.get('https://localhost:44384/api/CommonQuestion').subscribe((resp: any) => {
     this.CommonQuestion = resp;
     console.log(this.CommonQuestion);
 
-    //this.spinner.hide();
+    this.spinner.hide();
   //  this.toastr.success('Data Retrieved!');
 
   }, err => {
@@ -240,4 +245,240 @@ this.http.delete('https://localhost:44384/api/CommonQuestion/Delete/'+id).subscr
   this.spinner.hide();
 //  this.toastr.error(err.message, err.status);
 })}
+
+getAllUsers() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/User').subscribe((resp: any) => {
+    this.User = resp;
+    console.log(this.User);
+
+   this.spinner.hide();
+  /*  this.toastr.success('Data Retrieved!'); */
+
+  }, err => {
+    this.spinner.hide();
+/*     this.toastr.error(err.message, err.status); */
+  })
 }
+
+createUser(body: any) {
+  //body.image = this.display_image;
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/User', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   // this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    //this.toastr.error(err.message, err.status);
+  }
+  )
+}
+updateUser(body:any)
+{
+  body.image = this.display_image;
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
+    this.spinner.hide();
+   // this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   // this.toastr.error(err.message, err.status);
+  })
+}
+deleteUser(id:number)
+{
+this.spinner.show();
+this.http.delete('https://localhost:44384/api/User/Delete/'+id).subscribe((resp)=>{
+  this.spinner.hide();
+    //this.toastr.success('Deleted Successfully !!');
+},err=>{
+  this.spinner.hide();
+//  this.toastr.error(err.message, err.status);
+})
+}
+getAllCategories() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/Category').subscribe((resp: any) => {
+    this.Category = resp;
+    console.log(this.Category);
+
+   this.spinner.hide();
+  /*  this.toastr.success('Data Retrieved!'); */
+
+  }, err => {
+    this.spinner.hide();
+/*     this.toastr.error(err.message, err.status); */
+  })
+}
+
+createCategory(body: any) {
+  //body.image = this.display_image;
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/Category', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   // this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    //this.toastr.error(err.message, err.status);
+  }
+  )
+}
+updateCategory(body:any)
+{
+  body.image = this.display_image;
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/Category',body).subscribe((resp)=>{
+    this.spinner.hide();
+   // this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   // this.toastr.error(err.message, err.status);
+  })
+}
+deleteCategory(id:number)
+{
+this.spinner.show();
+this.http.delete('https://localhost:44384/api/Category/Delete/'+id).subscribe((resp)=>{
+  this.spinner.hide();
+    //this.toastr.success('Deleted Successfully !!');
+},err=>{
+  this.spinner.hide();
+//  this.toastr.error(err.message, err.status);
+})
+}
+getAllAboutus() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/Aboutus').subscribe((resp: any) => {
+    this.Aboutus = resp;
+    console.log(this.Aboutus);
+
+   this.spinner.hide();
+  /*  this.toastr.success('Data Retrieved!'); */
+
+  }, err => {
+    this.spinner.hide();
+/*     this.toastr.error(err.message, err.status); */
+  })
+}
+
+createAboutus(body: any) {
+  //body.image = this.display_image;
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/Aboutus', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   // this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    //this.toastr.error(err.message, err.status);
+  }
+  )
+}
+updateAboutus(body:any)
+{
+  body.image = this.display_image;
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/Aboutus',body).subscribe((resp)=>{
+    this.spinner.hide();
+   // this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   // this.toastr.error(err.message, err.status);
+  })
+}
+deleteAboutus(id:number)
+{
+this.spinner.show();
+this.http.delete('https://localhost:44384/api/Aboutus/Delete/'+id).subscribe((resp)=>{
+  this.spinner.hide();
+    //this.toastr.success('Deleted Successfully !!');
+},err=>{
+  this.spinner.hide();
+//  this.toastr.error(err.message, err.status);
+})
+}
+getAllContactus() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/Contactus').subscribe((resp: any) => {
+    this.Contactus = resp;
+    console.log(this.Contactus);
+
+   this.spinner.hide();
+  /*  this.toastr.success('Data Retrieved!'); */
+
+  }, err => {
+    this.spinner.hide();
+/*     this.toastr.error(err.message, err.status); */
+  })
+}
+
+createContactus(body: any) {
+  //body.image = this.display_image;
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/Contactus', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   // this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    //this.toastr.error(err.message, err.status);
+  }
+  )
+}
+updateContactus(body:any)
+{
+  body.image = this.display_image;
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/Contactus',body).subscribe((resp)=>{
+    this.spinner.hide();
+   // this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   // this.toastr.error(err.message, err.status);
+  })
+}
+deleteContactus(id:number)
+{
+this.spinner.show();
+this.http.delete('https://localhost:44384/api/Contactus/Delete/'+id).subscribe((resp)=>{
+  this.spinner.hide();
+    //this.toastr.success('Deleted Successfully !!');
+},err=>{
+  this.spinner.hide();
+//  this.toastr.error(err.message, err.status);
+})
+}
+
+
+
+
+
+
+}
+

@@ -1,25 +1,26 @@
 <app-sidebar></app-sidebar>
 <br>
-<h1 style="text-align: center;font-size:33px;"><b>Manage Home Page</b><h1><br><br>
+<h1 style="text-align: center;font-size:33px;"><b>Manage Asking</b><h1><br><br>
 <button style="display:block; margin: 0 auto;" class="center" (click)="opendialog()">Create New</button>
 <br>
 <table class="center">
     <tr>
         <th> Number</th>
-        <th>Image</th>
         <th>Description</th>
+        <th>Image</th>
+        
     </tr>
 
   
-    <tr *ngFor="let obj of home.Homes">
+    <tr *ngFor="let obj of home.Aboutus">
         
-        <td>{{obj.home_id}}</td>
-
-        <td><img src="../../../assets/images/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
+        <td>{{obj.id}}</td>
         <td>{{obj.description_}}</td>
+        <td><img src="../../../assets/images/{{obj.image}}" width="100px" height="100px"></td>
+
         <td>
             <button (click)="openUpdateDailog(obj)">Update</button>
-            <button (click)="openDeleteDailog(obj.home_id)">Delete</button>
+            <button (click)="openDeleteDailog(obj.id)">Delete</button>
         </td>
  
     </tr>
@@ -28,20 +29,18 @@
 
 
 <ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Home Info</b></h2>
+  <h2 style="text-align: center;"><b>Update Category Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Description Home</mat-label>
+          <mat-label>Description</mat-label>
           <input type="text" matInput formControlName="description_"
           [(ngModel)]="p_data.description_"
           >
           <mat-error *ngIf="updateForm.controls['description_'].hasError('required')">
-            Description is <strong>required</strong>
+            description name is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-        <br>
-     
-
+    
 
         </form>
    

@@ -17,6 +17,14 @@ import { CreateaskingComponent } from './createasking/createasking.component';
 import { ManageaskingComponent } from './manageasking/manageasking.component';
 import { ManagecommonQuestionComponent } from './managecommon-question/managecommon-question.component';
 import { CreatecommonQuestionComponent } from './createcommon-question/createcommon-question.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+import { CreatecategoryComponent } from './createcategory/createcategory.component';
+import { ManagecategoryComponent } from './managecategory/managecategory.component';
+import { ManageaboutusComponent } from './manageaboutus/manageaboutus.component';
+import { CreateaboutusComponent } from './createaboutus/createaboutus.component';
+import { CreatecontactComponent } from './createcontact/createcontact.component';
+import { ManagecontactComponent } from './managecontact/managecontact.component';
 
 
 @NgModule({
@@ -29,7 +37,15 @@ import { CreatecommonQuestionComponent } from './createcommon-question/createcom
     CreateaskingComponent,
     ManageaskingComponent,
     ManagecommonQuestionComponent,
-    CreatecommonQuestionComponent
+    CreatecommonQuestionComponent,
+    ManageuserComponent,
+    CreateuserComponent,
+    CreatecategoryComponent,
+    ManagecategoryComponent,
+    ManageaboutusComponent,
+    CreateaboutusComponent,
+    CreatecontactComponent,
+    ManagecontactComponent
   ],
   imports: [
     CommonModule,
