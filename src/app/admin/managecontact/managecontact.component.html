@@ -1,24 +1,23 @@
 <app-sidebar></app-sidebar>
 <br>
-<h1 style="text-align: center;font-size:33px;"><b>Testmonial</b><h1><br><br>
+<h1 style="text-align: center;font-size:33px;"><b>Manage Asking</b><h1><br><br>
 <button style="display:block; margin: 0 auto;" class="center" (click)="opendialog()">Create New</button>
 <br>
 <table class="center">
     <tr>
         <th> Number</th>
-        <th>Name</th>
-        <th>Messege</th>
-        <th>user ID</th>
-        
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Location</th>
     </tr>
 
   
-    <tr *ngFor="let obj of home.Testmonial">
+    <tr *ngFor="let obj of home.Contactus">
         
         <td>{{obj.id}}</td>
-        <td>{{obj.name}}</td>
-        <td>{{obj.messege}}</td>
-        <td>{{obj.userId}}</td>
+        <td>{{obj.phone}}</td>
+        <td>{{obj.email}}</td>
+        <td>{{obj.locationc}}</td>
 
         <td>
             <button (click)="openUpdateDailog(obj)">Update</button>
@@ -31,40 +30,38 @@
 
 
 <ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Testmonial Info</b></h2>
+  <h2 style="text-align: center;"><b>Update Contact us Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>name</mat-label>
-          <input type="number" matInput formControlName="name"
-          [(ngModel)]="p_data.name"
+          <mat-label>phone</mat-label>
+          <input type="text" matInput formControlName="phone"
+          [(ngModel)]="p_data.phone"
           >
-          <mat-error *ngIf="updateForm.controls['name'].hasError('required')">
-            name is <strong>required</strong>
+          <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
+            phone is <strong>required</strong>
           </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>messege</mat-label>
-            <input type="text" matInput formControlName="messege"
-            [(ngModel)]="p_data.messege"
+            <mat-label> email</mat-label>
+            <input type="text" matInput formControlName="email"
+            [(ngModel)]="p_data.email"
             >
-            <mat-error *ngIf="updateForm.controls['messege'].hasError('required')">
-                messege is <strong>required</strong>
+            <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
+              email is <strong>required</strong>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>user Id</mat-label>
-            <input type="text" matInput formControlName="userId"
-            [(ngModel)]="p_data.userId"
-            >
-            <mat-error *ngIf="updateForm.controls['userId'].hasError('required')">
-                user Id is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-     
-
+              <mat-label>location</mat-label>
+              <input type="text" matInput formControlName="locationc"
+              [(ngModel)]="p_data.locationc"
+              >
+              <mat-error *ngIf="updateForm.controls['locationc'].hasError('required')">
+                location is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+    
 
         </form>
    
