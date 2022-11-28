@@ -13,8 +13,8 @@ export class CreatecategoryComponent implements OnInit {
 
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
-    description_:new FormControl('',Validators.required),
-    image:new FormControl(),
+    category_name:new FormControl('',Validators.required),
+    //image_path:new FormControl(),
   })
 
 
