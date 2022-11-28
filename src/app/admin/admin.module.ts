@@ -8,9 +8,7 @@ import { CreateHomeComponent } from './create-home/create-home.component';
 
 import { SharedModule } from '../shared/shared.module';
 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ManagTestmonialComponent } from './manag-testmonial/manag-testmonial.component';
 import { CreateTestmonialComponent } from './create-testmonial/create-testmonial.component';
 import { CreateaskingComponent } from './createasking/createasking.component';
@@ -51,10 +49,7 @@ import { ManagecontactComponent } from './managecontact/managecontact.component'
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatInputModule
+ 
   ]
 })
 export class AdminModule { }

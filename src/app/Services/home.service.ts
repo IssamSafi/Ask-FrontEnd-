@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { BehaviorSubject } from 'rxjs';
+import {ToastrService} from 'ngx-toastr';
+
 
 
 @Injectable({
@@ -22,7 +24,7 @@ export class HomeService {
 
   display_image: any;
 
-  constructor(private http: HttpClient, private spinner: NgxSpinnerService,  /* private toastr: ToastrService */ ) { }
+  constructor(private http: HttpClient, private spinner: NgxSpinnerService,  private toastr: ToastrService  ) { }
 
   getAllHomes() {
     //show Spinner 
@@ -37,11 +39,11 @@ export class HomeService {
       console.log(this.Homes);
 
      this.spinner.hide();
-    /*  this.toastr.success('Data Retrieved!'); */
+     this.toastr.success('Data Retrieved!');
 
     }, err => {
       this.spinner.hide();
-  /*     this.toastr.error(err.message, err.status); */
+  this.toastr.error(err.message, err.status); 
     })
   }
 
