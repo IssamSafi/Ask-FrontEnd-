@@ -42,6 +42,7 @@ export class AuthService {
       this.router.navigate(['/']);
     },err=>{
       //this.toastr.error(err.message,err.status);
+      //k
     })
   }
 }
