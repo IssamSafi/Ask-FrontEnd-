@@ -1,12 +1,12 @@
-<h2 mat-dialog-title>Add Aboutus</h2>
+<h2 mat-dialog-title>Add category </h2>
 <mat-dialog-content class="mat-typography">
     <form  [formGroup]="create">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>description</mat-label>
-          <input type="text" matInput formControlName="description">
+          <mat-label>category name</mat-label>
+          <input type="text" matInput formControlName="category_name">
 
-          <mat-error *ngIf="create.controls['description'].hasError('required')">
-            description is <strong>required</strong>
+          <mat-error *ngIf="create.controls['category_name'].hasError('required')">
+            category name is <strong>required</strong>
           </mat-error>
         </mat-form-field>
 <br>

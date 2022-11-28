@@ -53,10 +53,10 @@ export class HomeService {
     this.http.post('https://localhost:44384/api/Home', body).subscribe((resp) => {
       console.log(resp);
       this.spinner.hide();
-     // this.toastr.success('Created !!');
+      this.toastr.success('Created !!');
     }, err => {
       this.spinner.hide();
-      //this.toastr.error(err.message, err.status);
+      this.toastr.error(err.message, err.status);
     }
     )
   }
@@ -66,10 +66,10 @@ export class HomeService {
     this.spinner.show();
     this.http.put('https://localhost:44384/api/Home',body).subscribe((resp)=>{
       this.spinner.hide();
-     // this.toastr.success('Updated Successfully !!');
+     this.toastr.success('Updated Successfully !!');
     },err=>{
       this.spinner.hide();
-     // this.toastr.error(err.message, err.status);
+      this.toastr.error(err.message, err.status);
     })
   }
 deleteHome(id:number)
@@ -77,10 +77,10 @@ deleteHome(id:number)
   this.spinner.show();
   this.http.delete('https://localhost:44384/api/Home/Delete/'+id).subscribe((resp)=>{
     this.spinner.hide();
-      //this.toastr.success('Deleted Successfully !!');
+      this.toastr.success('Deleted Successfully !!');
   },err=>{
     this.spinner.hide();
-  //  this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   })
 }
 getAllTestmonial() {
@@ -96,11 +96,11 @@ getAllTestmonial() {
     console.log(this.Testmonial);
 
     this.spinner.hide();
-  //  this.toastr.success('Data Retrieved!');
+   this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   })
 }
 createTestmonial(body: any) {
@@ -109,10 +109,10 @@ createTestmonial(body: any) {
   this.http.post('https://localhost:44384/api/Testimonial', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+  this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -121,10 +121,10 @@ updateTestmonial(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Testimonial',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+   this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   })
 }
 deleteTestmonial(id:number)
@@ -132,10 +132,10 @@ deleteTestmonial(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/Testimonial/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+    this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+this.toastr.error(err.message, err.status);
 })
 }
 getAllAsking() {
@@ -151,11 +151,11 @@ getAllAsking() {
     console.log(this.Asking);
 
     this.spinner.hide();
-  //  this.toastr.success('Data Retrieved!');
+  this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   })
 }
 createAsking(body: any) {
@@ -164,10 +164,10 @@ createAsking(body: any) {
   this.http.post('https://localhost:44384/api/Asking', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+   this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -176,10 +176,10 @@ updateAsking(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Asking',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+    this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+   this.toastr.error(err.message, err.status);
   })
 }
 deleteAsking(id:number)
@@ -187,10 +187,10 @@ deleteAsking(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/Asking/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+    this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+ this.toastr.error(err.message, err.status);
 })
 }
 getAllCommonQuestion() {
@@ -206,11 +206,11 @@ getAllCommonQuestion() {
     console.log(this.CommonQuestion);
 
     this.spinner.hide();
-  //  this.toastr.success('Data Retrieved!');
+  this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   })
 }
 createCommonQuestion(body: any) {
@@ -219,10 +219,10 @@ createCommonQuestion(body: any) {
   this.http.post('https://localhost:44384/api/CommonQuestion', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+   this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+  this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -231,10 +231,10 @@ updateCommonQuestion(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/CommonQuestion',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+   this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+   this.toastr.error(err.message, err.status);
   })
 }
 deleteCommonQuestion(id:number)
@@ -242,10 +242,10 @@ deleteCommonQuestion(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/CommonQuestion/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+    this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+ this.toastr.error(err.message, err.status);
 })}
 
 getAllUsers() {
@@ -261,11 +261,11 @@ getAllUsers() {
     console.log(this.User);
 
    this.spinner.hide();
-  /*  this.toastr.success('Data Retrieved!'); */
+   this.toastr.success('Data Retrieved!'); 
 
   }, err => {
     this.spinner.hide();
-/*     this.toastr.error(err.message, err.status); */
+    this.toastr.error(err.message, err.status);
   })
 }
 
@@ -275,10 +275,10 @@ createUser(body: any) {
   this.http.post('https://localhost:44384/api/User', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+   this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -288,10 +288,10 @@ updateUser(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+    this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+   this.toastr.error(err.message, err.status);
   })
 }
 deleteUser(id:number)
@@ -299,10 +299,10 @@ deleteUser(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/User/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+  this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+ this.toastr.error(err.message, err.status);
 })
 }
 getAllCategories() {
@@ -318,11 +318,11 @@ getAllCategories() {
     console.log(this.Category);
 
    this.spinner.hide();
-  /*  this.toastr.success('Data Retrieved!'); */
+   this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-/*     this.toastr.error(err.message, err.status); */
+    this.toastr.error(err.message, err.status);
   })
 }
 
@@ -332,10 +332,10 @@ createCategory(body: any) {
   this.http.post('https://localhost:44384/api/Category', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+    this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -345,10 +345,10 @@ updateCategory(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Category',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+   this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+   this.toastr.error(err.message, err.status);
   })
 }
 deleteCategory(id:number)
@@ -356,10 +356,10 @@ deleteCategory(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/Category/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+this.toastr.error(err.message, err.status);
 })
 }
 getAllAboutus() {
@@ -375,11 +375,11 @@ getAllAboutus() {
     console.log(this.Aboutus);
 
    this.spinner.hide();
-  /*  this.toastr.success('Data Retrieved!'); */
+   this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-/*     this.toastr.error(err.message, err.status); */
+    this.toastr.error(err.message, err.status);
   })
 }
 
@@ -389,10 +389,10 @@ createAboutus(body: any) {
   this.http.post('https://localhost:44384/api/Aboutus', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+   this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+    this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -402,10 +402,10 @@ updateAboutus(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Aboutus',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+  this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+  this.toastr.error(err.message, err.status);
   })
 }
 deleteAboutus(id:number)
@@ -413,10 +413,10 @@ deleteAboutus(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/Aboutus/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+  this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+this.toastr.error(err.message, err.status);
 })
 }
 getAllContactus() {
@@ -432,11 +432,11 @@ getAllContactus() {
     console.log(this.Contactus);
 
    this.spinner.hide();
-  /*  this.toastr.success('Data Retrieved!'); */
+   this.toastr.success('Data Retrieved!');
 
   }, err => {
     this.spinner.hide();
-/*     this.toastr.error(err.message, err.status); */
+this.toastr.error(err.message, err.status); 
   })
 }
 
@@ -446,10 +446,10 @@ createContactus(body: any) {
   this.http.post('https://localhost:44384/api/Contactus', body).subscribe((resp) => {
     console.log(resp);
     this.spinner.hide();
-   // this.toastr.success('Created !!');
+   this.toastr.success('Created !!');
   }, err => {
     this.spinner.hide();
-    //this.toastr.error(err.message, err.status);
+  this.toastr.error(err.message, err.status);
   }
   )
 }
@@ -459,10 +459,10 @@ updateContactus(body:any)
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Contactus',body).subscribe((resp)=>{
     this.spinner.hide();
-   // this.toastr.success('Updated Successfully !!');
+   this.toastr.success('Updated Successfully !!');
   },err=>{
     this.spinner.hide();
-   // this.toastr.error(err.message, err.status);
+   this.toastr.error(err.message, err.status);
   })
 }
 deleteContactus(id:number)
@@ -470,10 +470,10 @@ deleteContactus(id:number)
 this.spinner.show();
 this.http.delete('https://localhost:44384/api/Contactus/Delete/'+id).subscribe((resp)=>{
   this.spinner.hide();
-    //this.toastr.success('Deleted Successfully !!');
+this.toastr.success('Deleted Successfully !!');
 },err=>{
   this.spinner.hide();
-//  this.toastr.error(err.message, err.status);
+this.toastr.error(err.message, err.status);
 })
 }
 
