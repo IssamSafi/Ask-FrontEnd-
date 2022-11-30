@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashbordComponent } from './dashbord/dashbord.component';
 import { ManagTestmonialComponent } from './manag-testmonial/manag-testmonial.component';
 import { ManageaboutusComponent } from './manageaboutus/manageaboutus.component';
 import { ManageaskingComponent } from './manageasking/manageasking.component';
@@ -8,6 +9,7 @@ import { ManagecommonQuestionComponent } from './managecommon-question/managecom
 import { ManagecontactComponent } from './managecontact/managecontact.component';
 import { ManagehomeComponent } from './managehome/managehome.component';
 import { ManageuserComponent } from './manageuser/manageuser.component';
+import { ReportComponent } from './report/report.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'managecategory', component: ManagecategoryComponent },
   {path: 'manageaboutus', component: ManageaboutusComponent },
   {path: 'managecontact', component: ManagecontactComponent},
+  {path: 'dashbord', component: DashbordComponent},
+  {path: 'Report', component: ReportComponent},
 ];
 
 @NgModule({
