@@ -21,6 +21,8 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
+  Users: any= {};
+  report: any[] = [];
 
   display_image: any;
 
@@ -475,6 +477,49 @@ this.toastr.success('Deleted Successfully !!');
   this.spinner.hide();
 this.toastr.error(err.message, err.status);
 })
+}
+
+getTotalUser() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/jwt').subscribe((resp: any) => {
+    this.Users = resp;
+    console.log(this.Users);
+
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!'); 
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
+
+
+Report() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/jwt/report').subscribe((resp: any) => {
+    this.report = resp;
+    console.log(this.report);
+
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!'); 
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
 }
 
 

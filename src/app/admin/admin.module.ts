@@ -23,6 +23,8 @@ import { ManageaboutusComponent } from './manageaboutus/manageaboutus.component'
 import { CreateaboutusComponent } from './createaboutus/createaboutus.component';
 import { CreatecontactComponent } from './createcontact/createcontact.component';
 import { ManagecontactComponent } from './managecontact/managecontact.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
+import { ReportComponent } from './report/report.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { ManagecontactComponent } from './managecontact/managecontact.component'
     ManageaboutusComponent,
     CreateaboutusComponent,
     CreatecontactComponent,
-    ManagecontactComponent
+    ManagecontactComponent,
+    DashbordComponent,
+    ReportComponent
   ],
   imports: [
     CommonModule,
