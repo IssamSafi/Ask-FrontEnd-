@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-  Users: any= {};
+  Users: any[]=[];
   report: any[] = [];
 
   display_image: any;
@@ -512,7 +512,6 @@ Report() {
   this.http.get('https://localhost:44384/api/jwt/report').subscribe((resp: any) => {
     this.report = resp;
     console.log(this.report);
-
    this.spinner.hide();
    this.toastr.success('Data Retrieved!'); 
 
