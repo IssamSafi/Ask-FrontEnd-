@@ -1,0 +1,73 @@
+    <!-- Quote Start -->
+    <app-navbar></app-navbar> 
+
+
+
+        
+        <div class="container-xxl py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-2 wow fadeInUp" data-wow-delay="0.1s">
+    
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="bg-light text-center p-5 wow fadeIn" data-wow-delay="0.5s">
+                            
+                            <mat-dialog-content >
+                                <form  [formGroup]="create">
+                                    <div class="row g-9">
+                                        <div >
+                                    <mat-form-field  class="col-12 col-sm-12">
+                                    <mat-label>Name</mat-label>
+                                    <input class="form-control border-0" type="text" matInput formControlName="name" placeholder="Your Name" style="height: 40px;">
+                            
+                                    <mat-error *ngIf="create.controls['name'].hasError('required')">
+                                        Name is <strong>required</strong>
+                                    </mat-error>
+                                    </mat-form-field>
+                                   </div>
+                                   
+                                    <br>
+                                    
+                                    
+                                                <div >
+                            <mat-form-field  class="col-12 col-sm-12">
+                            <mat-label>Messege</mat-label>
+                            <textarea class="form-control border-0" rows="6" type="text" matInput formControlName="messege"></textarea>
+
+                            <mat-error *ngIf="create.controls['messege'].hasError('required')">
+                                messege is <strong>required</strong>
+                            </mat-error>
+                            </mat-form-field>
+                                   
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit" (click)="saveData()">Submit</button>
+                                    </div>
+
+                                </div>
+
+                                </div>
+
+                                </form>
+                            </mat-dialog-content>
+                        
+                      </div>
+                 </div>
+             </div> 
+          
+        </div>
+    </div>
+    
+    <app-footer></app-footer> 
+    
+
+
+
+   
+
+      
+   
+
+
+   
+   
