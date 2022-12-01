@@ -73,4 +73,7 @@ export class ManagecommonQuestionComponent implements OnInit {
     })
   
   }
+  ApproveReject(id:number,status:number){
+  this.home.AprroveRejectQ(id,status)
+  }
 }
