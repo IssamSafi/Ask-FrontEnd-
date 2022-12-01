@@ -68,4 +68,5 @@ export class ManagehomeComponent implements OnInit {
     })
   
   }
+ 
 }

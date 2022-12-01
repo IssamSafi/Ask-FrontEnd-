@@ -50,7 +50,7 @@ export class HomeService {
   }
 
   createHome(body: any) {
-    //body.image = this.display_image;
+    body.Welcome_iamge = this.display_image;
     this.spinner.show();
     this.http.post('https://localhost:44384/api/Home', body).subscribe((resp) => {
       console.log(resp);
@@ -64,7 +64,7 @@ export class HomeService {
   }
   updateHome(body:any)
   {
-    body.image = this.display_image;
+    body.Welcome_iamge = this.display_image;
     this.spinner.show();
     this.http.put('https://localhost:44384/api/Home',body).subscribe((resp)=>{
       this.spinner.hide();
@@ -537,6 +537,24 @@ uploadimage(File:FormData)
 
   
   }
+  uploadimagehome(File:FormData)
+  {
+  
+  
+    this.http.post('https://localhost:44384/api/Home/uploadImage/',File).subscribe((resp:any)=>{
+      this.display_image=resp.Welcome_Iamge;
+    },
+    
+      err=>{
+        this.toastr.error('cannot upload image');
+      })
    
+  
+    
+    }
+    AprroveRejectQ(id:number,status:number){
+      this.http.post('https://localhost:44384/api/asking',{AskId:id,status:status}).subscribe((resp:any)=>
+      )
+    }
 }
 

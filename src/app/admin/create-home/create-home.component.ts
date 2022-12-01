@@ -27,14 +27,13 @@ export class CreateHomeComponent implements OnInit {
   {
     this.home.createHome(this.create.value);
   }
-  /* 
-  uploadFile(file:any){
+  uploadfilehome(file:any){
     if(file.length==0)
     return;
-    let fileToUpload=<File>file[0]//the first image 
-    const formdata= new FormData();
-    formdata.append('file',fileToUpload,fileToUpload.name);
-    this.home.uploadAttachment(formdata);
-  } */
+ let imageToupload=<File>file[0]
+ const formdata= new FormData();
+ formdata.append('file',imageToupload,imageToupload.name);
+ this.home.uploadimage(formdata);
+  }
 }
 
