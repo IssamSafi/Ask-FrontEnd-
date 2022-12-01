@@ -10,7 +10,7 @@
           </mat-error>
         </mat-form-field>
 
-
+       <input type="file" #file formControlName="image" (change)="uploadfile(file.files)">
 
 
     </form>
