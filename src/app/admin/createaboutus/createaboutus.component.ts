@@ -13,7 +13,7 @@ export class CreateaboutusComponent implements OnInit {
 
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
-    Image:new FormControl(),
+    image:new FormControl(),
     description_:new FormControl('',Validators.required),
   })
 
