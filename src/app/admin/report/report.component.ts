@@ -15,4 +15,6 @@ export class ReportComponent implements OnInit {
     this.home.Report();
   }
 
+ 
+
 }
