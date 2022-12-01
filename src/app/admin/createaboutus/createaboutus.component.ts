@@ -13,12 +13,14 @@ export class CreateaboutusComponent implements OnInit {
 
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
-    image:new FormControl(),
+    Image:new FormControl(),
     description_:new FormControl('',Validators.required),
   })
 
 
   ngOnInit(): void {
+    
+    
   }
 
  
@@ -26,5 +28,13 @@ export class CreateaboutusComponent implements OnInit {
   {
     this.home.createAboutus(this.create.value);
   }
-
+  
+  uploadfile(file:any){
+    if(file.length==0)
+    return;
+ let imageToupload=<File>file[0]
+ const formdata= new FormData();
+ formdata.append('file',imageToupload,imageToupload.name);
+ this.home.uploadimage(formdata);
+  }
 }

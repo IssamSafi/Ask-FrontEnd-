@@ -386,7 +386,7 @@ getAllAboutus() {
 }
 
 createAboutus(body: any) {
-  //body.image = this.display_image;
+  body.Image = this.display_image;
   this.spinner.show();
   this.http.post('https://localhost:44384/api/Aboutus', body).subscribe((resp) => {
     console.log(resp);
@@ -400,7 +400,7 @@ createAboutus(body: any) {
 }
 updateAboutus(body:any)
 {
-  body.image = this.display_image;
+  body.Image = this.display_image;
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Aboutus',body).subscribe((resp)=>{
     this.spinner.hide();
@@ -521,11 +521,22 @@ Report() {
     this.toastr.error(err.message, err.status);
   })
 }
+  
+uploadimage(File:FormData)
+{
 
 
+  this.http.post('https://localhost:44384/api/Aboutus/uploadImage/',File).subscribe((resp:any)=>{
+    this.display_image=resp.Image;
+  },
+  
+    err=>{
+      this.toastr.error('cannot upload image');
+    })
+ 
 
-
-
-
+  
+  }
+   
 }
 

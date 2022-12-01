@@ -29,6 +29,7 @@ export class ManageaskingComponent implements OnInit {
 
   ngOnInit(): void {
     this.home.getAllAsking();
+    
   }
   opendialog() {
     this.dialog.open(CreateaskingComponent)

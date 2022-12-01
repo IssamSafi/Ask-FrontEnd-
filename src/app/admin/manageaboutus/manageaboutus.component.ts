@@ -23,7 +23,7 @@ export class ManageaboutusComponent implements OnInit {
 
   updateForm :FormGroup= new FormGroup({
     id:new FormControl(),
-    image:new FormControl(),
+    Image:new FormControl(),
     description_:new FormControl('',Validators.required),
     
   })
@@ -42,7 +42,7 @@ export class ManageaboutusComponent implements OnInit {
 
       id:obj.id,
       description_:obj.description_,
-      image:obj.image,
+      Image:obj.Image,
 
 
     }
