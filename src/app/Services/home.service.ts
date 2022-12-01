@@ -527,7 +527,7 @@ uploadimage(File:FormData)
 
 
   this.http.post('https://localhost:44384/api/Aboutus/uploadImage/',File).subscribe((resp:any)=>{
-    this.display_image=resp.Image;
+    this.display_image=resp.image;
   },
   
     err=>{
@@ -542,7 +542,7 @@ uploadimage(File:FormData)
   
   
     this.http.post('https://localhost:44384/api/Home/uploadImage/',File).subscribe((resp:any)=>{
-      this.display_image=resp.Welcome_Iamge;
+      this.display_image=resp.welcome_Iamge;
     },
     
       err=>{
@@ -553,8 +553,9 @@ uploadimage(File:FormData)
     
     }
     AprroveRejectQ(id:number,status:number){
-      this.http.post('https://localhost:44384/api/asking',{AskId:id,status:status}).subscribe((resp:any)=>
-      )
-    }
+      this.http.post('https://localhost:44384/api/asking',{AskId:id,status:status}).subscribe((resp:any)=>{
+     } )
+}
+
 }
 
