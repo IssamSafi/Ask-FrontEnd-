@@ -553,7 +553,7 @@ uploadimage(File:FormData)
     
     }
     AprroveRejectQ(id:number,status:number){
-      this.http.post('https://localhost:44384/api/asking',{AskId:id,status:status}).subscribe((resp:any)=>
+      this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
       )
     }
 }
