@@ -509,7 +509,7 @@ Report() {
 
   this.spinner.show();
 
-  this.http.get('https://localhost:44384/api/jwt/report').subscribe((resp: any) => {
+  this.http.get('https://localhost:44384/api/jwt').subscribe((resp: any) => {
     this.report = resp;
     console.log(this.report);
 
