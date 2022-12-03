@@ -56,9 +56,10 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     AdminRoutingModule,
     SharedModule,
     MatButtonModule,
-    MatTableExporterModule 
+    MatTableExporterModule,
    
  
-  ]
+  ],
+  
 })
 export class AdminModule { }
