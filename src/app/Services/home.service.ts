@@ -551,6 +551,37 @@ uploadimage(File:FormData)
   
     
     }
+    uploadimageuser(File:FormData)
+  {
+  
+  
+    this.http.post('https://localhost:44384/api/user/uploadImage/',File).subscribe((resp:any)=>{
+      this.display_image=resp.IamgePath;
+    },
+    
+      err=>{
+        this.toastr.error('cannot upload image');
+      })
+   
+  
+    
+    }
+    uploadimageCategory(File:FormData)
+  {
+  
+  
+    this.http.post('https://localhost:44384/api/Category/uploadImage/',File).subscribe((resp:any)=>{
+      this.display_image=resp.image_path;
+    },
+    
+      err=>{
+        this.toastr.error('cannot upload image');
+      })
+   
+  
+    
+    }
+
     AprroveRejectQ(id:number,status:number){
 
       this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
