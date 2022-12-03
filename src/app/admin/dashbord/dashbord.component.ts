@@ -12,7 +12,12 @@ export class DashbordComponent implements OnInit {
   constructor(public home :HomeService){}
 
   ngOnInit(): void {
-    this.home.getTotalUser();
+  
   }
+  total(){
+    this.home.getTotalUser();
+    
+    }
+  
 
 }
