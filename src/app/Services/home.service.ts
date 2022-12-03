@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class HomeService {
 
-  selectedCourse: any = {};
+ 
  
   Homes: any[] = [];
   Testmonial: any[] = [];
@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-  Users: any[]=[];
+  Users:any;
   report: any[] = [];
 
   display_image: any;
@@ -272,7 +272,7 @@ getAllUsers() {
 }
 
 createUser(body: any) {
-  //body.image = this.display_image;
+  body.imagePath = this.display_image;
   this.spinner.show();
   this.http.post('https://localhost:44384/api/User', body).subscribe((resp) => {
     console.log(resp);
@@ -286,7 +286,7 @@ createUser(body: any) {
 }
 updateUser(body:any)
 {
-  body.image = this.display_image;
+  body.imagePath = this.display_image;
   this.spinner.show();
   this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
     this.spinner.hide();
@@ -329,7 +329,7 @@ getAllCategories() {
 }
 
 createCategory(body: any) {
-  //body.image = this.display_image;
+  body.image_path = this.display_image;
   this.spinner.show();
   this.http.post('https://localhost:44384/api/Category', body).subscribe((resp) => {
     console.log(resp);
@@ -343,7 +343,7 @@ createCategory(body: any) {
 }
 updateCategory(body:any)
 {
-  body.image = this.display_image;
+  body.image_path = this.display_image;
   this.spinner.show();
   this.http.put('https://localhost:44384/api/Category',body).subscribe((resp)=>{
     this.spinner.hide();
@@ -487,7 +487,7 @@ getTotalUser() {
 
   this.spinner.show();
 
-  this.http.get('https://localhost:44384/api/jwt').subscribe((resp: any) => {
+  this.http.get('https://localhost:44384/api/jwt/total').subscribe((resp: any) => {
     this.Users = resp;
     console.log(this.Users);
 
@@ -556,7 +556,7 @@ uploadimage(File:FormData)
   
   
     this.http.post('https://localhost:44384/api/user/uploadImage/',File).subscribe((resp:any)=>{
-      this.display_image=resp.IamgePath;
+      this.display_image=resp.imagePath;
     },
     
       err=>{
