@@ -42,7 +42,7 @@ export class ManageaboutusComponent implements OnInit {
 
       id:obj.id,
       description_:obj.description_,
-      Image:obj.Image,
+      image:obj.image,
 
 
     }
