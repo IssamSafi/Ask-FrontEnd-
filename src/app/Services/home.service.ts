@@ -509,7 +509,7 @@ Report() {
 
   this.spinner.show();
 
-  this.http.get('https://localhost:44384/api/jwt/report').subscribe((resp: any) => {
+  this.http.get('https://localhost:44384/api/jwt').subscribe((resp: any) => {
     this.report = resp;
     console.log(this.report);
    this.spinner.hide();
@@ -552,9 +552,11 @@ uploadimage(File:FormData)
     
     }
     AprroveRejectQ(id:number,status:number){
-      this.http.post('https://localhost:44384/api/asking',{AskId:id,status:status}).subscribe((resp:any)=>{
-     } )
-}
+
+      this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
+      )
+    }
+
 
 }
 
