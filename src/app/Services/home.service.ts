@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-  Users: any= {};
+  Users: any[]=[];
   report: any[] = [];
 
   display_image: any;
@@ -509,10 +509,9 @@ Report() {
 
   this.spinner.show();
 
-  this.http.get('https://localhost:44384/api/jwt/report').subscribe((resp: any) => {
+  this.http.get('https://localhost:44384/api/jwt').subscribe((resp: any) => {
     this.report = resp;
     console.log(this.report);
-
    this.spinner.hide();
    this.toastr.success('Data Retrieved!'); 
 
@@ -542,7 +541,7 @@ uploadimage(File:FormData)
   
   
     this.http.post('https://localhost:44384/api/Home/uploadImage/',File).subscribe((resp:any)=>{
-      this.display_image=resp.Welcome_Iamge;
+      this.display_image=resp.welcome_Iamge;
     },
     
       err=>{
@@ -584,8 +583,11 @@ uploadimage(File:FormData)
     }
 
     AprroveRejectQ(id:number,status:number){
+
       this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
       )
     }
+
+
 }
 

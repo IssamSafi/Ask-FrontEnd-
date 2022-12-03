@@ -35,7 +35,7 @@ export class AuthService {
       let data :any=jwt_decode(responce.token);
       localStorage.setItem('user',JSON.stringify({...data}));
       if(data.Role=="1")
-      this.router.navigate(['admin/sidebar']);
+      this.router.navigate(['admin/dashbord']);
       else if (data.Role=="2")
       this.router.navigate(['/']);
     },err=>{

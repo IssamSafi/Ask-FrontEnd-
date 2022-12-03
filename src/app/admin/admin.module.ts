@@ -25,6 +25,8 @@ import { CreatecontactComponent } from './createcontact/createcontact.component'
 import { ManagecontactComponent } from './managecontact/managecontact.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { ReportComponent } from './report/report.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 @NgModule({
@@ -47,12 +49,15 @@ import { ReportComponent } from './report/report.component';
     CreatecontactComponent,
     ManagecontactComponent,
     DashbordComponent,
-    ReportComponent
+    ReportComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
+    MatButtonModule,
+    MatTableExporterModule 
+   
  
   ]
 })
