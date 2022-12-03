@@ -73,9 +73,11 @@ export class ManageaskingComponent implements OnInit {
       }
     })
   
+  
   }
   ApproveReject(id:number,status:number){
     this.home.AprroveRejectQ(id,status)
+
     if(status==1){ 
       this.toastr.success('Approve successfuly!');}
    
@@ -83,4 +85,8 @@ export class ManageaskingComponent implements OnInit {
       this.toastr.error('Reject !');}
 
     }
+
+
+    }
+}
 
