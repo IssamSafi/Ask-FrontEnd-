@@ -31,9 +31,9 @@ export class CreateuserComponent implements OnInit {
   uploadfile(file:any){
     if(file.length==0)
     return;
- let imageToupload=<File>file[0]
+ let imageuser=<File>file[0]
  const formdata= new FormData();
- formdata.append('file',imageToupload,imageToupload.name);
- this.home.uploadimage(formdata);
+ formdata.append('file',imageuser,imageuser.name);
+ this.home.uploadimageuser(formdata);
   }
 }

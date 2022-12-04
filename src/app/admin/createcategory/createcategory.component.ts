@@ -13,8 +13,10 @@ export class CreatecategoryComponent implements OnInit {
 
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
+
     category_Name:new FormControl('',Validators.required),
     image_path: new FormControl('',Validators.required),
+
   })
 
 
@@ -32,6 +34,6 @@ export class CreatecategoryComponent implements OnInit {
  let imageToupload=<File>file[0]
  const formdata= new FormData();
  formdata.append('file',imageToupload,imageToupload.name);
- this.home.uploadimage(formdata);
+ this.home.uploadimageCategory(formdata);
   }
 }

@@ -1,14 +1,15 @@
 <app-sidebar></app-sidebar>
+
 <br>
-<h1 style="text-align: center;font-size:33px;"><b>Manage Asking</b><h1><br><br>
-<button style="display:block; margin: 0 auto;" class="center" (click)="opendialog()">Create New</button>
-<br>
+<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage about Us</b><h1><br><br>
+  <button style="display:block; margin-top: 20px;margin-left:800px;text-align: center;" class="center" (click)="opendialog()">Create New</button>
+  <br>
 <table class="center">
     <tr>
         <th> Number</th>
         <th>Description</th>
         <th>Image</th>
-        
+        <th colspan="2">Action</th>
     </tr>
 
   
@@ -19,8 +20,9 @@
         <td><img src="../../../assets/img/{{obj.image}}" width="100px" height="100px"></td>
 
         <td>
-            <button (click)="openUpdateDailog(obj)">Update</button>
-            <button (click)="openDeleteDailog(obj.id)">Delete</button>
+            <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
+            
+            <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.id)">Delete</button>
         </td>
  
     </tr>

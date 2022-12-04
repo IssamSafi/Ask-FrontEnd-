@@ -36,7 +36,7 @@ export class CreateHomeComponent implements OnInit {
  let imageToupload=<File>file[0]
  const formdata= new FormData();
  formdata.append('file',imageToupload,imageToupload.name);
- this.home.uploadimage(formdata);
+ this.home.uploadimagehome(formdata);
   }
 }
 
