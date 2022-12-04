@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-  Users:any;
+  Users: any[] = [];
   report: any[] = [];
 
   display_image: any;
@@ -567,11 +567,11 @@ uploadimage(File:FormData)
         console.log(err);
   
 
-    }
+    })
   
-  
+    
 
-   
+    }
   
     
     
@@ -588,7 +588,7 @@ uploadimage(File:FormData)
       })
    
   
-    
+  
     }
 
     AprroveRejectQ(id:number,status:number){
