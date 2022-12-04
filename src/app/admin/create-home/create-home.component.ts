@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HomeService } from 'src/app/Services/home.service';
 import { HomeComponent } from 'src/app/home/home.component';
 
@@ -15,7 +15,10 @@ export class CreateHomeComponent implements OnInit {
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
     welcome_Iamge: new FormControl('',Validators.required),
-    description_: new FormControl()
+    description_: new FormControl('',Validators.required),
+    phone:new FormControl('',Validators.required),
+    email:new FormControl('',Validators.required),
+    location:new FormControl('',Validators.required),
   })
 
 

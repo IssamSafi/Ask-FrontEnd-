@@ -21,7 +21,7 @@
         <td>{{obj.lname}}</td>
         <td>{{obj.phone}}</td>
         <td>{{obj.email}}</td>
-        <td><img src="../../../assets/img/{{obj.imagePath}}" width="100px" height="100px"></td>
+        <td><img src="../../../assets/img/{{obj.image_Path}}" width="100px" height="100px"></td>
         <td>{{obj.description_}}</td>
         <td>
             <button (click)="openUpdateDailog(obj)">Update</button>
@@ -77,7 +77,8 @@
             </mat-error>
           </mat-form-field>
           <br>
-     
+          <input type="file" #file formControlName="image_Path" (change)="uploadFile(file.files) " [(ngModel)]="p_data.image_Path">
+      
 
 
         </form>

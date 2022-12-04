@@ -6,9 +6,39 @@
           <input type="text" matInput formControlName="description_">
 
           <mat-error *ngIf="create.controls['description_'].hasError('required')">
-            Email is <strong>required</strong>
+            description is <strong>required</strong>
           </mat-error>
         </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>phone</mat-label>
+        <input type="text" matInput formControlName="phone">
+
+        <mat-error *ngIf="create.controls['phone'].hasError('required')">
+          phone is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+       <br>
+       <mat-form-field class="example-full-width" appearance="fill">
+         <mat-label>email</mat-label>
+      <input type="text" matInput formControlName="email">
+
+      <mat-error *ngIf="create.controls['phone'].hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+       </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>location</mat-label>
+    <input type="text" matInput formControlName="location">
+
+    <mat-error *ngIf="create.controls['location'].hasError('required')">
+      location is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+
+
         <input type="file" #file formControlName="welcome_Iamge" (change)="uploadfilehome(file.files)">
 
     </form>

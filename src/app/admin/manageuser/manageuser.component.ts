@@ -25,7 +25,7 @@ export class ManageuserComponent implements OnInit {
     lname:new FormControl('',Validators.required),
     phone:new FormControl('',Validators.required),
     email:new FormControl('',Validators.required),
-    imagePath:new FormControl()
+    image_Path:new FormControl('',Validators.required)
   })
 
   ngOnInit(): void {
@@ -43,11 +43,19 @@ export class ManageuserComponent implements OnInit {
       lname:obj.lname,
       phone:obj.phone,
       email:obj.email,
-      imagePath:obj.imagePath,
+      image_Path:obj.image_Path,
     }
     this.updateForm.controls['id'].setValue(this.p_data.id);
     this.dialog.open(this.callUpdate);
   
+    }
+    uploadFile(file:any){
+      if(file.length==0)
+      return;
+      let fileToUpload=<File>file[0]//the first image 
+      const formdata= new FormData();
+      formdata.append('file',fileToUpload,fileToUpload.name);
+      this.home.uploadimageuser(formdata);
     }
   saveData(){
     this.home.updateUser(this.updateForm.value);

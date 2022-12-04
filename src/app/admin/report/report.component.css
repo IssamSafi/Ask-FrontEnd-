@@ -9,3 +9,12 @@ table, th, td {
     margin-right: auto;
   }
 
+.save{
+  padding:8px 14px;
+  background: rgb(4,116,0);
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  margin-top: 10px;
+}

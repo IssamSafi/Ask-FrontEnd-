@@ -1,26 +1,22 @@
 <app-sidebar></app-sidebar>
 <br>
-<h1 style="text-align: center;font-size:33px;"><b>Manage Asking</b><h1><br><br>
-<button style="display:block; margin: 0 auto;" class="center" (click)="opendialog()">Create New</button>
-<br>
+<h1 style="text-align: center;font-size:33px;"><b>Admin Contact</b><h1><br><br>
+
 <table class="center">
     <tr>
         <th> Number</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Location</th>
+        <th>Messege</th>
+        <th>User Name</th>
     </tr>
 
   
     <tr *ngFor="let obj of home.Contactus">
         
         <td>{{obj.id}}</td>
-        <td>{{obj.phone}}</td>
-        <td>{{obj.email}}</td>
-        <td>{{obj.locationc}}</td>
+        <td>{{obj.messege}}</td>
+        <td>{{obj.name}}</td>
 
         <td>
-            <button (click)="openUpdateDailog(obj)">Update</button>
             <button (click)="openDeleteDailog(obj.id)">Delete</button>
         </td>
  
@@ -29,50 +25,6 @@
 </table>
 
 
-<ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Contact us Info</b></h2>
-    <form class="example-form" [formGroup]="updateForm" >
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>phone</mat-label>
-          <input type="text" matInput formControlName="phone"
-          [(ngModel)]="p_data.phone"
-          >
-          <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
-            phone is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label> email</mat-label>
-            <input type="text" matInput formControlName="email"
-            [(ngModel)]="p_data.email"
-            >
-            <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
-              email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>location</mat-label>
-              <input type="text" matInput formControlName="locationc"
-              [(ngModel)]="p_data.locationc"
-              >
-              <mat-error *ngIf="updateForm.controls['locationc'].hasError('required')">
-                location is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-    
-
-        </form>
-   
-    <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveData()">Save</button>
-    </mat-dialog-actions>
-
-
-
-</ng-template>
 
  <ng-template #callDeleteDailog>
 <h2>Are you sure you want to delete this item ? </h2>

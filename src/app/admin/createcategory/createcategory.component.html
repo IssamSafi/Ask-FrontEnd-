@@ -3,13 +3,14 @@
     <form  [formGroup]="create">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>category name</mat-label>
-          <input type="text" matInput formControlName="category_name">
+          <input type="text" matInput formControlName="category_Name">
 
-          <mat-error *ngIf="create.controls['category_name'].hasError('required')">
+          <mat-error *ngIf="create.controls['category_Name'].hasError('required')">
             category name is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-        <input type="file" #file formControlName="welcome_Iamge" (change)="uploadfileCat(file.files)">
+        <br>
+        <input type="file" #file formControlName="image_path" (change)="uploadfile(file.files)">
 
 <br>
 
