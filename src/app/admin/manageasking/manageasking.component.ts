@@ -24,7 +24,7 @@ export class ManageaskingComponent implements OnInit {
     id:new FormControl(),
     itsapprove:new FormControl('',Validators.required),
     messege:new FormControl(),
-    userId:new FormControl('',Validators.required),
+    user_Id:new FormControl('',Validators.required),
     
   })
 
@@ -44,7 +44,7 @@ export class ManageaskingComponent implements OnInit {
       id:obj.id,
       itsapprove:obj.itsapprove,
       messege:obj.messege,
-      userId:obj.userId,
+      user_Id:obj.user_Id,
 
 
     }
@@ -87,5 +87,4 @@ export class ManageaskingComponent implements OnInit {
     }
 
 
-    
 

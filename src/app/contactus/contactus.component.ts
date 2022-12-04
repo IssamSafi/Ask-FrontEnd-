@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HomeService } from '../Services/home.service';
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+  constructor(private home:HomeService) { }
+  create :FormGroup =new FormGroup({
+    name:new FormControl('',Validators.required),
+    messege:new FormControl('',Validators.required),
+    
+  })
+
 
   ngOnInit(): void {
   }
 
+ 
+  saveData()
+  {
+    this.home.createContactus(this.create.value);
+  }
 }

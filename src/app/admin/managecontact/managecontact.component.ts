@@ -25,9 +25,8 @@ export class ManagecontactComponent implements OnInit {
 
   updateForm :FormGroup= new FormGroup({
     id:new FormControl(),
-    email:new FormControl('',Validators.required),
-    phone:new FormControl('',Validators.required),
-    locationc:new FormControl('',Validators.required),
+    name:new FormControl('',Validators.required),
+    messege:new FormControl('',Validators.required),
     
   })
 
@@ -38,24 +37,7 @@ export class ManagecontactComponent implements OnInit {
     this.dialog.open(CreatecontactComponent)
   }
   p_data :any={};
-  openUpdateDailog(obj:any){
-   
-    console.log(obj);
-    this.p_data={
-
-      id:obj.id,
-      email:obj.email,
-      phone:obj.phone,
-      locationc:obj.locationc
-
-    }
-    this.updateForm.controls['id'].setValue(this.p_data.id);
-    this.dialog.open(this.callUpdate);
   
-    }
-  saveData(){
-    this.home.updateContactus(this.updateForm.value);
-  }
   openDeleteDailog(id:number)
   {
     const dialogRef=  this.dialog.open(this.callDelete);

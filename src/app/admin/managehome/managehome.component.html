@@ -7,9 +7,14 @@
 <table style="text-align: center;font-size:23px;"  class="center">
     <tr>
         <th> Number</th>
-        <th>Image</th>
+
         <th>Description</th>
-        <th colspan="2">Action</th>
+
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Welocome Image</th>
+
     </tr>
 
   
@@ -17,8 +22,14 @@
         
         <td>{{obj.home_id}}</td>
 
-        <td><img src="../../../assets/img/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
+   
         <td>{{obj.description_}}</td>
+        <td>{{obj.phone}}</td>
+        <td>{{obj.email}}</td>
+        <td>{{obj.location}}</td>
+        <td><img src="../../../assets/img/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
+
+
         <td>
           <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
             
@@ -44,7 +55,38 @@
           </mat-error>
         </mat-form-field>
         <br>
-     
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>phone</mat-label>
+          <input type="text" matInput formControlName="phone"
+          [(ngModel)]="p_data.phone"
+          >
+          <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
+            phone is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>email</mat-label>
+          <input type="text" matInput formControlName="email"
+          [(ngModel)]="p_data.email"
+          >
+          <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
+            Description is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>email</mat-label>
+          <input type="text" matInput formControlName="location"
+          [(ngModel)]="p_data.location"
+          >
+          <mat-error *ngIf="updateForm.controls['location'].hasError('required')">
+            location is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <input type="file" #file formControlName="welcome_Iamge" (change)="uploadFile(file.files) " [(ngModel)]="p_data.welcome_Iamge">
+      
 
 
         </form>

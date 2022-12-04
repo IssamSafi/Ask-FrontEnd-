@@ -16,8 +16,9 @@
     <tr *ngFor="let obj of home.Category">
         
         <td>{{obj.id}}</td>
-        <td>{{obj.category_name}}</td>
-        <td><img src="../../../assets/img/{{obj.image_path}}" width="100px" height="100px"></td>
+        <td>{{obj.category_Name}}</td>
+
+        <td><img src="../../../assets/img/{{obj.image_Path}}" width="100px" height="100px"></td>
 
         <td>
           <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
@@ -36,10 +37,10 @@
     <form class="example-form" [formGroup]="updateForm" >
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Category name</mat-label>
-          <input type="text" matInput formControlName="category_name"
-          [(ngModel)]="p_data.category_name"
+          <input type="text" matInput formControlName="category_Name"
+          [(ngModel)]="p_data.category_Name"
           >
-          <mat-error *ngIf="updateForm.controls['category_name'].hasError('required')">
+          <mat-error *ngIf="updateForm.controls['category_Name'].hasError('required')">
             category name is <strong>required</strong>
           </mat-error>
         </mat-form-field>

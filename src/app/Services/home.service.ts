@@ -272,7 +272,10 @@ getAllUsers() {
 }
 
 createUser(body: any) {
-  body.imagePath = this.display_image;
+
+  body.image_Path = this.display_image;
+
+ 
   this.spinner.show();
   this.http.post('https://localhost:44384/api/User', body).subscribe((resp) => {
     console.log(resp);
@@ -286,7 +289,9 @@ createUser(body: any) {
 }
 updateUser(body:any)
 {
-  body.imagePath = this.display_image;
+
+  body.image_Path= this.display_image;
+
   this.spinner.show();
   this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
     this.spinner.hide();
@@ -487,7 +492,9 @@ getTotalUser() {
 
   this.spinner.show();
 
+
   this.http.get('https://localhost:44384/api/jwt/total').subscribe((resp: any) => {
+
     this.Users = resp;
     console.log(this.Users);
 
@@ -551,27 +558,29 @@ uploadimage(File:FormData)
   
     
     }
-    uploadimageuser(File:FormData)
-  {
+
+    uploadimageuser(file: FormData) {
+      this.http.post('https://localhost:44384/api/user/uploadImage/', file).subscribe((resp: any) => {
+        this.display_image = resp.image_Path;
+      }, err => {
+        this.toastr.error('Can not Upload Image');
+        console.log(err);
+  
+
+    }
   
   
-    this.http.post('https://localhost:44384/api/user/uploadImage/',File).subscribe((resp:any)=>{
-      this.display_image=resp.imagePath;
-    },
-    
-      err=>{
-        this.toastr.error('cannot upload image');
-      })
+
    
   
     
-    }
+    
     uploadimageCategory(File:FormData)
   {
   
   
     this.http.post('https://localhost:44384/api/Category/uploadImage/',File).subscribe((resp:any)=>{
-      this.display_image=resp.image_path;
+      this.display_image=resp.image_Path;
     },
     
       err=>{
@@ -587,6 +596,7 @@ uploadimage(File:FormData)
       this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
       )
     }
+    
 
 
 }

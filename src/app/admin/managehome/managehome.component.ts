@@ -22,7 +22,11 @@ export class ManagehomeComponent implements OnInit {
   updateForm :FormGroup= new FormGroup({
     home_id:new FormControl(),
     description_:new FormControl('',Validators.required),
-    welcome_Iamge:new FormControl()
+    welcome_Iamge:new FormControl('',Validators.required),
+    phone:new FormControl('',Validators.required),
+    email:new FormControl('',Validators.required),
+    location:new FormControl('',Validators.required),
+
   })
 
   ngOnInit(): void {
@@ -39,12 +43,25 @@ export class ManagehomeComponent implements OnInit {
 
       home_id:obj.home_id,
       description_:obj.description_,
-      welcome_Iamge:obj.welcome_Iamge
+      welcome_Iamge:obj.welcome_Iamge,
+      phone:obj.phone,
+      email:obj.email,
+      location:obj.location,
+      
+    
 
     }
     this.updateForm.controls['home_id'].setValue(this.p_data.home_id);
     this.dialog.open(this.callUpdate);
   
+    }
+    uploadFile(file:any){
+      if(file.length==0)
+      return;
+      let fileToUpload=<File>file[0]//the first image 
+      const formdata= new FormData();
+      formdata.append('file',fileToUpload,fileToUpload.name);
+      this.home.uploadimagehome(formdata);
     }
   saveData(){
     this.home.updateHome(this.updateForm.value);
