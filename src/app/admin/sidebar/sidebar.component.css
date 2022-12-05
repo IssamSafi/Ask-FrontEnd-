@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
   }
+  
   body {
     background: #fff;
     font-family: Roboto, sans-serif;
@@ -92,14 +93,19 @@
     background: #87949b;
   }
   #sidebar {
-    position: fixed;
+    position:absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 300px;
+    height: 125%;
+    width: 240px;
     background: #1d2127;
     transition-duration: 0.3s;
     z-index: 5;
+    
+    padding-right: padding-x;
+    padding-left: padding-x;
+    margin-right: auto;
+    margin-left: auto;
   }
   #sidebar,
   #sidebar a {
