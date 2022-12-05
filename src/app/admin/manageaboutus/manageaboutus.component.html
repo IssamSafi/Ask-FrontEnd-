@@ -1,13 +1,13 @@
 <app-sidebar></app-sidebar>
 
-<br>
-<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage about Us</b><h1><br><br>
+  <br>
+<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage Aboutus Page</b><h1><br><br>
   <button style="display:block; margin-top: 20px;margin-left:800px;text-align: center;" class="center" (click)="opendialog()">Create New</button>
   <br>
 <table class="center">
     <tr>
         <th> Number</th>
-        <th>Description</th>
+        <th>description_</th>
         <th>Image</th>
         <th colspan="2">Action</th>
     </tr>
@@ -17,12 +17,14 @@
         
         <td>{{obj.id}}</td>
         <td>{{obj.description_}}</td>
+
         <td><img src="../../../assets/img/{{obj.image}}" width="100px" height="100px"></td>
 
         <td>
-            <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
+          <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
             
-            <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.id)">Delete</button>
+          <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.id)">Delete</button>
+      
         </td>
  
     </tr>
@@ -31,18 +33,20 @@
 
 
 <ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Category Info</b></h2>
+  <h2 style="text-align: center;"><b>Update About us Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Description</mat-label>
+          <mat-label>description</mat-label>
           <input type="text" matInput formControlName="description_"
           [(ngModel)]="p_data.description_"
           >
           <mat-error *ngIf="updateForm.controls['description_'].hasError('required')">
-            description name is <strong>required</strong>
+            description is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-    
+        <br>
+        <input type="file" #file formControlName="image" (change)="uploadFile(file.files) " [(ngModel)]="p_data.image">
+      
 
         </form>
    

@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 
 
+
 @NgModule({
   declarations: [
     SidebarComponent,
@@ -50,7 +51,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     ManagecontactComponent,
     DashbordComponent,
     ReportComponent,
-  ],
+    ],
   imports: [
     CommonModule,
     AdminRoutingModule,

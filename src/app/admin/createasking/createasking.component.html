@@ -1,15 +1,7 @@
 <h2 mat-dialog-title>Add Asking</h2>
 <mat-dialog-content class="mat-typography">
     <form  [formGroup]="create">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Its approve</mat-label>
-          <input type="number" matInput formControlName="itsapprove">
 
-          <mat-error *ngIf="create.controls['itsapprove'].hasError('required')">
-            Its approve is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-<br>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Messege</mat-label>
@@ -23,13 +15,22 @@
 <br>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>User Id</mat-label>
-            <input type="number" matInput formControlName="userId">
+            <input type="number" matInput formControlName="user_Id">
   
-            <mat-error *ngIf="create.controls['userId'].hasError('required')">
+            <mat-error *ngIf="create.controls['user_Id'].hasError('required')">
                 user Id is <strong>required</strong>
             </mat-error>
           </mat-form-field>
-
+          <br>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Its approve</mat-label>
+            <input type="number" matInput formControlName="itsapprove">
+  
+            <mat-error *ngIf="create.controls['itsapprove'].hasError('required')">
+              Its approve is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+ 
 
 
 

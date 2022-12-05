@@ -44,7 +44,9 @@
             category name is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-    
+        <br>
+        <input type="file" #file formControlName="image_Path" (change)="uploadFile(file.files) " [(ngModel)]="p_data.image_Path">
+      
 
         </form>
    

@@ -1,16 +1,17 @@
 <app-sidebar></app-sidebar>
 
-<br>
-<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>User Deatilas</b><h1><br><br>
+  <br>
+<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>User Deatils</b><h1><br><br>
   <button style="display:block; margin-top: 20px;margin-left:800px;text-align: center;" class="center" (click)="opendialog()">Create New</button>
   <br>
-<table style="text-align: left;font-size:23px;" class="center">
+<table class="center">
     <tr>
         <th> Number</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>First name</th>
+        <th>Last name</th>
         <th>Phone</th>
         <th>Email</th>
+       
         <th>Image</th>
         <th colspan="2">Action</th>
     </tr>
@@ -23,8 +24,11 @@
         <td>{{obj.lname}}</td>
         <td>{{obj.phone}}</td>
         <td>{{obj.email}}</td>
+
+      
         <td><img src="../../../assets/img/{{obj.image_Path}}" width="100px" height="100px"></td>
-        <td>{{obj.description_}}</td>
+       
+
         <td>
           <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
             
@@ -38,52 +42,54 @@
 
 
 <ng-template #callUpdatDailog>
-    <h2 style="text-align: center;"><b>Update User Info</b></h2>
+  <h2 style="text-align: center;"><b>Update User Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>first name</mat-label>
+        <input type="text" matInput formControlName="fname"
+        [(ngModel)]="p_data.fname"
+        >
+        <mat-error *ngIf="updateForm.controls['fname'].hasError('required')">
+          first name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      
+      <br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>last name</mat-label>
+        <input type="text" matInput formControlName="lname"
+        [(ngModel)]="p_data.lname"
+        >
+        <mat-error *ngIf="updateForm.controls['lname'].hasError('required')">
+          last name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>First Name</mat-label>
-          <input type="text" matInput formControlName="fname"
-          [(ngModel)]="p_data.fname"
+          <mat-label>phone</mat-label>
+          <input type="text" matInput formControlName="phone"
+          [(ngModel)]="p_data.phone"
           >
-          <mat-error *ngIf="updateForm.controls['fname'].hasError('required')">
-            First Name is <strong>required</strong>
+          <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
+            phone is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-        <br>      
+        <br>
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Last Name</mat-label>
-            <input type="text" matInput formControlName="lname"
-            [(ngModel)]="p_data.lname"
-            >
-            <mat-error *ngIf="updateForm.controls['lname'].hasError('required')">
-              Last Name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>    
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Phone</mat-label>
-            <input type="text" matInput formControlName="phone"
-            [(ngModel)]="p_data.phone"
-            >
-            <mat-error *ngIf="updateForm.controls['phone'].hasError('required')">
-                phone is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input type="text" matInput formControlName="email"
-            [(ngModel)]="p_data.email"
-            >
-            <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
-                Email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <input type="file" #file formControlName="image_Path" (change)="uploadFile(file.files) " [(ngModel)]="p_data.image_Path">
+          <mat-label>email</mat-label>
+          <input type="text" matInput formControlName="email"
+          [(ngModel)]="p_data.email"
+          >
+          <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
+            email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+ 
+       
+        
+        <input type="file" #file formControlName="image_Path" (change)="uploadFile(file.files) " [(ngModel)]="p_data.image_Path">
       
-
 
         </form>
    

@@ -9,6 +9,27 @@ import { HomeService } from 'src/app/Services/home.service';
 })
 export class ReportComponent implements OnInit {
 
+  mytodos = [
+    {
+      item:'need to buy movie tickets',
+      isCompleted:false
+    },
+    {
+      item:'Gardening tomorrow 9:00AM',
+      isCompleted:false
+    },
+    {
+      item:'Car Washing',
+      isCompleted:true
+    },
+    {
+      item:'Buy a pen',
+      isCompleted:false
+    }
+  ]
+
+
+
   constructor(public home: HomeService){}
 
   ngOnInit(): void {
