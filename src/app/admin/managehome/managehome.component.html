@@ -1,40 +1,38 @@
 <app-sidebar></app-sidebar>
 
-<br>
-<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage Home Page</b><h1><br><br>
+  <br>
+<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage Home page</b><h1><br><br>
   <button style="display:block; margin-top: 20px;margin-left:800px;text-align: center;" class="center" (click)="opendialog()">Create New</button>
   <br>
-<table style="text-align: center;font-size:23px;"  class="center">
+<table class="center">
     <tr>
         <th> Number</th>
-
-        <th>Description</th>
-
         <th>Phone</th>
         <th>Email</th>
+       
         <th>Location</th>
-        <th>Welocome Image</th>
-
+        <th>Description</th>
+        <th>Image</th>
+        <th colspan="2">Action</th>
     </tr>
 
   
-    <tr *ngFor="let obj of home.Homes">
+    <tr *ngFor="let obj of home. Homes">
         
-        <td>{{obj.home_id}}</td>
-
-   
-        <td>{{obj.description_}}</td>
+        <td>{{obj.home_Id}}</td>
         <td>{{obj.phone}}</td>
         <td>{{obj.email}}</td>
-        <td>{{obj.location}}</td>
-        <td><img src="../../../assets/img/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
 
+        <td>{{obj.location}}</td>
+        <td>{{obj.description_}}</td>
+        <td><img src="../../../assets/img/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
+       
 
         <td>
           <button style="background-color: #4CAF50;color: rgb(253, 252, 252);" (click)="openUpdateDailog(obj)">Update</button>
             
-          <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.id)">Delete</button>
-        
+          <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.home_Id)">Delete</button>
+      
         </td>
  
     </tr>
@@ -43,18 +41,8 @@
 
 
 <ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Home Info</b></h2>
+  <h2 style="text-align: center;"><b>Update Home Page Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Description Home</mat-label>
-          <input type="text" matInput formControlName="description_"
-          [(ngModel)]="p_data.description_"
-          >
-          <mat-error *ngIf="updateForm.controls['description_'].hasError('required')">
-            Description is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>phone</mat-label>
           <input type="text" matInput formControlName="phone"
@@ -71,12 +59,12 @@
           [(ngModel)]="p_data.email"
           >
           <mat-error *ngIf="updateForm.controls['email'].hasError('required')">
-            Description is <strong>required</strong>
+            email is <strong>required</strong>
           </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>email</mat-label>
+          <mat-label>location</mat-label>
           <input type="text" matInput formControlName="location"
           [(ngModel)]="p_data.location"
           >
@@ -84,10 +72,22 @@
             location is <strong>required</strong>
           </mat-error>
         </mat-form-field>
+        
         <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>description</mat-label>
+          <input type="text" matInput formControlName="description_"
+          [(ngModel)]="p_data.description_"
+          >
+          <mat-error *ngIf="updateForm.controls['description_'].hasError('required')">
+            description is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+       
+        
         <input type="file" #file formControlName="welcome_Iamge" (change)="uploadFile(file.files) " [(ngModel)]="p_data.welcome_Iamge">
       
-
 
         </form>
    

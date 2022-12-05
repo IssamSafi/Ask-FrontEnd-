@@ -15,7 +15,7 @@ export class CreateaskingComponent implements OnInit {
   create :FormGroup =new FormGroup({
     itsapprove:new FormControl('',Validators.required),
     messege:new FormControl(),
-    userId:new FormControl('',Validators.required),
+    user_Id:new FormControl('',Validators.required),
   })
 
 

@@ -4,8 +4,8 @@ import { HomeService } from 'src/app/Services/home.service';
 import { CreateHomeComponent } from '../create-home/create-home.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/Services/admin.service';
-
-
+import { CreateaskingComponent } from '../createasking/createasking.component';
+import { CreatecategoryComponent } from '../createcategory/createcategory.component';
 
 
 @Component({
@@ -20,13 +20,13 @@ export class ManagehomeComponent implements OnInit {
   @ViewChild('callDeleteDailog') callDelete!:TemplateRef<any>
 
   updateForm :FormGroup= new FormGroup({
-    home_id:new FormControl(),
+    home_Id:new FormControl(),
     description_:new FormControl('',Validators.required),
-    welcome_Iamge:new FormControl('',Validators.required),
     phone:new FormControl('',Validators.required),
     email:new FormControl('',Validators.required),
     location:new FormControl('',Validators.required),
-
+    welcome_Iamge:new FormControl('',Validators.required),
+    
   })
 
   ngOnInit(): void {
@@ -41,20 +41,21 @@ export class ManagehomeComponent implements OnInit {
     console.log(obj);
     this.p_data={
 
-      home_id:obj.home_id,
+      home_Id:obj.home_Id,
       description_:obj.description_,
-      welcome_Iamge:obj.welcome_Iamge,
       phone:obj.phone,
       email:obj.email,
       location:obj.location,
-      
-    
+      welcome_Iamge:obj.welcome_Iamge,
+
+
 
     }
-    this.updateForm.controls['home_id'].setValue(this.p_data.home_id);
+    this.updateForm.controls['home_Id'].setValue(this.p_data.home_Id);
     this.dialog.open(this.callUpdate);
   
     }
+
     uploadFile(file:any){
       if(file.length==0)
       return;
@@ -66,7 +67,7 @@ export class ManagehomeComponent implements OnInit {
   saveData(){
     this.home.updateHome(this.updateForm.value);
   }
-  openDeleteDailog(home_id:number)
+  openDeleteDailog(id:number)
   {
     const dialogRef=  this.dialog.open(this.callDelete);
     dialogRef.afterClosed().subscribe((result)=>{
@@ -75,7 +76,7 @@ export class ManagehomeComponent implements OnInit {
         if(result=='yes')
         {
           
-          this.home.deleteHome(home_id);
+          this.home.deleteHome(id);
         }
           
           else if(result=='no')
@@ -85,5 +86,4 @@ export class ManagehomeComponent implements OnInit {
     })
   
   }
- 
 }

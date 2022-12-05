@@ -47,14 +47,15 @@ export class ManagTestmonialComponent implements OnInit {
     })
   
   }
-/*   ApproveReject(id:number,status:number){
-    this.home.AprroveRejectQ(id,status)
+  ApproveReject(id:number,status:number){
+ 
 
     if(status==1){ 
+      
       this.toastr.success('Approve successfuly!');}
    
       else
-      this.toastr.error('Reject !');}*/
+      this.toastr.error('Reject !');}
 
     } 
 

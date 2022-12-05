@@ -49,6 +49,15 @@ export class ManagecategoryComponent implements OnInit {
     this.dialog.open(this.callUpdate);
   
     }
+
+    uploadFile(file:any){
+      if(file.length==0)
+      return;
+      let fileToUpload=<File>file[0]//the first image 
+      const formdata= new FormData();
+      formdata.append('file',fileToUpload,fileToUpload.name);
+      this.home.uploadimageCategory(formdata);
+    }
   saveData(){
     this.home.updateCategory(this.updateForm.value);
   }

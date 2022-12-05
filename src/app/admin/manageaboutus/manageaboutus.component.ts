@@ -9,6 +9,7 @@ import { CreatecategoryComponent } from '../createcategory/createcategory.compon
 import { CreateaboutusComponent } from '../createaboutus/createaboutus.component';
 
 
+
 @Component({
   selector: 'app-manageaboutus',
   templateUrl: './manageaboutus.component.html',
@@ -23,8 +24,8 @@ export class ManageaboutusComponent implements OnInit {
 
   updateForm :FormGroup= new FormGroup({
     id:new FormControl(),
-    image:new FormControl(),
     description_:new FormControl('',Validators.required),
+    image:new FormControl('',Validators.required),
     
   })
 
@@ -49,6 +50,15 @@ export class ManageaboutusComponent implements OnInit {
     this.updateForm.controls['id'].setValue(this.p_data.id);
     this.dialog.open(this.callUpdate);
   
+    }
+
+    uploadFile(file:any){
+      if(file.length==0)
+      return;
+      let fileToUpload=<File>file[0]//the first image 
+      const formdata= new FormData();
+      formdata.append('file',fileToUpload,fileToUpload.name);
+      this.home.uploadimage(formdata);
     }
   saveData(){
     this.home.updateAboutus(this.updateForm.value);

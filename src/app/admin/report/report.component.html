@@ -1,11 +1,10 @@
-<app-sidebar></app-sidebar>
+
 
 <br>
 
-
-
-<h1 style="text-align: center;font-size:33px;"><b>Report</b><h1><br><br>
+<!-- <h1 style="text-align: center;font-size:33px;"><b>Report</b><h1><br><br>
     <button type="button" class="save" (click)="file()" >Excel</button>
+
 <br><br>
  <table class="center"  >
 
@@ -29,6 +28,22 @@
     </tr>
   
 </table>
+ -->
+ 
+
+ <button  printSectionId="mytodosItemsId" ngxPrint >Print</button>
+ <div id="mytodosItemsId">
+   <h4 >My todos</h4>
+   <div >
+     <ul>
+       <li *ngFor="let t of mytodos">
+         <span [ngClass]="[t.isCompleted? 'itemCompleted':'itemInCompleted']">
+         {{t.item}}
+         </span>
+       </li>
+     </ul>
+   </div>
+ </div>
 
 
  

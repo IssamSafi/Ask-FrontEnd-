@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-  Users:any;
+  Users:any[] = [];
   report: any[] = [];
 
   display_image: any;
@@ -546,8 +546,7 @@ uploadimage(File:FormData)
   uploadimagehome(File:FormData)
   {
   
-  
-    this.http.post('https://localhost:44384/api/Home/uploadImage/',File).subscribe((resp:any)=>{
+    this.http.post('https://localhost:44384/api/home/uploadImage/',File).subscribe((resp:any)=>{
       this.display_image=resp.welcome_Iamge;
     },
     
@@ -555,7 +554,6 @@ uploadimage(File:FormData)
         this.toastr.error('cannot upload image');
       })
    
-  
     
     }
 
@@ -567,9 +565,9 @@ uploadimage(File:FormData)
         console.log(err);
   
 
+    })
+  
     }
-  
-  
 
    
   
