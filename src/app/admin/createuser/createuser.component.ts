@@ -28,13 +28,12 @@ export class CreateuserComponent implements OnInit {
   {
     this.home.createUser(this.create.value);
   }
-  /* 
-  uploadFile(file:any){
+  uploadfileuser(file:any){
     if(file.length==0)
     return;
-    let fileToUpload=<File>file[0]//the first image 
-    const formdata= new FormData();
-    formdata.append('file',fileToUpload,fileToUpload.name);
-    this.home.uploadAttachment(formdata);
-  } */
+ let imageuser=<File>file[0]
+ const formdata= new FormData();
+ formdata.append('file',imageuser,imageuser.name);
+ this.home.uploadimageuser(formdata);
+  }
 }

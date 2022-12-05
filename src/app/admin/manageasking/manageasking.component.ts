@@ -5,6 +5,7 @@ import { CreateHomeComponent } from '../create-home/create-home.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/Services/admin.service';
 import { CreateaskingComponent } from '../createasking/createasking.component';
+import {ToastrService} from 'ngx-toastr';
 
 
 
@@ -15,7 +16,7 @@ import { CreateaskingComponent } from '../createasking/createasking.component';
 })
 export class ManageaskingComponent implements OnInit {
 
-  constructor(public home: HomeService, private dialog: MatDialog) { }
+  constructor(public home: HomeService, private dialog: MatDialog, private toastr: ToastrService) { }
   @ViewChild('callUpdatDailog') callUpdate!:TemplateRef<any>
   @ViewChild('callDeleteDailog') callDelete!:TemplateRef<any>
 
@@ -76,5 +77,15 @@ export class ManageaskingComponent implements OnInit {
   }
   ApproveReject(id:number,status:number){
     this.home.AprroveRejectQ(id,status)
+
+    if(status==1){ 
+      this.toastr.success('Approve successfuly!');}
+   
+      else
+      this.toastr.error('Reject !');}
+
     }
-}
+
+
+    
+

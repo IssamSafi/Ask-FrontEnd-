@@ -37,6 +37,7 @@
     </mat-error>
   </mat-form-field>
 
+  <input type="file" #file formControlName="imagePath" (change)="uploadfileuser(file.files)">
 
 
 
