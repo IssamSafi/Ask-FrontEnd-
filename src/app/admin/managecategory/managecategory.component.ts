@@ -22,8 +22,8 @@ export class ManagecategoryComponent implements OnInit {
 
   updateForm :FormGroup= new FormGroup({
     id:new FormControl(),
-    category_name:new FormControl('',Validators.required),
-    image_path:new FormControl(),
+    category_Name:new FormControl('',Validators.required),
+    image_path:new FormControl('',Validators.required),
     
   })
 
@@ -40,7 +40,7 @@ export class ManagecategoryComponent implements OnInit {
     this.p_data={
 
       id:obj.id,
-      category_name:obj.category_name,
+      category_Name:obj.category_Name,
       image_path:obj.image_path,
 
 
@@ -48,6 +48,15 @@ export class ManagecategoryComponent implements OnInit {
     this.updateForm.controls['id'].setValue(this.p_data.id);
     this.dialog.open(this.callUpdate);
   
+    }
+
+    uploadFile(file:any){
+      if(file.length==0)
+      return;
+      let fileToUpload=<File>file[0]//the first image 
+      const formdata= new FormData();
+      formdata.append('file',fileToUpload,fileToUpload.name);
+      this.home.uploadimageCategory(formdata);
     }
   saveData(){
     this.home.updateCategory(this.updateForm.value);

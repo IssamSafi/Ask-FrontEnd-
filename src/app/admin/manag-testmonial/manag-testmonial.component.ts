@@ -5,6 +5,7 @@ import { HomeService } from 'src/app/Services/home.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/Services/admin.service';
 import { CreateTestmonialComponent } from '../create-testmonial/create-testmonial.component';
+import {ToastrService} from 'ngx-toastr';
 
 
 
@@ -17,7 +18,7 @@ import { CreateTestmonialComponent } from '../create-testmonial/create-testmonia
 })
 export class ManagTestmonialComponent implements OnInit {
 
-  constructor(public home: HomeService, private dialog: MatDialog) { }
+  constructor(public home: HomeService, private dialog: MatDialog, private toastr: ToastrService) { }
   @ViewChild('callDeleteDailog') callDelete!:TemplateRef<any>
 
 
@@ -46,4 +47,15 @@ export class ManagTestmonialComponent implements OnInit {
     })
   
   }
-}
+  ApproveReject(id:number,status:number){
+ 
+
+    if(status==1){ 
+      
+      this.toastr.success('Approve successfuly!');}
+   
+      else
+      this.toastr.error('Reject !');}
+
+    } 
+

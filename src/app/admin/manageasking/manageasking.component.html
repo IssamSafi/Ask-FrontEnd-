@@ -24,7 +24,7 @@ border-radius:9px" class="center" (click)="opendialog()">Create New</button>
         <td>{{obj.id}}</td>
         <td>{{obj.itsapprove}}</td>
         <td>{{obj.messege}}</td>
-        <td>{{obj.userId}}</td>
+        <td>{{obj.user_Id}}</td>
 
         <td>
           <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
@@ -72,10 +72,10 @@ border-radius:9px" class="center" (click)="opendialog()">Create New</button>
           <br>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>user Id</mat-label>
-            <input type="text" matInput formControlName="userId"
-            [(ngModel)]="p_data.userId"
+            <input type="number" matInput formControlName="user_Id"
+            [(ngModel)]="p_data.user_Id"
             >
-            <mat-error *ngIf="updateForm.controls['userId'].hasError('required')">
+            <mat-error *ngIf="updateForm.controls['user_Id'].hasError('required')">
                 user Id is <strong>required</strong>
             </mat-error>
           </mat-form-field>

@@ -8,6 +8,7 @@ import {ToastrModule, ToastNoAnimation, ToastNoAnimationModule} from 'ngx-toastr
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxPrintModule} from 'ngx-print';
 
 
 
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    NgxPrintModule
     
 
   ]
@@ -36,7 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    NgxPrintModule
   ]
 })
 export class SharedModule { }

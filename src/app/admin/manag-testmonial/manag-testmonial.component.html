@@ -9,7 +9,9 @@
         <th>Name</th>
         <th>Messege</th>
         <th>user ID</th>
+        <th>Its approve</th>
         <th colspan="2">Action</th>
+
     </tr>
 
   
@@ -18,13 +20,22 @@
         <td>{{obj.id}}</td>
         <td>{{obj.name}}</td>
         <td>{{obj.messege}}</td>
-        <td>{{obj.userId}}</td>
+        <td>{{obj.user_Id}}</td>
+        <td>{{obj.itsapprove}}</td>
+        
 
         <td>
-            <button style="background-color: #f44336;color: rgb(253, 252, 252);color: #fff;
-            border:none;
-          border-radius:9px;" (click)="openDeleteDailog(obj.id)">Delete</button>
-            </td>
+
+
+            
+ 
+
+            <button style="background-color:  rgb(239, 25, 2);color: rgb(253, 252, 252);" (click)="openDeleteDailog(obj.id)">Delete</button>
+        
+            <button style="background-color:  rgb(245, 206, 11);color: rgb(253, 252, 252);"(click)="ApproveReject(obj.id,1)">Approve</button>
+            <button style="background-color:  rgb(255, 165, 0);color: rgb(253, 252, 252);"(click)="ApproveReject(obj.id,0)">Reject</button>
+        </td>
+
  
     </tr>
   

@@ -36,8 +36,9 @@
         phone is <strong>required</strong>
     </mat-error>
   </mat-form-field>
+  <br>
+  <input type="file" #file formControlName="image_Path" (change)="uploadfile(file.files)">
 
-  <input type="file" #file formControlName="imagePath" (change)="uploadfileuser(file.files)">
 
 
 

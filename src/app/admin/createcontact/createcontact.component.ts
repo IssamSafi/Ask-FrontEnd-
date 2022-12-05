@@ -13,9 +13,8 @@ export class CreatecontactComponent implements OnInit {
 
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
-    email:new FormControl('',Validators.required),
-    phone:new FormControl('',Validators.required),
-    locationc:new FormControl('',Validators.required),
+    name:new FormControl('',Validators.required),
+    messege:new FormControl('',Validators.required),
   })
 
 

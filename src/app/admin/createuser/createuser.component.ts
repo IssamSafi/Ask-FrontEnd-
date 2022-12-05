@@ -16,7 +16,7 @@ export class CreateuserComponent implements OnInit {
     lname:new FormControl('',Validators.required),
     phone:new FormControl('',Validators.required),
     email:new FormControl('',Validators.required),
-    imagePath:new FormControl()
+    image_Path:new FormControl()
   })
 
 
@@ -28,7 +28,7 @@ export class CreateuserComponent implements OnInit {
   {
     this.home.createUser(this.create.value);
   }
-  uploadfileuser(file:any){
+  uploadfile(file:any){
     if(file.length==0)
     return;
  let imageuser=<File>file[0]
