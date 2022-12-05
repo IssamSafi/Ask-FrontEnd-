@@ -1,6 +1,6 @@
 td, th {
   border: 1px solid #dddddd;
-   text-align: left;
+   text-align: center;
    padding: -50px;
     border-collapse: collapse;
  }
@@ -10,25 +10,24 @@ td, th {
  }
   table {
     font-family: arial, sans-serif;
-  
+  font-size: large;
      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
      display: table; 
      background-color:#ffffff;
      border-collapse: collapse;
-  width: 100%;
+  width: 82%;
   border: 1px solid #ddd;
 
   }
   th{
     background-color:rgb(248, 19, 19);
-    color: rgb(239, 233, 233);
+   color: rgb(239, 233, 233);
   }
   
   table.center {
    
     margin-left: auto; 
-   
-    padding:-150px;
+    padding:-145px;
    
   }
   body {
