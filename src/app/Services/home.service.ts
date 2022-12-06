@@ -21,7 +21,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-
+   homee:[]=[];
   Users:any[] = [];
 
   report: any[] = [];
@@ -597,6 +597,26 @@ uploadimage(File:FormData)
 
       this.http.get('https://localhost:44384/api/asking/ask/'+id+','+status).subscribe((resp:any)=>{}
       )
+    }
+
+    gethomeById(id: number) {
+      //show Spinner 
+      //Hits Api 
+      //Hide Spinner
+      //Resp=> Toastr 
+  
+      this.spinner.show();
+      this.http.get('https://localhost:44384/api/home/GetById/' + id).subscribe((resp: any) => {
+        this.homee = resp;
+        console.log(this.homee);
+        this.spinner.hide();
+        this.toastr.success('Data Retrieved!');
+  
+      }, err => {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      })
+  
     }
     
 

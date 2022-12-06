@@ -13,6 +13,8 @@ import { SharedModule } from './shared/shared.module';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { TokenInterceptor } from 'src/Interceptor/token.interceptor';
 import { TestmonialComponent } from './testmonial/testmonial.component';
+import { AskingComponent } from './asking/asking.component';
+import { AllQuestionComponent } from './all-question/all-question.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { TestmonialComponent } from './testmonial/testmonial.component';
     HomeComponent,
     ContactusComponent,
     AboutusComponent,
-    TestmonialComponent
+    TestmonialComponent,
+    AskingComponent,
+    AllQuestionComponent
   ],
   imports: [
     BrowserModule,
