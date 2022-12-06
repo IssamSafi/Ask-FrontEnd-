@@ -63,6 +63,16 @@ td, th {
   margin-top: 10px;
 }
 
+.pdf{
+  padding:8px 14px;
+  background: #FF0000;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
 .itemCompleted{
   color: purple;
   text-decoration: line-through;

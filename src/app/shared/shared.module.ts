@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxPrintModule} from 'ngx-print';
+import { HomeService } from '../Services/home.service';
 
 
 

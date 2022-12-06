@@ -1,22 +1,28 @@
 
 <h1 style="text-align: center;font-size:45px;"><b>All Question</b><h1><br>
 <div class="container mt-5 mb-5">
-    <div *ngFor="let obj of home.report" class="row d-flex align-items-center justify-content-center">
+    <div *ngFor="let obj of home.report"  class="row d-flex align-items-center justify-content-center">
         <div class="col-md-6">
-            <div class="card"  >
+            <div class="card"  *ngIf="(obj.itsapprove)==1" >
                 <div class="d-flex justify-content-between p-2 px-3">
                     <div class="d-flex flex-row align-items-center"> <img src="../../../assets/img/{{obj.image_Path}}"  width="50" class="rounded-circle">
                         <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><b>{{obj.fname}}  {{obj.lname}}   </b></span></div>
                     </div>
                     <div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2"></small> <i class="fa fa-ellipsis-h"></i> </div>
+                    <!-- Add icon library -->
+
                 </div> 
                 <div class="p-2">
-                    <p class="text-justify">{{obj.messege}}</p>
+                    <p class="text-justify" >{{obj.messege}}</p>
                     <hr>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex flex-row icons d-flex align-items-center"> <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i> </div>
-                        <div class="d-flex flex-row muted-color"> <span>2 comments</span> <span class="ml-2">Share</span> </div>
-                    </div>
+                   
+                    <script src="https://use.fontawesome.com/fe459689b4.js">
+                
+            </script>
+<script src="/assets/js/design.js"></script>
+  <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+  <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+
                     <hr>
                     <div class="comments">
                         <div class="d-flex flex-row mb-2"> <img src="https://i.imgur.com/9AZ2QX1.jpg" width="40" class="rounded-image">
