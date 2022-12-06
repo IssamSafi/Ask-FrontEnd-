@@ -48,7 +48,7 @@ export class ManagTestmonialComponent implements OnInit {
   
   }
   ApproveReject(id:number,status:number){
- 
+ this.home.AprroveRejectTestimonial(id,status)
 
     if(status==1){ 
       

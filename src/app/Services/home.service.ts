@@ -619,7 +619,11 @@ uploadimage(File:FormData)
   
     }
     
+    AprroveRejectTestimonial(id:number,status:number){
 
+      this.http.get('https://localhost:44384/api/Testimonial/Status/'+id+','+status).subscribe((resp:any)=>{}
+      )
+    }
 
 }
 

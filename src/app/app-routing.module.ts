@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AdminModule } from './admin/admin.module';
+import { AskingComponent } from './asking/asking.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthorizationGuard } from './authorization.guard';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'about', component: AboutusComponent },
   {path: 'contactus', component: ContactusComponent },
   {path: 'Testmonial', component: TestmonialComponent },
-
+  {path: 'asking', component: AskingComponent },
   {path: 'auth', loadChildren:()=>AuthModule },
   {path: 'admin', loadChildren:()=>AdminModule,
   canActivate:[AuthorizationGuard] }

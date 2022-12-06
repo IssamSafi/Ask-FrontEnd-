@@ -15,6 +15,7 @@ import { TokenInterceptor } from 'src/Interceptor/token.interceptor';
 import { TestmonialComponent } from './testmonial/testmonial.component';
 import { AskingComponent } from './asking/asking.component';
 import { AllQuestionComponent } from './all-question/all-question.component';
+import { ShowTestmonialComponent } from './show-testmonial/show-testmonial.component';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { AllQuestionComponent } from './all-question/all-question.component';
     AboutusComponent,
     TestmonialComponent,
     AskingComponent,
-    AllQuestionComponent
+    AllQuestionComponent,
+    ShowTestmonialComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { AllQuestionComponent } from './all-question/all-question.component';
     SharedModule,
     NgxSpinnerModule,
     HttpClientModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    SharedModule
 
 
 
