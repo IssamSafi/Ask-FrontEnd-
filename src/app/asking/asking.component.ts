@@ -4,20 +4,17 @@ import { HomeService } from 'src/app/Services/home.service';
 import { HomeComponent } from 'src/app/home/home.component';
 
 @Component({
-  selector: 'app-createasking',
-  templateUrl: './createasking.component.html',
-  styleUrls: ['./createasking.component.css']
+  selector: 'app-asking',
+  templateUrl: './asking.component.html',
+  styleUrls: ['./asking.component.css']
 })
-export class CreateaskingComponent implements OnInit {
+export class AskingComponent implements OnInit {
 
-  
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
-    itsapprove:new FormControl('',Validators.required),
     messege:new FormControl(),
-    askingdate:new FormControl(),
-    
     user_Id:new FormControl('',Validators.required),
+    askingdate:new FormControl(),
   })
 
 
@@ -29,5 +26,6 @@ export class CreateaskingComponent implements OnInit {
   {
     this.home.createAsking(this.create.value);
   }
+
 
 }

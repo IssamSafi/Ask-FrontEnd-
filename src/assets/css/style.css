@@ -75,7 +75,7 @@
     border: none;
     content: "\f107";
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    font-weight: 1000;
     vertical-align: middle;
     margin-left: 8px;
 }
@@ -85,7 +85,8 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 15px;
+
+    font-size: 19px;
     text-transform: uppercase;
     outline: none;
 }
@@ -425,7 +426,7 @@
 
 .footer .btn.btn-social {
     margin-right: 5px;
-    width: 35px;
+    width: 50px;
     height: 35px;
     display: flex;
     align-items: center;
@@ -446,7 +447,7 @@
     padding: 0;
     text-align: left;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
@@ -456,8 +457,8 @@
     position: relative;
     content: "\f105";
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
+    font-weight: 1000;
+    margin-right: 17px;
 }
 
 .footer .btn.btn-link:hover {
@@ -467,7 +468,7 @@
 
 .footer .copyright {
     padding: 25px 0;
-    font-size: 15px;
+    font-size: 20px;
     border-top: 1px solid rgba(256, 256, 256, .1);
 }
 

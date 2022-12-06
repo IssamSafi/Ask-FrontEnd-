@@ -25,6 +25,7 @@ export class ManageaskingComponent implements OnInit {
     itsapprove:new FormControl('',Validators.required),
     messege:new FormControl(),
     user_Id:new FormControl('',Validators.required),
+    askingdate:new FormControl(),
     
   })
 
@@ -45,6 +46,7 @@ export class ManageaskingComponent implements OnInit {
       itsapprove:obj.itsapprove,
       messege:obj.messege,
       user_Id:obj.user_Id,
+      askingdate:obj.askingdate,
 
 
     }
