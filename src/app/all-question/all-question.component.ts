@@ -12,7 +12,11 @@ export class AllQuestionComponent implements OnInit {
   constructor(public home: HomeService){}
   numberOfLikes : number=0;
   numberOfDislike:number=0;
-
+  comment="add answer here -_-";
+  postcomment=[];
+post(){
+  this.postcomment.push();
+}
   ngOnInit(): void {
     
     this.home.Report();
