@@ -33,12 +33,12 @@
                                 <br>
                                 <div class="row g-9">
                                     
-                                <mat-form-field  class="col-12 col-sm-12">
+                                <mat-form-field  class="col-12 col-sm-12" hidden>
                                 <mat-label>user Id</mat-label>
-                                <input class="form-control border-0" type="number" matInput formControlName="user_Id" placeholder="Your user Id" style="height: 40px;">
+                                <input class="form-control border-0"  type="number" matInput formControlName="user_Id" placeholder="Your user Id" style="height: 40px;">
                         
                                 <mat-error *ngIf="create.controls['user_Id'].hasError('required')">
-                                    Name is <strong>required</strong>
+                                    userid is <strong>required</strong>
                                 </mat-error>
                                 </mat-form-field>
                                </div>

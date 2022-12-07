@@ -24,7 +24,7 @@ export class HomeService {
    homee:[]=[];
   Users:any[] = [];
   test:any[] = [];
-
+comments:any[]=[];
   report: any[] = [];
 
   display_image: any;
@@ -647,8 +647,54 @@ uploadimage(File:FormData)
     }
 
 
+Getallcomment(){
+  this.spinner.show();
+  this.http.get('https://localhost:44384/api/comment').subscribe((resp:any)=> {
+    this.spinner.hide();
+    this.comments=resp;
+    this.toastr.success('Data Retrieved!')
+  }, err=>{
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
+DeleteComments(id:number){
+  this.spinner.show();
+  this.http.delete('https://localhost:44384/api/comment/delete/'+id).subscribe((resp:any)=>{
+    this.spinner.hide();
+    this.toastr.success('Data Retrieved')
+  }, err=> {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status)
+  }
+  )
+}
 
+updateComments(body:any)
+{
+  
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/comment',body).subscribe((resp)=>{
+    this.spinner.hide();
+   this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   this.toastr.error(err.message, err.status);
+  })
+}
 
-
+createComment(body: any) {
+  
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/comment', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  }
+  )
+}
 }
 

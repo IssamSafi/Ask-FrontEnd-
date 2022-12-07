@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/Services/home.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 declare var name: any;
 @Component({
   selector: 'app-all-question',
@@ -12,15 +13,21 @@ export class AllQuestionComponent implements OnInit {
   constructor(public home: HomeService){}
   numberOfLikes : number=0;
   numberOfDislike:number=0;
-  comment="add answer here -_-";
+  comment ="test";
   postcomment=[];
+  //commentt : new FormControl('',Validators.required);
 post(){
-  this.postcomment.push();
+  this.postcomment.push.apply(this.comment);
+  this.comment="";
 }
   ngOnInit(): void {
     
     this.home.Report();
+    //this.home.createComment(this.commentt.value);
     new name();
+    
+
+    
    
   }
   
@@ -32,6 +39,6 @@ post(){
  }
 
 
- 
+
 
 }
