@@ -1,39 +1,35 @@
-<h1>Testimonials Slider</h1>
-<div class="container">
-  <input type="radio" name="nav" id="first" checked/>
-  <input type="radio" name="nav" id="second" />
-  <input type="radio" name="nav" id="third" />
-  
-  <label for="first" class="first"></label>
-<label for="second"  class="second"></label>
-<label for="third" class="third"></label>
- 
-  <div class="one slide">
-    <blockquote>
-      <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
-    </blockquote>
-    <img src="http://media-cache-ec3.pinterest.com/upload/276830708316574707_vQX7jld6.jpg" width="170" height="130" />
-    <h2>Steve Kruger</h2>
-    <h6>UI/UX Designer at Woof Design Studio</h6>
+<h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>Testimonial</b><h1><br>
+  <h2 style="text-align: center;"><b>What Our  client say ?</b><h2><br>
+
+
+
+
+
+<div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+
+  <div class="carousel-inner py-4" >
+    <!-- Single item -->
+    <div class="carousel-item active" >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" *ngFor="let obj of home.test" >
+            <div *ngIf="(obj.itsapprove)==1">
+            <img class="rounded-circle shadow-1-strong mb-4"
+            src="../../../assets/img/{{obj.image_Path}}" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">{{obj.fname}}  {{obj.lname}}</h5>
+            <p>Client</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              {{obj.messege}}
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-  
-  <div class="two slide">
-    <blockquote>
-      <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I recommend him to anyone who wants their work done professionally. The project ... <a href="#"> read more</a><span class="rightq quotes">&bdquo; </span>
-    </blockquote>
-    <img src="http://behance.vo.llnwd.net/profiles14/297668/projects/3041537/f4d6311b432c4804f1c8045459df9647.jpg" width="170" height="130" />
-    <h2>John Doe</h2>
-    <h6>Developer Relations at Woof Studios</h6>
-  </div>
-  
-  <div class="three slide">
-    <blockquote>
-      <span class="quotes leftq"> &ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
-    </blockquote>
-    <img src="http://media.digitalcameraworld.com/files/2012/10/People_photography_composition_tips_PHG18.chap4_.n_p38_39.jpg" width="170" height="130" />
-    <h2>Steve Stevenson</h2>
-    <h6>CEO Woof Web Design Studios</h6>
-  </div>
-  
-  
+  <!-- Inner -->
 </div>
+
+

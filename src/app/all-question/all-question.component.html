@@ -1,9 +1,10 @@
 
-<h1 style="text-align: center;font-size:45px;"><b>All Question</b><h1><br>
+<br><br>
+    <h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>All Question</b><h1><br>
 <div class="container mt-5 mb-5">
     <div *ngFor="let obj of home.report"  class="row d-flex align-items-center justify-content-center">
         <div class="col-md-6">
-            <div class="card"  *ngIf="(obj.itsapprove)==1" >
+            <div class="card"   >
                 <div class="d-flex justify-content-between p-2 px-3">
                     <div class="d-flex flex-row align-items-center"> <img src="../../../assets/img/{{obj.image_Path}}"  width="50" class="rounded-circle">
                         <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><b>{{obj.fname}}  {{obj.lname}}   </b></span></div>

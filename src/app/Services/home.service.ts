@@ -23,6 +23,7 @@ export class HomeService {
   Contactus: any[] = [];
    homee:[]=[];
   Users:any[] = [];
+  test:any[] = [];
 
   report: any[] = [];
 
@@ -624,6 +625,30 @@ uploadimage(File:FormData)
       this.http.get('https://localhost:44384/api/Testimonial/Status/'+id+','+status).subscribe((resp:any)=>{}
       )
     }
+
+    ShowTestmonial() {
+      //show Spinner 
+      //Hits Api 
+      //Hide Spinner
+      //Resp=> Toastr 
+    
+      this.spinner.show();
+    
+      this.http.get('https://localhost:44384/api/jwt/testmonial').subscribe((resp: any) => {
+        this.test = resp;
+        console.log(this.test);
+       this.spinner.hide();
+       this.toastr.success('Data Retrieved!'); 
+    
+      }, err => {
+        this.spinner.hide();
+        this.toastr.error(err.message, err.status);
+      })
+    }
+
+
+
+
 
 }
 
