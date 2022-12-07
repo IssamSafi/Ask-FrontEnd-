@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/Services/home.service';
+
 /* import { NgxSpinnerService } from 'ngx-spinner'; */
 
 @Component({
@@ -18,15 +20,22 @@ export class RegisterComponent implements OnInit {
     confirmPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
   })
 
-  constructor(private route:Router/* ,private spinner :NgxSpinnerService */) { }
+  constructor(private route:Router,/* ,private spinner :NgxSpinnerService */private home:HomeService) { }
 
     submit(){
 /*       this.spinner.show();
       setTimeout(()=>{
         this.spinner.hide();
       },3000) */
-      console.log(this.registerForm.value);
+      console.log();
+     // this.home.createHome(this.registerForm.value);
     }
+    saveData()
+    {
+      
+    }
+
+
   ngOnInit(): void {
   }
   matchError(){
