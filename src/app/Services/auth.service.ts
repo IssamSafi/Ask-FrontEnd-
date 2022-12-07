@@ -14,11 +14,12 @@ export class AuthService {
     
     private toastr:ToastrService,private router:Router,private http:HttpClient,
     ) { }
-  submit(email:any, password:any)
+  submit(email:any, password:any )
   {
     var body ={
       User_Name:email.value.toString(),
-      password: password.value.toString()
+      password: password.value.toString(),
+      
     }
     const headerDic={
       'Content-Type' :'application/json',
@@ -31,16 +32,23 @@ export class AuthService {
       const responce={
         token :resp.toString()
       }
+      
       localStorage.setItem('token',responce.token);
       let data :any=jwt_decode(responce.token);
       localStorage.setItem('user',JSON.stringify({...data}));
       if(data.Role=="1")
       this.router.navigate(['admin/dashbord']);
       else if (data.Role=="2")
+
       this.router.navigate(['/home']);
+
+  
+
     },err=>{
       this.toastr.error(err.message,err.status);
     })
   }
-}
+  
+  
 
+}
