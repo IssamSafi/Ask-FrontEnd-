@@ -16,6 +16,8 @@ import { TestmonialComponent } from './testmonial/testmonial.component';
 import { AskingComponent } from './asking/asking.component';
 import { AllQuestionComponent } from './all-question/all-question.component';
 import { ShowTestmonialComponent } from './show-testmonial/show-testmonial.component';
+import { HomeguestComponent } from './homeguest/homeguest.component';
+import { AboutguestComponent } from './aboutguest/aboutguest.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { ShowTestmonialComponent } from './show-testmonial/show-testmonial.compo
     AskingComponent,
     AllQuestionComponent,
     ShowTestmonialComponent,
+    HomeguestComponent,
+    AboutguestComponent,
 
   ],
   imports: [

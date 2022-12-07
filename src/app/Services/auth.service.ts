@@ -39,7 +39,10 @@ export class AuthService {
       if(data.Role=="1")
       this.router.navigate(['admin/dashbord']);
       else if (data.Role=="2")
-      this.router.navigate(['/']);
+
+      this.router.navigate(['/home']);
+
+  
 
     },err=>{
       this.toastr.error(err.message,err.status);

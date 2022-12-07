@@ -24,5 +24,8 @@ export class LoginComponent implements OnInit {
     goToReg(){
       this.route.navigate(['auth/register'])
     }
+    goToHome(){
+      this.route.navigate(['/'])
+    }
 
 }
