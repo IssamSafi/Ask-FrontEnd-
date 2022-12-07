@@ -25,5 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule
 
   ]
+  
 })
 export class AuthModule { }

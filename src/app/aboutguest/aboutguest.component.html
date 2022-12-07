@@ -1,0 +1,38 @@
+<app-navbarguest></app-navbarguest> 
+
+
+<br> <br>
+<h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>About Us</b><h1>
+<br>
+    <!-- Page Header Start -->
+
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid overflow-hidden py-5 px-lg-0">
+        <div class="container about py-5 px-lg-0" *ngFor="let obj of home.Aboutus">
+            <div class="row g-4 mx-lg-0" >
+                <div class="col-lg-4 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                          <img  class="position-absolute img-fluid w-100 h-100" style="object-fit: cover;" src="../../../assets/img/{{obj.image}}" />
+                    </div>
+                </div>
+                <div class="col-lg-2 ps-lg-0"></div>
+                <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
+             
+                    <p class="mb-5">{{obj.description_}} </p>
+                    <div class="row g-4 mb-5">
+                        
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+              
+
+    <app-footerguest></app-footerguest> 
+

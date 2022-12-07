@@ -10,13 +10,17 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxPrintModule} from 'ngx-print';
 import { HomeService } from '../Services/home.service';
+import { FooterguestComponent } from './footerguest/footerguest.component';
+import { NavbarguestComponent } from './navbarguest/navbarguest.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FooterguestComponent,
+    NavbarguestComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,9 @@ import { HomeService } from '../Services/home.service';
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NavbarguestComponent,
+    FooterguestComponent
   ]
 })
 export class SharedModule { }
