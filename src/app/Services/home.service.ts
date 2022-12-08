@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { BehaviorSubject } from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
+import { RETURN } from 'mat-table-exporter';
 
 
 
@@ -26,6 +27,7 @@ export class HomeService {
   test:any[] = [];
 comments:any[]=[];
   report: any[] = [];
+  search: any[] = [];
 
   display_image: any;
 
@@ -696,5 +698,26 @@ createComment(body: any) {
   }
   )
 }
+getChartinfo(){
+  return this.http.get("http://localhost:3000/sales");
+}
+/* SearchUser(body: any) {
+  
+
+    this.spinner.show();
+    this.http.post('https://localhost:44384/api/JWT/Search').subscribe((resp:any)=> {
+      this.spinner.hide();
+      this.search=resp;
+      this.spinner.hide();
+      this.search=body;
+     this.toastr.success('Created !!');
+    }, err => {
+      this.spinner.hide();
+      this.toastr.error(err.message, err.status);
+    }
+    )
+  }
+ */
+
 }
 
