@@ -9,6 +9,7 @@ import { AuthorizationGuard } from './authorization.guard';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 import { TestmonialComponent } from './testmonial/testmonial.component';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'asking', component: AskingComponent },
   {path: '', component: HomeguestComponent },
   {path: 'aboutguest', component: AboutguestComponent },
+  {path: 'search', component: SearchUserComponent },
 
   {path: 'auth', loadChildren:()=>AuthModule },
   {path: 'admin', loadChildren:()=>AdminModule,

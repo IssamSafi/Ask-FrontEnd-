@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
       setTimeout(()=>{
         this.spinner.hide();
       },3000) */
-      console.log();
+      console.log(this.registerForm.value);
      // this.home.createHome(this.registerForm.value);
     }
     saveData()

@@ -23,6 +23,7 @@
     "chart.js": "^4.0.1",
     "faker": "^6.6.6",
     "g": "^2.0.1",
+    "json-server": "^0.17.1",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.28",
     "jwt-decode": "^3.1.2",

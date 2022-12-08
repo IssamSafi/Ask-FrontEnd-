@@ -13,7 +13,8 @@ export class TestmonialComponent implements OnInit {
   constructor(private home:HomeService) { }
   create :FormGroup =new FormGroup({
     name: new FormControl('',Validators.required),
-    messege: new FormControl('',Validators.required)
+    messege: new FormControl('',Validators.required),
+    user_Id: new FormControl('',Validators.required)
     
   })
 
@@ -24,7 +25,14 @@ export class TestmonialComponent implements OnInit {
  
   saveData()
   {
+    let user:any=localStorage.getItem("user");
+    if(user){
+      user=JSON.parse(user);
+      this.create.controls["name"].setValue(user.Name);
+      this.create.controls["user_Id"].setValue(+user.ID)
+    }
     this.home.createTestmonial(this.create.value);
+
   }
 
 }
