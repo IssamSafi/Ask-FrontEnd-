@@ -701,6 +701,28 @@ createComment(body: any) {
 getChartinfo(){
   return this.http.get("http://localhost:3000/sales");
 }
+
+Rigester(body: any) {
+  
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/jwt/Rigester', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  }
+  )
+}
+
+
+
+
+
+
+
+
 /* SearchUser(body: any) {
   
 
