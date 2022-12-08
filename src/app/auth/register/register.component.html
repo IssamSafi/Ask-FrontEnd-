@@ -64,8 +64,8 @@
                 <mat-label>First Name</mat-label>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
                   <mat-form-field class="example-full-width">
-                    <input type="text" matInput  formControlName="firstname" />
-                    <mat-error *ngIf="registerForm.controls['firstname'].hasError('required')">
+                    <input type="text" matInput  formControlName="fname" />
+                    <mat-error *ngIf="registerForm.controls['fname'].hasError('required')">
                       First Name is <strong>required</strong>
                     </mat-error>
                   </mat-form-field>
@@ -76,8 +76,8 @@
                 <mat-label>Last Name</mat-label>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
                   <mat-form-field>
-                    <input type="text" matInput  formControlName="lastname" />
-                    <mat-error *ngIf="registerForm.controls['lastname'].hasError('required')">
+                    <input type="text" matInput  formControlName="lname" />
+                    <mat-error *ngIf="registerForm.controls['lname'].hasError('required')">
                       Last Name is <strong>required</strong>
                     </mat-error>
                   </mat-form-field></div></div></div>
@@ -85,11 +85,11 @@
                 <mat-label>Email</mat-label>
                 <div class="input_field"> <span aria-hidden="true" class="fa fa-envelope"></span>
                 <mat-form-field class="example-full-width">
-                <input type="email" matInput name="email" formControlName="email" />
-                <mat-error *ngIf="registerForm.controls['email'].hasError('required') ">
+                <input type="email" matInput name="user_name" formControlName="user_name" />
+                <mat-error *ngIf="registerForm.controls['user_name'].hasError('required') ">
                   Email is <strong>required</strong>
                 </mat-error>
-                <mat-error *ngIf="registerForm.controls['email'].hasError('email') ">
+                <mat-error *ngIf="registerForm.controls['user_name'].hasError('user_name') ">
                   Please enter a valid email address
                 </mat-error>
               </mat-form-field>
