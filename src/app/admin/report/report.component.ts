@@ -13,24 +13,14 @@ export class ReportComponent implements OnInit {
 
 
   constructor(public home: HomeService){}
-chartdata:any;
+
 categoryname:any[]=[];
 question:any[]=[];
+chart:any[]=this.categoryname;
 
   ngOnInit(): void {
-this.home.getChartinfo().subscribe(result=>{
-  this.chartdata=result;
-    if(this.chartdata!=null){
-      for(let i=0;i<this.chartdata.length;i++){
-        //console.log(this.chartdata[i]);
-        this.categoryname.push(this.chartdata[i].year);
-        this.question.push(this.chartdata[i].amount);
-      }
-      this.RenderChart(this.categoryname,this.question);
-
-    }
-  }
-  )
+ this.home.charts();
+  
 
 
 

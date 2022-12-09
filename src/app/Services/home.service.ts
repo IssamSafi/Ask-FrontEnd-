@@ -28,7 +28,7 @@ export class HomeService {
 comments:any[]=[];
   report: any[] = [];
   search: any[] = [];
-
+chart:any[]=[];
   display_image: any;
 
   constructor(private http: HttpClient, private spinner: NgxSpinnerService,  private toastr: ToastrService  ) { }
@@ -717,17 +717,28 @@ Rigester(body: any) {
 }
 
 
+charts(){
+  this.spinner.show();
+  this.http.get('https://localhost:44384/api/jwt/chart').subscribe((resp:any)=>{
+    this.chart=resp;
+    this.spinner.hide();
+    this.toastr.success('data succsess')
+
+  }, err=>{
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
 
 
 
 
 
-
-/* SearchUser(body: any) {
+SearchUser(body: any) {
   
 
     this.spinner.show();
-    this.http.post('https://localhost:44384/api/JWT/Search').subscribe((resp:any)=> {
+    this.http.get('https://localhost:44384/api/jwt/Search').subscribe((resp:any)=> {
       this.spinner.hide();
       this.search=resp;
       this.spinner.hide();
@@ -739,7 +750,7 @@ Rigester(body: any) {
     }
     )
   }
- */
+ 
 
 }
 
