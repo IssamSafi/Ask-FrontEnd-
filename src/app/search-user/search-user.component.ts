@@ -24,7 +24,11 @@ export class SearchUserComponent implements OnInit {
 
   search()
   {
+    if(this.fname !=null)
     this.home.SearchUser(this.fname);
+  else
+  this.home.getAllUsers();
+  
   }
 
 

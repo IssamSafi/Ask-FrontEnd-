@@ -31,6 +31,7 @@ post(){
   ngOnInit(): void {
     
     this.home.Report();
+   
     //this.home.createComment(this.commentt.value);
     new name();
     
