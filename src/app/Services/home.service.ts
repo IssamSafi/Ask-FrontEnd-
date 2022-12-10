@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { BehaviorSubject } from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
+import { RETURN } from 'mat-table-exporter';
 
 
 
@@ -26,7 +27,8 @@ export class HomeService {
   test:any[] = [];
 comments:any[]=[];
   report: any[] = [];
-
+  search: any[] = [];
+chart:any[]=[];
   display_image: any;
 
   constructor(private http: HttpClient, private spinner: NgxSpinnerService,  private toastr: ToastrService  ) { }
@@ -696,5 +698,59 @@ createComment(body: any) {
   }
   )
 }
+getChartinfo(){
+  return this.http.get("http://localhost:3000/sales");
+}
+
+Rigester(body: any) {
+  
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/jwt/Rigester', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  }
+  )
+}
+
+
+charts(){
+  this.spinner.show();
+  this.http.get('https://localhost:44384/api/jwt/chart').subscribe((resp:any)=>{
+    this.chart=resp;
+    this.spinner.hide();
+    this.toastr.success('data succsess')
+
+  }, err=>{
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
+
+
+
+
+
+SearchUser(body: any) {
+  
+
+    this.spinner.show();
+    this.http.get('https://localhost:44384/api/jwt/Search').subscribe((resp:any)=> {
+      this.spinner.hide();
+      this.search=resp;
+      this.spinner.hide();
+      this.search=body;
+     this.toastr.success('Created !!');
+    }, err => {
+      this.spinner.hide();
+      this.toastr.error(err.message, err.status);
+    }
+    )
+  }
+ 
+
 }
 

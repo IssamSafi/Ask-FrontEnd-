@@ -27,6 +27,11 @@ export class AskingComponent implements OnInit {
  
   saveData()
   {
+    let user:any=localStorage.getItem("user");
+    if(user){
+      user=JSON.parse(user);
+      this.create.controls["user_Id"].setValue(+user.ID)
+    }
     this.home.createAsking(this.create.value);
   }
 

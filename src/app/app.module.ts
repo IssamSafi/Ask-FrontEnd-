@@ -18,7 +18,11 @@ import { AllQuestionComponent } from './all-question/all-question.component';
 import { ShowTestmonialComponent } from './show-testmonial/show-testmonial.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
 import { AboutguestComponent } from './aboutguest/aboutguest.component';
+
 import { UserProfileComponent } from './user-profile/user-profile.component';
+
+import { SearchUserComponent } from './search-user/search-user.component';
+
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ShowTestmonialComponent,
     HomeguestComponent,
     AboutguestComponent,
+
     UserProfileComponent,
+
+    SearchUserComponent,
+
 
   ],
   imports: [

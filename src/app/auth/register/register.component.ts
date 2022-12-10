@@ -13,9 +13,9 @@ import { HomeService } from 'src/app/Services/home.service';
 export class RegisterComponent implements OnInit {
 
   registerForm :FormGroup= new FormGroup({
-    firstname :new FormControl('',[Validators.required]),
-    lastname :new FormControl('',[Validators.required]),
-    email :new FormControl('',[Validators.required,Validators.email]),
+    fname :new FormControl('',[Validators.required]),
+    lname :new FormControl('',[Validators.required]),
+    user_name :new FormControl('',[Validators.required,Validators.email]),
     password :new FormControl('',[Validators.required,Validators.minLength(8)]),
     confirmPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
   })
@@ -27,8 +27,8 @@ export class RegisterComponent implements OnInit {
       setTimeout(()=>{
         this.spinner.hide();
       },3000) */
-      console.log();
-     // this.home.createHome(this.registerForm.value);
+      console.log(this.registerForm.value);
+      this.home.Rigester(this.registerForm.value);
     }
     saveData()
     {

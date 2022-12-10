@@ -11,8 +11,9 @@
     <!-- Single item -->
     <div class="carousel-item active" >
       <div class="container">
-        <div class="row">
+        <div class="row" >
           <div class="col-lg-4" *ngFor="let obj of home.test" >
+            <div  >
             <div *ngIf="(obj.itsapprove)==1">
             <img class="rounded-circle shadow-1-strong mb-4"
             src="../../../assets/img/{{obj.image_Path}}" alt="avatar"
@@ -23,6 +24,7 @@
               <i class="fas fa-quote-left pe-2"></i>
               {{obj.messege}}
             </p>
+          </div>
           </div>
 
         </div>

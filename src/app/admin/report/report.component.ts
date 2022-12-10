@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/Services/admin.service';
 import { HomeService } from 'src/app/Services/home.service';
-import{Chart,registerables} from 'node_modules/chart.js'
+import{Chart,registerables} from 'node_modules/chart.js';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-report',
@@ -13,8 +14,19 @@ export class ReportComponent implements OnInit {
 
   constructor(public home: HomeService){}
 
+categoryname:any[]=[];
+question:any[]=[];
+chart:any[]=this.categoryname;
+
   ngOnInit(): void {
+ this.home.charts();
+  
+
+
+
+
     this.home.Report();
+ 
   }
 
 
@@ -120,7 +132,36 @@ export class ReportComponent implements OnInit {
     this.array=[];
   }
 
-
+  RenderChart(Category:any,questionnumber:any){
+    const myChart = new Chart("chart", {
+        type: 'bar',
+        data: {
+            labels:Category ,
+            datasets: [{
+                label: 'Charts',
+                data:questionnumber ,
+                backgroundColor: [
+              
+                    'rgba(0,0,255)',
+ 
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+              
+                
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+  }
 
 
     }
