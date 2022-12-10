@@ -698,9 +698,6 @@ createComment(body: any) {
   }
   )
 }
-getChartinfo(){
-  return this.http.get("http://localhost:3000/sales");
-}
 
 Rigester(body: any) {
   

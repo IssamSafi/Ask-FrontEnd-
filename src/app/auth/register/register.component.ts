@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
     user_name :new FormControl('',[Validators.required,Validators.email]),
     password :new FormControl('',[Validators.required,Validators.minLength(8)]),
     confirmPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
+    phone:new FormControl('',[Validators.required,Validators.minLength(8)]),
   })
 
   constructor(private route:Router,/* ,private spinner :NgxSpinnerService */private home:HomeService) { }
