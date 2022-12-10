@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <br>
-<h1 style="text-align: center;font-size:40px;font-family: Times; text-transform: uppercase;"><b>Manage Asking</b><h1><br><br>
-  <button style="display:block; margin-top: 20px;margin-left:1300px;text-align: center;
+<h1 style="text-align: center;font-size:50px;font-family:  Times, serif; text-transform: uppercase;"><b>Manage Asking</b><h1><br><br>
+  <button style="display:block; margin-top: 20px;margin: left 700px;text-align: center;
 
   background-color:#008CBA;;
   color: #fff;
@@ -34,19 +34,20 @@ border-radius:9px" class="center" (click)="opendialog()">Create New</button>
         
 
         <td>
-          <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
-          border:none;
-        border-radius:9px;" (click)="openUpdateDailog(obj)">Update</button>
-            
-          <button style="background-color: #f44336;color: rgb(253, 252, 252);color: #fff;
-          border:none;
-        border-radius:9px;" (click)="openDeleteDailog(obj.id)">Delete</button>
-          <button style="background-color:  rgb(245, 206, 11);color: rgb(253, 252, 252);color: #fff;
-          border:none;
-        border-radius:9px;"(click)="ApproveReject(obj.id,1)">Approve</button>
-            <button style="background-color:  rgb(255, 165, 0);color: rgb(253, 252, 252);color: #fff;
-            border:none;
-          border-radius:9px;"(click)="ApproveReject(obj.id,0)">Reject</button></td>
+         
+<button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
+  border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;" (click)="openUpdateDailog(obj)">Update</button>
+    
+  <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
+  font-size: 20px;margin-top: 10px;margin-left: 9px;" (click)="openDeleteDailog(obj.id)">Delete</button>
+
+
+<button style="background-color:  rgb(245, 206, 10);color: rgb(253, 252, 252);color: #fff; border:none;
+border-radius:9px;border: none;outline: none;font-size: 20px;margin-top: 10px;margin-left: 5px;
+  "(click)="ApproveReject(obj.id,1)">Approve</button>
+ <button style="background-color:  rgb(255, 165, 10);color: rgb(253, 252, 252);color: #fff; border:none;border-radius:9px; border: none;
+  outline: none;font-size: 20px; margin-top: 10px;margin-left: 9px;"(click)="ApproveReject(obj.id,0)">Reject</button>
+  </td>
  
     </tr>
   
@@ -55,7 +56,7 @@ border-radius:9px" class="center" (click)="opendialog()">Create New</button>
 
 
 <ng-template #callUpdatDailog>
-  <h2 style="text-align: center;"><b>Update Asking Info</b></h2>
+  <h2 style="text-align: center;font-size:23px;font-family:  Times, serif; "><b>Update Asking Info</b></h2>
     <form class="example-form" [formGroup]="updateForm" >
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Its approve</mat-label>
@@ -102,19 +103,27 @@ border-radius:9px" class="center" (click)="opendialog()">Create New</button>
 
         </form>
    
-    <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveData()">Save</button>
-    </mat-dialog-actions>
+        <mat-dialog-actions align="end">
+          <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
+          border:none;
+        border-radius:9px;" mat-button mat-dialog-close>Cancel</button>
+          <button  style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
+          border:none;
+        border-radius:9px;"mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="saveData()">Save</button>
+        </mat-dialog-actions>
 
 
 
 </ng-template>
 
- <ng-template #callDeleteDailog>
-<h2>Are you sure you want to delete this item ? </h2>
-<button mat-dialog-close="yes">Yes</button>
-<button mat-dialog-close="no">No</button>
+<ng-template #callDeleteDailog>
+  <h2>Are you sure you want to delete this item ? </h2>
+  <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
+  border:none;
+  border-radius:9px;"  mat-dialog-close="yes">Yes</button>
+  <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
+  border:none;
+  border-radius:9px;"  mat-dialog-close="no">No</button>
 
 
  </ng-template>         

@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Add Aboutus</h2>
+<h2 style="text-align: center;font-size:25px;font-family:  Times, serif; "mat-dialog-title>Add Aboutus</h2>
 <mat-dialog-content class="mat-typography">
     <form  [formGroup]="create">
         <mat-form-field class="example-full-width" appearance="fill">
@@ -16,6 +16,11 @@
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="saveData()">Save</button>
+ 
+    <button  style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
+    font-size: 20px;margin-top: 10px;margin-left: 9px;"mat-button mat-dialog-close>Cancel</button>
+    <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
+    border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;"mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="saveData()">Save</button>
+  
+ 
 </mat-dialog-actions>
