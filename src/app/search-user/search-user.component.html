@@ -7,14 +7,14 @@
      
         <form class="form-inline" style="margin-top: 3%;">
                 <div class="form-group mx-sm-3 mb-2">
-                <label   for="inputText" style="font-size:24px;font-family:Snell Roundhand,cursive;">inter user name here:</label>
+                <label for="inputText" class="sr-`
+                only">Search</label>
                 <input type="text" class="form-control"
-                id="inputText" placeholder="searchname" [(ngModel)]="fname" (change)="SreachInput($event)">
-               <br>
-                <button type="submit"
+                id="inputText" placeholder="Search by name" [(ngModel)]="fname" (change)="SearchI($event)" >
+                </div>
+                <button type="submit"                                                
                 class="btn btn-success"
                 (click)="search()">Search</button>
-        </div>
                 </form>
           
 
@@ -28,17 +28,16 @@
                 <th>Image</th>
                 <th>Question</th>
                 <th>Question Date</th>
-                <th colspan="2">Action</th>
+    
         
             </tr>
         
           
-            <tr *ngFor="let obj of home.search">
+            <tr  *ngFor="let obj of home.Alluser">
                 
                 <td>{{obj.fname}}</td>
                 <td>{{obj.lname}}</td>
-                <td>{{obj.email}}</td>
-                <td><img src="../../../assets/img/{{obj.welcome_Iamge}}" width="100px" height="100px"></td>
+                <td><img src="../../../assets/img/{{obj.image_Path}}" width="100px" height="100px"></td>
                 <td>{{obj.messege}}</td>
                 <td>{{obj.askingdate}}</td>
               

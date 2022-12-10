@@ -9,7 +9,7 @@ import { every } from 'rxjs';
   styleUrls: ['./search-user.component.css']
 })
 export class SearchUserComponent implements OnInit {
-  fname="";
+  fname:string="";
   constructor(public home: HomeService) { }
 
   ngOnInit(): void {
@@ -17,20 +17,30 @@ export class SearchUserComponent implements OnInit {
   }
 
 
-  SreachInput(ev:any)
+  SearchI(ev:any)
   {
     this.fname= ev.target.value;
   }
 
   search()
   {
-    if(this.fname !=null)
-    this.home.SearchUser(this.fname);
-  else
-  this.home.getAllUsers();
+     if(this.fname !=null){
+    this.home.SearchUser(this.fname);}
+  else {
+  this.home.SearchAllUser();} 
   
   }
 
+/* 
+  SreachInput(ev:any)
+  {
+    this.price= ev.target.value;
+  }
+
+  search()
+  {
+    this.home.SearchByPrice(this.price);
+  } */
 
 
 
