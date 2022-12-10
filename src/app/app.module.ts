@@ -18,6 +18,7 @@ import { AllQuestionComponent } from './all-question/all-question.component';
 import { ShowTestmonialComponent } from './show-testmonial/show-testmonial.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
 import { AboutguestComponent } from './aboutguest/aboutguest.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AboutguestComponent } from './aboutguest/aboutguest.component';
     ShowTestmonialComponent,
     HomeguestComponent,
     AboutguestComponent,
+    UserProfileComponent,
 
   ],
   imports: [
