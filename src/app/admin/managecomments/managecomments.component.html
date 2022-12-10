@@ -1,27 +1,26 @@
 <app-sidebar></app-sidebar>
 
 <br>
-<h1 style=" text-align:center;font-size:55px;font-family:Comic Sans MS; text-transform: uppercase;color: #f44336;"><b>     Testmonial</b><h1><br><br>
+<h1 style=" text-align:center;font-size:55px;font-family:Comic Sans MS; text-transform: uppercase;color: #f44336;"><b>    Manage Comments</b><h1><br><br>
   
 <table class="center">
     <tr>
         <th>Number</th>
-        <th>Name</th>
-        <th>Messege</th>
+        <th>Comment</th>
         <th>user ID</th>
-        <th>Its approve</th>
+        <th>Question ID</th>
         <th colspan="2">Action</th>
 
     </tr>
 
   
-    <tr *ngFor="let obj of home.Testmonial">
+    <tr *ngFor="let obj of home.comments">
         
         <td>{{obj.id}}</td>
-        <td>{{obj.name}}</td>
-        <td>{{obj.messege}}</td>
-        <td>{{obj.user_Id}}</td>
-        <td>{{obj.itsapprove}}</td>
+        <td>{{obj.commentt}}</td>
+        <td>{{obj.userid}}</td>
+        <td>{{obj.askid}}</td>
+
         
 
         <td>
@@ -31,12 +30,6 @@
               font-size: 15px;margin-top: 5px;" (click)="openDeleteDailog(obj.id)">Delete</button>
             
             
-            <button style="background-color:  rgb(245, 206, 10);color: rgb(253, 252, 252);color: #fff; border:none;
-            border-radius:9px;border: none;outline: none;font-size: 15px;margin-top: 5px;
-              "(click)="ApproveReject(obj.id,1)">Approve</button>
-             <button style="background-color:  rgb(255, 165, 10);color: rgb(253, 252, 252);color: #fff; border:none;border-radius:9px; border: none;
-              outline: none;font-size: 15px; margin-top: 5px;"(click)="ApproveReject(obj.id,0)">Reject</button>
-              </td>
 
  
     </tr>

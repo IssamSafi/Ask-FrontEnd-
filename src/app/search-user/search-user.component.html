@@ -2,20 +2,24 @@
 
     <app-navbar></app-navbar> 
 
-    <br> <br>   <br>
+    <br> <br>   
     <h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>Search User</b><h1>
-    
+     
         <form class="form-inline" style="margin-top: 3%;">
                 <div class="form-group mx-sm-3 mb-2">
-                <label for="inputText" class="sr-`
-                only">search user name</label>
+                <label   for="inputText" style="font-size:24px;font-family:Snell Roundhand,cursive;">inter user name here:</label>
                 <input type="text" class="form-control"
                 id="inputText" placeholder="searchname" [value]="fname" (change)="SreachInput($event)">
-                </div>
+               <br>
                 <button type="submit"
                 class="btn btn-success"
                 (click)="search()">Search</button>
+        </div>
                 </form>
+          
+
+
+            <br>
         <table class="center">
             <tr>
                 
