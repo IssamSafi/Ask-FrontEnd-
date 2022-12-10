@@ -1,7 +1,7 @@
 td, th {
     border: 2px solid #dddddd;
      
-     text-align: center;
+     text-align: left;
      padding: 8px;
       border-collapse: collapse;
    }
@@ -12,7 +12,6 @@ td, th {
    table {
     font-family: Arial, Helvetica, sans-serif;
   font-size: 70%;
-  text-align: center;
    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
    display: table; 
    background-color:#ffffff;
@@ -25,14 +24,9 @@ td, th {
       color: rgb(239, 233, 233);
     }
     
-    input {
-        width: 20%;
-       margin-left: auto;
-       margin-right: auto;
-      }
     table.center {
       margin-left: auto; 
-      margin-right: auto; 
+     
     }
     body {
       font-family: "Helvetica Neue", Helvetica, Arial;
@@ -44,5 +38,4 @@ td, th {
       font-smooth: antialiased;
       background-color:rgba(255, 99, 71, 0);
     }
-    
   

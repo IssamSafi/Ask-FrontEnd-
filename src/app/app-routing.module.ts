@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { TestmonialComponent } from './testmonial/testmonial.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: '', component: HomeguestComponent },
   {path: 'aboutguest', component: AboutguestComponent },
   {path: 'search', component: SearchUserComponent },
+  {path: 'Profile', component: UserProfileComponent},
 
   {path: 'auth', loadChildren:()=>AuthModule },
   {path: 'admin', loadChildren:()=>AdminModule,

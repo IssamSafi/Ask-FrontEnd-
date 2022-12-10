@@ -5,6 +5,7 @@ import { ManagTestmonialComponent } from './manag-testmonial/manag-testmonial.co
 import { ManageaboutusComponent } from './manageaboutus/manageaboutus.component';
 import { ManageaskingComponent } from './manageasking/manageasking.component';
 import { ManagecategoryComponent } from './managecategory/managecategory.component';
+import { ManagecommentsComponent } from './managecomments/managecomments.component';
 import { ManagecommonQuestionComponent } from './managecommon-question/managecommon-question.component';
 import { ManagecontactComponent } from './managecontact/managecontact.component';
 import { ManagehomeComponent } from './managehome/managehome.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'managecategory', component: ManagecategoryComponent },
   {path: 'manageaboutus', component: ManageaboutusComponent },
   {path: 'managecontact', component: ManagecontactComponent},
+  {path: 'managecomment', component: ManagecommentsComponent},
   {path: 'dashbord', component: DashbordComponent},
   {path: 'Report', component: ReportComponent},
 ];

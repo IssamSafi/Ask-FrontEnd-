@@ -31,6 +31,12 @@ export class ManageuserComponent implements OnInit {
 
   ngOnInit(): void {
     this.home.getAllUsers();
+
+
+
+
+
+    
   }
   opendialog() {
     this.dialog.open(CreateuserComponent)

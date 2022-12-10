@@ -22,7 +22,8 @@ export class ContactusComponent implements OnInit {
 
  
   saveData()
-  {   let user:any=localStorage.getItem("user");
+  {   
+    let user:any=localStorage.getItem("user");
   if(user){
     user=JSON.parse(user);
     this.create.controls["name"].setValue(user.Name);

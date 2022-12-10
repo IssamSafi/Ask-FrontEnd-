@@ -27,6 +27,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { ReportComponent } from './report/report.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { ManagecommentsComponent } from './managecomments/managecomments.component';
 
 
 
@@ -51,6 +52,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     ManagecontactComponent,
     DashbordComponent,
     ReportComponent,
+    ManagecommentsComponent,
     ],
   imports: [
     CommonModule,
