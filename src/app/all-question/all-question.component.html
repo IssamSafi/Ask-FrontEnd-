@@ -42,12 +42,26 @@
                                 <div class="d-flex flex-row align-items-center status"> <small>Like</small> <small>Reply</small> <small>Translate</small> <small>8 mins</small> </div>
                             </div>
                         </div>
-                        <div class="comment-input"> <input type="text" [(ngModel)]="comment" class="form-control">
-                            
-                            <div><button (click)="post()">comment </button></div>
+                     <!--    <div class="comment-input"> <input type="text" [(ngModel)]="comment" class="form-control"> -->
+                        
+    <form  [formGroup]="create">
+        <mat-form-field class="example-full-width" >
+          <mat-label>comment here</mat-label>
+          <input type="text" matInput formControlName="commentt">
+        </mat-form-field>
+        <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
+        border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;"   (click)="saveData()">Sent</button>
+
+    </form>
+  
+                        
+
+
+
+
+                          <!--   <div><button (click)="post()">comment </button></div> -->
                             <!-- <div class="fonts"> <i class="fa fa-camera"></i> </div> -->
-                        </div>
-                        <hr>
+                      
                         <br><br>
                     </div>
                 </div>
@@ -55,3 +69,13 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+ 
+

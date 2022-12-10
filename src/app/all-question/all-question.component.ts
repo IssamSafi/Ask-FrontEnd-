@@ -11,6 +11,14 @@ export class AllQuestionComponent implements OnInit {
  
 
   constructor(public home: HomeService){}
+
+  create :FormGroup =new FormGroup({
+    commentt:new FormControl('',Validators.required),
+    userid:new FormControl('',Validators.required),
+    //askid:new FormControl('')
+  })
+
+
   numberOfLikes : number=0;
   numberOfDislike:number=0;
   comment ="test";
@@ -39,6 +47,15 @@ post(){
  }
 
 
+ saveData()
+ {
+   let user:any=localStorage.getItem("user");
+   if(user){
+     user=JSON.parse(user);
+     this.create.controls["userid"].setValue(+user.ID)
+   }
+   this.home.createComment(this.create.value);
+ }
 
 
 }

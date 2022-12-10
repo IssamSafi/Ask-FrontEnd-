@@ -1,56 +1,4 @@
 
-
-<!-- <form class="example-form" [formGroup]="registerForm" >
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email"
-             placeholder="Ex. pat@example.com">
-      <mat-error *ngIf="registerForm.controls['email'].hasError('email') && !registerForm.controls['email'].hasError('required')">
-        Please enter a valid email 
-      </mat-error>
-      <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input type="password" matInput formControlName="password"
-               placeholder="Ex. pat@example.com">
-        <mat-error *ngIf="registerForm.controls['password'].hasError('minlength') && !registerForm.controls['password'].hasError('required')">
-          Please enter a strong password  
-        </mat-error>
-        <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
-          password is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Full name </mat-label>
-        <input type="text" matInput formControlName="Fullname"
-               >
-        <mat-error *ngIf="registerForm.controls['Fullname'].hasError('required')">
-          Full name  is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Address </mat-label>
-        <input type="text" matInput formControlName="address"
-              >
-        <mat-error *ngIf="registerForm.controls['address'].hasError('required')">
-          Address  is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Phone Number </mat-label>
-        <input type="number" matInput formControlName="phoneNumber"
-             >
-           </mat-form-field>
-      <button [disabled]="!registerForm.valid"  (click)="submit()" >Login </button>
-
-  </form> -->
   <div class="form_wrapper">
     <div class="form_container">
       <div class="title_container">
@@ -82,6 +30,9 @@
                     </mat-error>
                   </mat-form-field></div></div></div>
 
+            
+
+
                 <mat-label>Email</mat-label>
                 <div class="input_field"> <span aria-hidden="true" class="fa fa-envelope"></span>
                 <mat-form-field class="example-full-width">
@@ -93,7 +44,10 @@
                   Please enter a valid email address
                 </mat-error>
               </mat-form-field>
+
+              
               </div>
+              
 
             <mat-label>Password</mat-label>
             <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>
