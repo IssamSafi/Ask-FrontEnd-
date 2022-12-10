@@ -29,6 +29,10 @@ comments:any[]=[];
   report: any[] = [];
   search: any[] = [];
 chart:any[]=[];
+Alluser:any[]=[];
+Allsearchuser:any[]=[];
+
+
   display_image: any;
 
   constructor(private http: HttpClient, private spinner: NgxSpinnerService,  private toastr: ToastrService  ) { }
@@ -708,22 +712,48 @@ charts(){
 
 
 
-SearchUser(body: any) {
+SearchUser(body: string) {
   
+
 
     this.spinner.show();
     this.http.get('https://localhost:44384/api/jwt/Search/'+body).subscribe((resp:any)=> {
       this.spinner.hide();
+      this.Alluser=resp;
+      this.toastr.success('Data Retrieved!')
       
-      this.spinner.hide();
-      
-     this.toastr.success('Created !!');
+
     }, err => {
       this.spinner.hide();
       this.toastr.error(err.message, err.status);
     }
     )
   }
+
+   SearchAllUser() {
+    this.spinner.show();
+  this.http.get('https://localhost:44384/api/jwt/AllUserSearch').subscribe((resp:any)=> {
+    this.spinner.hide();
+    this.Alluser=resp;
+    this.toastr.success('Data Retrieved!')
+  }, err=>{
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+
+
+} 
+
+
+
+  
+
+
+
+
+
+
+ 
 
   getuserById(id: number) {
     //show Spinner 
