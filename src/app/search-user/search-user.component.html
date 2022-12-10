@@ -9,7 +9,7 @@
                 <div class="form-group mx-sm-3 mb-2">
                 <label   for="inputText" style="font-size:24px;font-family:Snell Roundhand,cursive;">inter user name here:</label>
                 <input type="text" class="form-control"
-                id="inputText" placeholder="searchname" [value]="fname" (change)="SreachInput($event)">
+                id="inputText" placeholder="searchname" [(ngModel)]="fname" (change)="SreachInput($event)">
                <br>
                 <button type="submit"
                 class="btn btn-success"

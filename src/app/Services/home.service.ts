@@ -22,7 +22,7 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-   homee:[]=[];
+   getuser:[]=[];
   Users:any[] = [];
   test:any[] = [];
 comments:any[]=[];
@@ -602,25 +602,7 @@ uploadimage(File:FormData)
       )
     }
 
-    gethomeById(id: number) {
-      //show Spinner 
-      //Hits Api 
-      //Hide Spinner
-      //Resp=> Toastr 
-  
-      this.spinner.show();
-      this.http.get('https://localhost:44384/api/home/GetById/' + id).subscribe((resp: any) => {
-        this.homee = resp;
-        console.log(this.homee);
-        this.spinner.hide();
-        this.toastr.success('Data Retrieved!');
-  
-      }, err => {
-        this.spinner.hide();
-        this.toastr.error(err.message, err.status);
-      })
-  
-    }
+
     
     AprroveRejectTestimonial(id:number,status:number){
 
@@ -715,16 +697,11 @@ Rigester(body: any) {
 
 
 charts(){
-  this.spinner.show();
-  this.http.get('https://localhost:44384/api/jwt/chart').subscribe((resp:any)=>{
-    this.chart=resp;
-    this.spinner.hide();
-    this.toastr.success('data succsess')
+ 
+  return this.http.get('https://localhost:44384/api/jwt/chart')
+    
+    
 
-  }, err=>{
-    this.spinner.hide();
-    this.toastr.error(err.message, err.status);
-  })
 }
 
 
@@ -735,17 +712,37 @@ SearchUser(body: any) {
   
 
     this.spinner.show();
-    this.http.get('https://localhost:44384/api/jwt/Search').subscribe((resp:any)=> {
+    this.http.get('https://localhost:44384/api/jwt/Search/'+body).subscribe((resp:any)=> {
       this.spinner.hide();
-      this.search=resp;
+      
       this.spinner.hide();
-      this.search=body;
+      
      this.toastr.success('Created !!');
     }, err => {
       this.spinner.hide();
       this.toastr.error(err.message, err.status);
     }
     )
+  }
+
+  getuserById(id: number) {
+    //show Spinner 
+    //Hits Api 
+    //Hide Spinner
+    //Resp=> Toastr 
+
+    this.spinner.show();
+    this.http.get('https://localhost:44384/api/user/Getbyid/' + id).subscribe((resp: any) => {
+      this.getuser = resp;
+      console.log(this.getuser);
+      this.spinner.hide();
+      this.toastr.success('Data Retrieved!');
+
+    }, err => {
+      this.spinner.hide();
+      this.toastr.error(err.message, err.status);
+    })
+
   }
  
 
