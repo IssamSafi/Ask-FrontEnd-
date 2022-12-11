@@ -1,74 +1,88 @@
  <app-navbar></app-navbar> 
 
+ <br> <br>
+
+    <br>
+
+ 
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>edit profile </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
 
 <div class="container bootstrap snippets bootdey" >
-    <h1 class="text-primary">Edit Profile</h1>
+    <h1 style="text-align: center;font-size:70px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;" ><b>Edit Profile</b></h1>
+    <br><br>
       <hr>
 	<div class="row" >
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          
-          <input type="file" class="form-control">
+          <img src="../../../assets/img/{{this.home.getuser.image_Path}}" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h4>Upload a different photo...</h4>
+        
+
+                  
+        <input type="file" #file formControlName="image_Path" (change)="uploadfile(file.files) " [(ngModel)]="this.home.getuser.image_Path">
+      
         </div>
       </div>
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div>
-        <h3>Personal info</h3>
+  
         
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" [formGroup]="profile">
           <div class="form-group">
-            <label class="col-lg-3 control-label">First Name:</label>
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>First Name:</b> </label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" matInput formControlName="fname" [(ngModel)]="this.home.getuser.fname">
   
             </div>
+            <br>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last Name:</label>
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Last Name:</b></label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="bootdey">
+              <input class="form-control" type="text" matInput formControlName="lname" [(ngModel)]="this.home.getuser.lname">
             </div>
+            <br>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Phone:</label>
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Phone:</b></label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" matInput formControlName="phone" [(ngModel)]="this.home.getuser.phone">
             </div>
+            <br>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Email:</b></label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="email" matInput formControlName="email" [(ngModel)]="this.home.getuser.email">
             </div>
+            <br>
+            <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;
+            border:none;
+          border-radius:9px;
+            border: none;
+
+            font-size: 31px;
+            margin-top: 10px;
+            margin-left: 10px;" (click)=" saveData()" ><b>Save</b></button>
+    
           </div>
-          
+        
         </form>
       </div>
   </div>
 </div>
 <hr>
+
 
 <style type="text/css">
 				                

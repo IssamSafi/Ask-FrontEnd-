@@ -9,23 +9,48 @@ import { HomeService } from '../Services/home.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(private home:HomeService) { }
+  constructor(public home:HomeService) { }
 
   profile :FormGroup =new FormGroup({
     id:new FormControl('',),
+    fname:new FormControl('',),
+     lname:new FormControl('',),
+    phone:new FormControl('',),
+    email:new FormControl('',),
+    image_Path:new FormControl('',)
   })
 
+userlocalstorage:any=localStorage.getItem('user');
+userInfo:any=JSON.parse(this.userlocalstorage);
+
+
   ngOnInit(): void {
-/*     let user:any=localStorage.getItem("user");
-    if(user){
-      user=JSON.parse(user);
-     this.profile.controls["id"].setValue(user.ID);
-    }
-    this.home.getuserById(ID); */
+
+this.home.getuserById(this.userInfo.ID);
+
+  }
+  uploadfile(file:any){
+    if(file.length==0)
+    return;
+ let imageuser=<File>file[0]
+ const formdata= new FormData();
+ formdata.append('file',imageuser,imageuser.name);
+ this.home.uploadimageuser(formdata);
+  }
+
+  saveData(){
+    this.profile.controls['id'].setValue(this.home.getuser.id);
+    this.profile.controls['fname'].setValue(this.home.getuser.fname);
+    this.profile.controls['lname'].setValue(this.home.getuser.lname);
+    this.profile.controls['email'].setValue(this.home.getuser.email);
+    this.profile.controls['phone'].setValue(this.home.getuser.phone);
+
+
+    this.profile.controls['image_Path'].setValue(this.home.getuser.image_Path);
+
+    this.home.updateUser(this.profile.value);
   }
 
 
-
-    //this.home.createContactus(this.create.value); 
 
 }
