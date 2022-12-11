@@ -34,6 +34,7 @@ chart:any[]=[];
 Alluser:any[]=[];
 Allsearchuser:any[]=[];
 com:any[]=[];
+numcomment:any[]=[];
 
 
   display_image: any;
@@ -841,6 +842,23 @@ getQuestionById(id: number) {
 
 }
 
+numofcomment(){
+
+  this.spinner.show();
+  this.http.get('https://localhost:44384/api/jwt/CommentNum/' ).subscribe((resp: any) => {
+    this.numcomment  = resp;
+    console.log(this.numcomment );
+    this.spinner.hide();
+    this.toastr.success('Data Retrieved!');
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+
+
+
+}
 }
 
 
