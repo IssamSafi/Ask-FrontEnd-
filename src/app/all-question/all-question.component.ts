@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { HomeService } from 'src/app/Services/home.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -21,13 +23,14 @@ export class AllQuestionComponent implements OnInit {
 
   create :FormGroup =new FormGroup({
     commentt:new FormControl('',Validators.required),
-    userid:new FormControl('',)
-    //askid:new FormControl('')
+    userid:new FormControl('',),
+    askid:new FormControl('')
   })
   userLike:any;
   numberOfLikes : number=0;
   numberOfDislike:number=0;
   numberOfComment:number=0;
+  like:number=0;
 
   //commentt : new FormControl('',Validators.required);
 
@@ -36,29 +39,41 @@ export class AllQuestionComponent implements OnInit {
     this.home.Report();
     this.home.NewReportComments();
     this.home.Getallcomment();
+    this.home.numofcomment();
+   
    
     //this.home.createComment(this.commentt.value);
     new name();
     
 
-    
    
   }
+  clickcomment(){
+
+    this.numberOfComment++;
+  }
+
+ 
 
  clickLike(){
+  {
+    
+      let user:any=localStorage.getItem("user");
+      if(user){
+        user=JSON.parse(user);
+        for(this.numberOfLikes=0;this.numberOfLikes<1;+1){
+     if(user.ID)
+     this.numberOfLikes++;
+     
+    }
 
-     let user:any=localStorage.getItem("user");
-   if(user){
-     user=JSON.parse(user);
-     for(this.numberOfLikes=0;this.numberOfLikes<1;+1){
-  if(user.ID)
-  this.numberOfLikes++;
-  
-
- }
+     }
+ 
    }
 }
+
 clickDislike(){
+  {
   let user:any=localStorage.getItem("user");
   if(user){
     user=JSON.parse(user);
@@ -66,19 +81,20 @@ clickDislike(){
  if(user.ID)
   this.numberOfDislike++;
  }
+  }}
   }
-  }
+
  saveData()
  {
    let user:any=localStorage.getItem("user");
    if(user){
      user=JSON.parse(user);
      this.create.controls["userid"].setValue(+user.ID)
+    //  this.create.controls["askid"].setValue(id)
    }
    this.home.createComment(this.create.value);
 
  }
-
 
 
  updateForm :FormGroup= new FormGroup({

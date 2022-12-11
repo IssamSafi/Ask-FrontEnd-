@@ -1,136 +1,149 @@
-
 <br><br>
-    <h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>All Question</b><h1><br>
-<div class="container mt-5 mb-5" >
-    <div *ngFor="let obj of home.report"  class="row d-flex align-items-center justify-content-center"style="background-color:#ff6c6d;  border-style: inset;">
+<h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>All Question</b>
+  <h1><br>
+    <div class="container mt-5 mb-5">
+      <div *ngFor="let obj of home.report" class="row d-flex align-items-center justify-content-center"
+        style="background-color:#ff6c6d;  border-style: inset;">
         <div class="col-md-11">
-            <div class="card"  *ngIf="(obj.itsapprove)==1"   >
-                <div class="d-flex justify-content-between p-2 px-3">
-                    <div class="d-flex flex-row align-items-center"> <img src="../../../assets/img/{{obj.image_Path}}"  width="50" class="rounded-circle">
-                        <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><b>{{obj.fname}}  {{obj.lname}}   </b></span></div>
+          <div class="card" *ngIf="(obj.itsapprove)==1">
+            <div class="d-flex justify-content-between p-2 px-3">
+              <div class="d-flex flex-row align-items-center"> <img src="../../../assets/img/{{obj.image_Path}}"
+                  width="50" class="rounded-circle">
+                <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><b>{{obj.fname}} {{obj.lname}}
+                    </b></span></div>
 
-                        
-                    </div>
-                 
-                    <!-- Add icon library -->
 
-              
-                
-                <div class="w3-show-inline-block" style="text-align:right;">
-                    <small class="mr-2"><b>Category:</b>{{obj.category_Name}}</small> 
+              </div>
+
+              <!-- Add icon library -->
+
+
+
+              <div class="w3-show-inline-block" style="text-align:right;">
+                <small class="mr-2"><b>Category:</b>{{obj.category_Name}}</small>
                 <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
-border:none;border-radius:9px;border: none; outline: none;font-size: 9px; width:15%;margin-left: 9px" (click)="openUpdateDailog(obj.messege)">Update</button>
-  
-<button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
-font-size:10px;margin-left: 9px;width:15%;"  (click)="openDeleteDailog(obj.id)">Delete</button>
-</div>
+border:none;border-radius:9px;border: none; outline: none;font-size: 9px; width:15%;margin-left: 9px"
+                  (click)="openUpdateDailog(obj.messege)">Update</button>
 
-  </div> 
-                <div class="p-2">
-                    <p class="text-justify" >{{obj.messege}}</p>
-                    <hr>
-                   
-                    <script src="https://use.fontawesome.com/fe459689b4.js">
-                
-            </script>
-         <script src="/assets/js/design.js"></script>
-         <div style="text-align: center;">
-           <p>    {{numberOfLikes }}   {{numberOfDislike}}</p>
-         <button class="btn " id="green" color="green" (click)="clickLike()"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>    
-           <button class="btn" id="red" color="red" (click)="clickDislike()"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-        </div>
-                    <hr>
-                    <div class="comments" >
-                        <div  *ngFor="let x of home.com" >
-                        <div class="d-flex flex-row mb-2"     *ngIf="x.id==obj.id"> <img src="../../../assets/img/{{x.image_Path}}"  width="40" class="rounded-image">
-                            <div   > <span class="name">{{x.fname}} {{x.lname}}</span><br> <small class="comment-text">{{x.commentt}} </small>
-                               
-                            </div>
-                        </div>
-                    </div>
-             
-                     <!--    <div class="comment-input"> <input type="text" [(ngModel)]="comment" class="form-control"> -->
-                      
-    <form  [formGroup]="create" class="form-row">
-        <mat-form-field class="form-control" >
-          <mat-label>comment here</mat-label>
-          <div class="w3-show-inline-block" style="width:10%">  
-          <input type="text" matInput formControlName="commentt">
-          <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
-          border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;"   (click)="saveData()">Sent</button>
+                <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
+font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">Delete</button>
+              </div>
+
             </div>
+
+            <div class="p-2">
+              <p class="text-justify">{{obj.messege}}</p>
+              <hr>
+
+              <script src="https://use.fontawesome.com/fe459689b4.js">
+
+              </script>
+              <script src="/assets/js/design.js"></script>
+              <div style="text-align: center;">
+                <p> {{numberOfLikes}} {{numberOfDislike}}</p>
+                <button class="btn " id="green" color="green" (click)="clickLike()"><i class="fa fa-thumbs-up fa-lg"
+                    aria-hidden="true"></i></button>
+                <button class="btn" id="red" color="red" (click)="clickDislike()"><i class="fa fa-thumbs-down fa-lg"
+                    aria-hidden="true"></i></button>
+              </div>
+              <hr>
+              <div class="comments">
+                <div *ngFor="let x of home.com">
+                  <div class="d-flex flex-row mb-2" *ngIf="x.id==obj.id"> <img
+                      src="../../../assets/img/{{x.image_Path}}" width="40" class="rounded-image">
+                    <div> <span class="name">{{x.fname}} {{x.lname}}</span><br> <small
+                        class="comment-text">{{x.commentt}} </small>
+
+                        <div class="w3-show-inline-block" style="text-align:right;">
+  
+                          <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
+          border:none;border-radius:9px;border: none; outline: none;font-size: 10px; width:33%;margin-left: 6px"
+                            (click)="openUpdateDailog(obj.messege)">Update</button>
+          
+                          <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
+          font-size:10px;margin-left: 6px;width:33%;" (click)="openDeleteDailog(obj.id)">Delete</button>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <!--    <div class="comment-input"> <input type="text" [(ngModel)]="comment" class="form-control"> -->
+
+                <form [formGroup]="create" class="form-row">
+                  <mat-form-field class="form-control">
+                    <mat-label>comment here</mat-label>
+                    <div class="w3-show-inline-block" style="width:10%">
+                      <input type="text" matInput formControlName="commentt">
+                      <!-- <input hidden type="number" matInput formControlName="askid" value="{{report.id}}"> -->
+                      <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
+                border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;"
+                                  (click)="saveData()">Sent</button>
+                    </div>
+                    <div *ngFor="let y of home.numcomment">
+                      <p *ngIf="y.id==obj.id"> {{y.commentCount}} comment</p>
+                    </div>
+                  </mat-form-field>
+                  
+
+                </form>
+
+                
+
+
+
+
+                <!--   <div><button (click)="post()">comment </button></div> -->
+                <!-- <div class="fonts"> <i class="fa fa-camera"></i> </div> -->
+
+                <br><br>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+
+    <ng-template #callUpdatDailog>
+      <h2 style="text-align: center;font-size:23px;font-family:  Times, serif; "><b>Update Question</b></h2>
+      <form class="example-form" [formGroup]="updateForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Question</mat-label>
+          <input type="text" matInput formControlName="messege" [(ngModel)]="p_data">
+          <mat-error *ngIf="updateForm.controls['messege'].hasError('required')">
+            Question is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
 
 
-    </form>
-           
-                        
+      </form>
+
+      <mat-dialog-actions align="end">
+        <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
+        border:none;
+      border-radius:9px;" mat-button mat-dialog-close>Cancel</button>
+        <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
+        border:none;
+      border-radius:9px;" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="save()">Save</button>
+      </mat-dialog-actions>
 
 
 
+    </ng-template>
 
-                          <!--   <div><button (click)="post()">comment </button></div> -->
-                            <!-- <div class="fonts"> <i class="fa fa-camera"></i> </div> -->
-                      
-                        <br><br>
-                    </div>
-                </div>
-            
-            </div>
-            
-        </div>
-    
-    </div>
-    <br>
-</div>
+    <ng-template #callDeleteDailog>
+      <h2>Are you sure you want to delete this item ? </h2>
+      <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
+border:none;
+border-radius:9px;" mat-dialog-close="yes">Yes</button>
+      <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
+border:none;
+border-radius:9px;" mat-dialog-close="no">No</button>
 
 
-<ng-template #callUpdatDailog>
-    <h2 style="text-align: center;font-size:23px;font-family:  Times, serif; "><b>Update Question</b></h2>
-      <form class="example-form" [formGroup]="updateForm" >
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Question</mat-label>
-            <input type="text" matInput formControlName="messege"
-            [(ngModel)]="p_data"
-            >
-            <mat-error *ngIf="updateForm.controls['messege'].hasError('required')">
-              Question is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-
-  
-          </form>
-     
-          <mat-dialog-actions align="end">
-            <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
-            border:none;
-          border-radius:9px;" mat-button mat-dialog-close>Cancel</button>
-            <button  style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
-            border:none;
-          border-radius:9px;"mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="save()">Save</button>
-          </mat-dialog-actions>
-  
-  
-  
-  </ng-template>
-  
-  <ng-template #callDeleteDailog>
-    <h2>Are you sure you want to delete this item ? </h2>
-    <button style="background-color: #ec5555;color: rgb(253, 252, 252);color: #fff;
-    border:none;
-    border-radius:9px;"  mat-dialog-close="yes">Yes</button>
-    <button style="background-color: #4CAF50;color: rgb(253, 252, 252);color: #fff;
-    border:none;
-    border-radius:9px;"  mat-dialog-close="no">No</button>
-  
-  
-   </ng-template>         
-  
-  
-
-
-
-
-
- 
-
+    </ng-template>
