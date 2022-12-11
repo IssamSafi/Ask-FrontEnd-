@@ -14,19 +14,11 @@ export class ReportComponent implements OnInit {
 
   constructor(public home: HomeService){}
 
-categoryname:any[]=[];
-question:any[]=[];
-result:any[]=[];
+
 
   ngOnInit(): void {
- this.home.charts().subscribe((resp:any)=>{
-  this.result=resp;
-  this.result.forEach((chartrep:any)=>{
-    this.categoryname.push(chartrep.category_Name);
-    this.question.push(chartrep.questionCount);
-  })
- })
-  this.RenderChart(this.categoryname,this.question)
+
+
 
 
 
@@ -35,36 +27,7 @@ result:any[]=[];
  
   }
 
-  RenderChart(Category:any,questionnumber:any){
-    const myChart = new Chart("chart", {
-        type: 'bar',
-        data: {
-            labels:Category ,
-            datasets: [{
-                label: 'Charts',
-                data:questionnumber ,
-                backgroundColor: [
-              
-                    'rgba(0,0,255)',
- 
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-              
-                
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-  }
+
 
       
   array:any=[  ];

@@ -22,7 +22,9 @@ export class HomeService {
   Category: any[] = [];
   Aboutus: any[] = [];
   Contactus: any[] = [];
-   getuser:[]=[];
+   getuser:any;
+   getcomment :any;
+   getques :any;
   Users:any[] = [];
   test:any[] = [];
 comments:any[]=[];
@@ -31,6 +33,7 @@ comments:any[]=[];
 chart:any[]=[];
 Alluser:any[]=[];
 Allsearchuser:any[]=[];
+com:any[]=[];
 
 
   display_image: any;
@@ -296,20 +299,7 @@ createUser(body: any) {
   }
   )
 }
-updateUser(body:any)
-{
 
-  body.image_Path= this.display_image;
-
-  this.spinner.show();
-  this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
-    this.spinner.hide();
-    this.toastr.success('Updated Successfully !!');
-  },err=>{
-    this.spinner.hide();
-   this.toastr.error(err.message, err.status);
-  })
-}
 deleteUser(id:number)
 {
 this.spinner.show();
@@ -744,6 +734,26 @@ SearchUser(body: string) {
 
 } 
 
+NewReportComments() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/jwt/Comments').subscribe((resp: any) => {
+    this.com = resp;
+    console.log(this.com);
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!'); 
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
+
 
 
   
@@ -774,7 +784,64 @@ SearchUser(body: string) {
     })
 
   }
- 
+
+
+  getcommetById(id: number) {
+    //show Spinner 
+    //Hits Api 
+    //Hide Spinner
+    //Resp=> Toastr 
+
+    this.spinner.show();
+    this.http.get('https://localhost:44384/api/comment/GetById/' + id).subscribe((resp: any) => {
+      this.getcomment = resp;
+      console.log(this.getcomment );
+      this.spinner.hide();
+      this.toastr.success('Data Retrieved!');
+
+    }, err => {
+      this.spinner.hide();
+      this.toastr.error(err.message, err.status);
+    })
+
+  }
+
+
+  updateUser(body:any)
+{
+
+  body.image_Path= this.display_image;
+
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/User',body).subscribe((resp)=>{
+    this.spinner.hide();
+    this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   this.toastr.error(err.message, err.status);
+  })
+}
+getQuestionById(id: number) {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+  this.http.get('https://localhost:44384/api/comment/GetById/' + id).subscribe((resp: any) => {
+    this.getques  = resp;
+    console.log(this.getques );
+    this.spinner.hide();
+    this.toastr.success('Data Retrieved!');
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
 
 }
+
+}
+
+
 
