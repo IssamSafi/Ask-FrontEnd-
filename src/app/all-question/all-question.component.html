@@ -23,7 +23,7 @@
                 <small class="mr-2"><b>Category:</b>{{obj.category_Name}}</small>
                 <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
 border:none;border-radius:9px;border: none; outline: none;font-size: 9px; width:15%;margin-left: 9px"
-                  (click)="openUpdateDailog(obj.messege)">Update</button>
+                  (click)="openUpdateDailog(obj)">Update</button>
 
                 <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
 font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">Delete</button>
@@ -54,14 +54,14 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
                     <div> <span class="name">{{x.fname}} {{x.lname}}</span><br> <small
                         class="comment-text">{{x.commentt}} </small>
 
-                        <div class="w3-show-inline-block" style="text-align:right;">
+                        <div class="w3-show-inline-block" style="text-align:right;" *ngIf="check==x.userid">
   
                           <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
-          border:none;border-radius:9px;border: none; outline: none;font-size: 10px; width:33%;margin-left: 6px"
+          border:none;border-radius:9px;border: none; outline: none;font-size: 8px; width:33%;margin-left: 12px"
                             (click)="openUpdateDailog(obj.messege)">Update</button>
           
                           <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
-          font-size:10px;margin-left: 6px;width:33%;" (click)="openDeleteDailog(obj.id)">Delete</button>
+          font-size:8px;margin-left: 6px;width:33%;" (click)="openDeleteDailog(obj.id)">Delete</button>
                         </div>
 
                     </div>
@@ -75,10 +75,11 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
                     <mat-label>comment here</mat-label>
                     <div class="w3-show-inline-block" style="width:10%">
                       <input type="text" matInput formControlName="commentt">
+
                       <!-- <input hidden type="number" matInput formControlName="askid" value="{{report.id}}"> -->
                       <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
                 border:none;border-radius:9px;border: none; outline: none;font-size: 20px; margin-top: 10px;"
-                                  (click)="saveData()">Sent</button>
+                                  (click)="saveData(obj.id)">Sent</button>
                     </div>
                     <div *ngFor="let y of home.numcomment">
                       <p *ngIf="y.id==obj.id"> {{y.commentCount}} comment</p>
@@ -114,7 +115,7 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
       <form class="example-form" [formGroup]="updateForm">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Question</mat-label>
-          <input type="text" matInput formControlName="messege" [(ngModel)]="p_data">
+          <input type="text" matInput formControlName="messege" [(ngModel)]="p_data.messege">
           <mat-error *ngIf="updateForm.controls['messege'].hasError('required')">
             Question is <strong>required</strong>
           </mat-error>

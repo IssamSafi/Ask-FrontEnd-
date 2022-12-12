@@ -11,27 +11,30 @@ import { HomeComponent } from 'src/app/home/home.component';
 })
 export class AskingComponent implements OnInit {
 
-  constructor(private home:HomeService,private auth:AuthService) { }
+  constructor(public home:HomeService,private auth:AuthService) { }
   create :FormGroup =new FormGroup({
     messege:new FormControl(),
     user_Id:new FormControl('',Validators.required),
     askingdate:new FormControl(),
+    category_Id:new FormControl(),
   })
 
 
   ngOnInit(): void {
 
- 
+    this.home.getAllCategories();
   }
 
  
   saveData()
   {
+    debugger;
     let user:any=localStorage.getItem("user");
     if(user){
       user=JSON.parse(user);
       this.create.controls["user_Id"].setValue(+user.ID)
     }
+    this.create.controls["category_Id"].setValue(+this.create.controls["category_Id"].value);
     this.home.createAsking(this.create.value);
   }
 
