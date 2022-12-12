@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
     password :new FormControl('',[Validators.required,Validators.minLength(8)]),
     confirmPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
     phone:new FormControl('',[Validators.required,Validators.minLength(8)]),
+    image_Path:new FormControl('')
   })
 
   constructor(private route:Router,/* ,private spinner :NgxSpinnerService */private home:HomeService) { }
@@ -54,4 +55,13 @@ export class RegisterComponent implements OnInit {
     this.route.navigate(['/'])
   }
 
+  uploadfile(file:any){
+    if(file.length==0)
+    return;
+ let imageuser=<File>file[0]
+ const formdata= new FormData();
+ formdata.append('file',imageuser,imageuser.name);
+ this.home.uploadimageuser(formdata);
+  }
 }
+
