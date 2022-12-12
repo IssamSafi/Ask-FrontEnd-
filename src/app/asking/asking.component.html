@@ -31,23 +31,25 @@
                                             </mat-form-field>
                                     </div>
 
-                                    <div class="input_field select_option">
-                                        <label>Select a category</label>
+                                    <br>  <br>   <br> <br>   <br>
+
+                                    <div class="input_field select_option" style="text-align: left;">
+                                        <label style="font-family:Snell Roundhand,cursive ;font-size:22px;"><b>Select a category</b></label>
                                         <select formControlName="category_Id">
-                                          <option  *ngFor="let obj of home.Category" [value]=obj.id> {{obj.category_Name}}</option>
+                                          <option  *ngFor="let obj of home.Category" [value]=obj.id>   {{obj.category_Name}}</option>
                                  
                                           </select>
                                           
                                           <div class="select_arrow"></div>
                                       </div>
+                                      
 
-
-                                <br>
+                                      <br>   <br>
                     
         
                                 </div>
 
-
+                                <br> 
 
       
                                 <div class="col-12">
