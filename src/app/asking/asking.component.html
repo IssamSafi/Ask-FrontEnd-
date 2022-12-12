@@ -30,9 +30,25 @@
                                             </mat-error>
                                             </mat-form-field>
                                     </div>
+
+                                    <div class="input_field select_option">
+                                        <label>Select a category</label>
+                                        <select formControlName="category_Id">
+                                          <option  *ngFor="let obj of home.Category" [value]=obj.id> {{obj.category_Name}}</option>
+                                 
+                                          </select>
+                                          
+                                          <div class="select_arrow"></div>
+                                      </div>
+
+
                                 <br>
+                    
         
                                 </div>
+
+
+
       
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit" (click)="saveData()">Submit</button>

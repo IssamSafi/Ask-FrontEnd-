@@ -31,11 +31,13 @@ export class AllQuestionComponent implements OnInit {
   numberOfDislike:number=0;
   numberOfComment:number=0;
   like:number=0;
+  check:number=0;
+
 
   //commentt : new FormControl('',Validators.required);
 
   ngOnInit(): void {
-    
+    this.Check();
     this.home.Report();
     this.home.NewReportComments();
     this.home.Getallcomment();
@@ -44,16 +46,34 @@ export class AllQuestionComponent implements OnInit {
    
     //this.home.createComment(this.commentt.value);
     new name();
-    
+   
 
    
   }
+
+Check(){
+  debugger;
+  let user:any=localStorage.getItem("user");
+  if(user){
+    user=JSON.parse(user);
+this.check=+user.ID;
+  }
+}
+
+
+
+
   clickcomment(){
 
     this.numberOfComment++;
   }
 
- 
+  takevalue(ev:any){
+    debugger;
+this.create.controls["askid"].setValue(ev.target.value);
+console.log(ev.target.value);
+
+  }
 
  clickLike(){
   {
@@ -84,21 +104,31 @@ clickDislike(){
   }}
   }
 
- saveData()
+ saveData(id:number)
  {
+  
    let user:any=localStorage.getItem("user");
    if(user){
      user=JSON.parse(user);
      this.create.controls["userid"].setValue(+user.ID)
     //  this.create.controls["askid"].setValue(id)
    }
+   debugger;
+   this.create.controls["askid"].setValue(id);
+console.log(id);
+debugger;
    this.home.createComment(this.create.value);
 
  }
 
 
  updateForm :FormGroup= new FormGroup({
+  id:new FormControl(),
   messege:new FormControl(),
+  user_Id:new FormControl(),
+  askingdate:new FormControl(),
+  category_Id:new FormControl(),
+  itsapprove:new FormControl(),
   
 })
 
@@ -106,21 +136,35 @@ clickDislike(){
 
  p_data :any={};
  openUpdateDailog(obj:any){
-  
-   console.log(obj);
+  debugger;
+   console.log(obj.value);
+   
    this.p_data={
-
-    messege:obj.messege
+    id:obj.id,
+    messege:obj.messege,
+    user_Id:obj.user_Id,
+    askingdate:obj.askingdate,
+    category_Id:obj.category_Id,
+    itsapprove:obj.itsapprove,
 
 
    }
    this.updateForm.controls['id'].setValue(this.p_data.id);
+   this.updateForm.controls['category_Id'].setValue(+this.p_data.category_Id);
+   this.updateForm.controls['askingdate'].setValue(this.p_data.askingdate);
+   this.updateForm.controls['user_Id'].setValue(+this.p_data.user_Id);
+   this.updateForm.controls['itsapprove'].setValue(this.p_data.itsapprove);
+
+
+
+
    this.dialog.open(this.callUpdate);
  
    }
 
 
  save(){
+  debugger;
   this.home.updateAsking(this.updateForm.value);
 }
 openDeleteDailog(id:number)

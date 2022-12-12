@@ -663,7 +663,7 @@ updateComments(body:any)
 }
 
 createComment(body: any) {
-  
+  debugger;
   this.spinner.show();
   this.http.post('https://localhost:44384/api/comment', body).subscribe((resp) => {
     console.log(resp);
