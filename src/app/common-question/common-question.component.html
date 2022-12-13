@@ -1,0 +1,20 @@
+
+
+
+<br> <br>
+<h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>Common Question</b><h1>
+    <br>
+    <h2 style="text-align: center;font-family:Snell Roundhand,cursive"><b>Most common questions in the last month</b><h2>
+<br><br>
+
+<div class="card-group" >
+    <div class="card" *ngFor="let obj of home.CommonQuestion">
+      <div class="card-body" style="text-align: left;">
+     
+        <p class="card-text"><b>{{obj.question}}</b></p><br>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <hr>
+
+

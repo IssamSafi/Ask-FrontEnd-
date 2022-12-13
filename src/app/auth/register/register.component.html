@@ -93,7 +93,7 @@
   
 
 
-            <label>Upload your Image</label>
+            <label style="font-size:16px ;"><b>Upload your Image</b></label>
             <input type="file" #file formControlName="image_Path" (change)="uploadfile(file.files)">
           
             <br>  <br>
@@ -101,9 +101,9 @@
             <button class="btn btn-dark example-full-width" 
             [disabled]="!registerForm.valid" (click)="submit()"
             type="submit" value="Register">Register
-          </button><br>
-            <p style="text-align: center;cursor: pointer;" (click)="goToLogin()">Already have account</p><br><br>
-            <p style="text-align: center;cursor: pointer;font-family:Snell Roundhand,cursive; font-size:23px;" (click)="goToHome()" ><b>Back to Home</b></p>
+          </button><br><br>
+            <p style="text-align: center;cursor: pointer;font-family:Snell Roundhand,cursive; font-size:18px;" (click)="goToLogin()"><b>Already have account</b></p><br><br>
+            <p style="text-align: center;cursor: pointer;font-family:Snell Roundhand,cursive; font-size:28px;" (click)="goToHome()" ><b>Back to Home</b></p>
           </form>
         </div>
       </div>

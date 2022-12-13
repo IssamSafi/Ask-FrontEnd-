@@ -22,6 +22,7 @@ import { AboutguestComponent } from './aboutguest/aboutguest.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { SearchUserComponent } from './search-user/search-user.component';
+import { CommonQuestionComponent } from './common-question/common-question.component';
 
 
 
@@ -41,6 +42,7 @@ import { SearchUserComponent } from './search-user/search-user.component';
     UserProfileComponent,
 
     SearchUserComponent,
+      CommonQuestionComponent,
 
 
   ],

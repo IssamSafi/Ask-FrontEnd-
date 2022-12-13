@@ -1,0 +1,123 @@
+<app-sidebar></app-sidebar>
+
+<br>
+<h1 style=" text-align:center;font-size:55px;font-family:Comic Sans MS; text-transform: uppercase;color: #f44336;"><b>  Edit Profile</b><h1><br><br>
+  
+
+
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+
+</head>
+<body>
+
+
+<div class="container bootstrap snippets bootdey" >
+
+      <hr>
+	<div class="row" >
+      <!-- left column -->
+      <div class="col-md-3">
+    
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info" style="text-align: left;">
+  
+        
+        <form class="form-horizontal" role="form" [formGroup]="profile">
+          <div class="form-group">
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>First Name:</b> </label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" matInput formControlName="fname" [(ngModel)]="this.home.getuser.fname">
+  
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Last Name:</b></label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" matInput formControlName="lname" [(ngModel)]="this.home.getuser.lname">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Phone:</b></label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" matInput formControlName="phone" [(ngModel)]="this.home.getuser.phone">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label" style="font-family:Nirmala UI;font-size: 21px;"><b>Email:</b></label>
+            <div class="col-lg-8">
+              <input class="form-control" type="email" matInput formControlName="email" [(ngModel)]="this.home.getuser.email">
+            </div>
+            <br>
+    
+    
+          </div>
+        
+        </form>
+        <div style="text-align: left;">
+            <img src="../../../assets/img/{{this.home.getuser.image_Path}}" class="avatar img-circle img-thumbnail" alt="avatar">
+            <h4>Upload a different photo...</h4>
+          
+  
+                    
+          <input type="file" #file formControlName="image_Path" (change)="uploadfile(file.files) " [(ngModel)]="this.home.getuser.image_Path">
+        
+          </div>
+        <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;
+        border:none;
+      border-radius:9px;
+        border: none;
+
+        font-size: 31px;
+        margin-top: 10px;
+        margin-left: 10px;" (click)=" saveData()" ><b>Save</b></button>
+      </div>
+  </div>
+</div>
+<hr>
+
+
+<style type="text/css">
+				                
+body{margin-top:20px;}
+.avatar{
+width:200px;
+height:200px;
+}				              
+</style>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+ 
+    
+
+    
+
+
+
+   
+
+      
+   
+
+
+   
+   
