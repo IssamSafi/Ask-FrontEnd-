@@ -29,6 +29,7 @@ export class HomeService {
   test:any[] = [];
 comments:any[]=[];
   report: any[] = [];
+  newreport: any[] = [];
   search: any[] = [];
 chart:any[]=[];
 Alluser:any[]=[];
@@ -527,6 +528,29 @@ Report() {
     this.toastr.error(err.message, err.status);
   })
 }
+
+NewReport() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+
+  this.http.get('https://localhost:44384/api/jwt/newreport').subscribe((resp: any) => {
+    this.newreport = resp;
+    console.log(this.newreport);
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!'); 
+
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  })
+}
+
+
+
   
 uploadimage(File:FormData)
 {

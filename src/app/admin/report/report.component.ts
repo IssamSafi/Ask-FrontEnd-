@@ -23,7 +23,7 @@ export class ReportComponent implements OnInit {
 
 
 
-    this.home.Report();
+    this.home.NewReport();
  
   }
 

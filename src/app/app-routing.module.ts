@@ -6,6 +6,7 @@ import { AdminModule } from './admin/admin.module';
 import { AskingComponent } from './asking/asking.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthorizationGuard } from './authorization.guard';
+import { CommonQuestionComponent } from './common-question/common-question.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'aboutguest', component: AboutguestComponent },
   {path: 'search', component: SearchUserComponent },
   {path: 'Profile', component: UserProfileComponent},
+  {path: 'commonquestion', component: CommonQuestionComponent},
 
   {path: 'auth', loadChildren:()=>AuthModule },
   {path: 'admin', loadChildren:()=>AdminModule,

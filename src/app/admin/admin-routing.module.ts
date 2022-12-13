@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashbordComponent } from './dashbord/dashbord.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ManagTestmonialComponent } from './manag-testmonial/manag-testmonial.component';
 import { ManageaboutusComponent } from './manageaboutus/manageaboutus.component';
 import { ManageaskingComponent } from './manageasking/manageasking.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'managecomment', component: ManagecommentsComponent},
   {path: 'dashbord', component: DashbordComponent},
   {path: 'Report', component: ReportComponent},
+  {path: 'editprofile', component: EditprofileComponent},
 ];
 
 @NgModule({

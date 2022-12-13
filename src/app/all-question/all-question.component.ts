@@ -19,7 +19,8 @@ export class AllQuestionComponent implements OnInit {
   constructor(public home: HomeService, private dialog: MatDialog){}
   @ViewChild('callUpdatDailog') callUpdate!:TemplateRef<any>
   @ViewChild('callDeleteDailog') callDelete!:TemplateRef<any>
-
+  @ViewChild('callUpdatCommentDailog') callUpdateComment!:TemplateRef<any>
+  @ViewChild('callDeleteCommentDailog') callDeleteComment!:TemplateRef<any>
 
   create :FormGroup =new FormGroup({
     commentt:new FormControl('',Validators.required),
@@ -32,6 +33,7 @@ export class AllQuestionComponent implements OnInit {
   numberOfComment:number=0;
   like:number=0;
   check:number=0;
+  checkQ:number=0;
 
 
   //commentt : new FormControl('',Validators.required);
@@ -42,10 +44,10 @@ export class AllQuestionComponent implements OnInit {
     this.home.NewReportComments();
     this.home.Getallcomment();
     this.home.numofcomment();
-   
+   this.CheckQu();
    
     //this.home.createComment(this.commentt.value);
-    new name();
+
    
 
    
@@ -57,6 +59,16 @@ Check(){
   if(user){
     user=JSON.parse(user);
 this.check=+user.ID;
+  }
+}
+
+
+CheckQu(){
+  debugger;
+  let user:any=localStorage.getItem("user");
+  if(user){
+    user=JSON.parse(user);
+this.checkQ=+user.ID;
   }
 }
 
@@ -187,4 +199,70 @@ openDeleteDailog(id:number)
 
 
 }
+
+
+updateComment :FormGroup= new FormGroup({
+  commid:new FormControl(),
+  commentt:new FormControl(),
+  user_Id:new FormControl(),
+  askid:new FormControl(),
+  
+})
+
+
+
+ pdata :any={};
+ openUpdateCommentDailog(obj:any){
+  debugger;
+   console.log(obj.value);
+   
+   this.pdata={
+    commid:obj.commid,
+    commentt:obj.commentt,
+    user_Id:obj.user_Id,
+    id:obj.id,
+
+
+   }
+   this.updateComment.controls['commid'].setValue(this.pdata.commid);
+   this.updateComment.controls['commentt'].setValue(this.pdata.commentt);
+   this.updateComment.controls['user_Id'].setValue(+this.pdata.user_Id);
+   this.updateComment.controls['askid'].setValue(this.pdata.askid);
+
+
+
+
+   this.dialog.open(this.callUpdateComment);
+ 
+   }
+
+
+ saveChange(){
+  debugger;
+  this.home.updateComments(this.updateComment.value);
+}
+openDeleteCommenntDailog(id:number)
+{
+  const dialogRef=  this.dialog.open(this.callDeleteComment);
+  dialogRef.afterClosed().subscribe((result)=>{
+    if(result!=undefined)
+    {
+      if(result=='yes')
+      {
+        
+        this.home.DeleteComments(id);
+      }
+        
+        else if(result=='no')
+        console.log('thank you ');
+        
+    }
+  })
+
+
+}
+
+
+
+
 }
