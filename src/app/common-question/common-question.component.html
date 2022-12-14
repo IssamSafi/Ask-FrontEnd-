@@ -4,17 +4,26 @@
 <br> <br>
 <h1 style="text-align: center;font-size:55px;font-family:Snell Roundhand,cursive;color:#FF3E41 ;"><b>Common Question</b><h1>
     <br>
-    <h2 style="text-align: center;font-family:Snell Roundhand,cursive"><b>Most common questions in the last month</b><h2>
+    <h2 style="text-align: center;font-family:Snell Roundhand,cursive;font-size: 32px;"><b>Most common questions in the last month</b><h2>
 <br><br>
 
-<div class="card-group" >
-    <div class="card" *ngFor="let obj of home.CommonQuestion">
-      <div class="card-body" style="text-align: left;">
-     
-        <p class="card-text"><b>{{obj.question}}</b></p><br>
-        <p class="card-text"><small class="text-muted"></small></p>
-      </div>
+
+
+
+
+
+<hr>
+<div class="row" style="background-color:#ff6c6d;">
+  <div   style="width: 20rem;" *ngFor="let obj of home.CommonQuestion">
+    <div class="card-body"  style="  border-style: outset;" >
+      <h5 class="card-title"></h5>
+    
+      <p class="card-text" style="font-size: 23px;font-family:Bahnschrift SemiBold;"><b>{{obj.question}}</b></p><br>
+
     </div>
+  </div>
+</div>
     <hr>
+    
 
 

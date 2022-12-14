@@ -30,13 +30,10 @@ export class AllQuestionComponent implements OnInit {
   userLike:any;
   numberOfLikes : number=0;
   numberOfDislike:number=0;
-  numberOfComment:number=0;
-  like:number=0;
   check:number=0;
   checkQ:number=0;
 
 
-  //commentt : new FormControl('',Validators.required);
 
   ngOnInit(): void {
     this.Check();
@@ -46,7 +43,7 @@ export class AllQuestionComponent implements OnInit {
     this.home.numofcomment();
    this.CheckQu();
    
-    //this.home.createComment(this.commentt.value);
+ 
 
    
 
@@ -74,12 +71,6 @@ this.checkQ=+user.ID;
 
 
 
-
-  clickcomment(){
-
-    this.numberOfComment++;
-  }
-
   takevalue(ev:any){
     debugger;
 this.create.controls["askid"].setValue(ev.target.value);
@@ -87,34 +78,33 @@ console.log(ev.target.value);
 
   }
 
+
+
  clickLike(){
   {
-    
+debugger
       let user:any=localStorage.getItem("user");
       if(user){
         user=JSON.parse(user);
-        for(this.numberOfLikes=0;this.numberOfLikes<1;+1){
+        
      if(user.ID)
      this.numberOfLikes++;
-     
+    //  this.home.report[this.numberOfLikes].likee=this.numberOfLikes;
     }
+    
 
-     }
+
+     
  
    }
 }
 
 clickDislike(){
   {
-  let user:any=localStorage.getItem("user");
-  if(user){
-    user=JSON.parse(user);
-    for(this.numberOfDislike=0;this.numberOfDislike<1;+1){
- if(user.ID)
-  this.numberOfDislike++;
+
  }
-  }}
   }
+
 
  saveData(id:number)
  {
@@ -202,9 +192,9 @@ openDeleteDailog(id:number)
 
 
 updateComment :FormGroup= new FormGroup({
-  commid:new FormControl(),
+  id:new FormControl(),
   commentt:new FormControl(),
-  user_Id:new FormControl(),
+  userid:new FormControl(),
   askid:new FormControl(),
   
 })
@@ -217,17 +207,18 @@ updateComment :FormGroup= new FormGroup({
    console.log(obj.value);
    
    this.pdata={
-    commid:obj.commid,
-    commentt:obj.commentt,
-    user_Id:obj.user_Id,
     id:obj.id,
+    commentt:obj.commentt,
+    userid:obj.userid,
+    askid:obj.askid,
+
 
 
    }
-   this.updateComment.controls['commid'].setValue(this.pdata.commid);
+   this.updateComment.controls['id'].setValue(this.pdata.id);
    this.updateComment.controls['commentt'].setValue(this.pdata.commentt);
-   this.updateComment.controls['user_Id'].setValue(+this.pdata.user_Id);
-   this.updateComment.controls['askid'].setValue(this.pdata.askid);
+   this.updateComment.controls['userid'].setValue(+this.pdata.userid);
+   this.updateComment.controls['askid'].setValue(this.pdata.id);
 
 
 

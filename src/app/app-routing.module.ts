@@ -10,6 +10,7 @@ import { CommonQuestionComponent } from './common-question/common-question.compo
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { HomeguestComponent } from './homeguest/homeguest.component';
+
 import { SearchUserComponent } from './search-user/search-user.component';
 import { TestmonialComponent } from './testmonial/testmonial.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'search', component: SearchUserComponent },
   {path: 'Profile', component: UserProfileComponent},
   {path: 'commonquestion', component: CommonQuestionComponent},
+ 
 
   {path: 'auth', loadChildren:()=>AuthModule },
   {path: 'admin', loadChildren:()=>AdminModule,
