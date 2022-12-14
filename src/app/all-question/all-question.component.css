@@ -231,4 +231,9 @@
   .red {
     color: red;
   }
+
+  hr.new4 {
+    border: 1px solid black ;
+    width: 100%;
+  }
   

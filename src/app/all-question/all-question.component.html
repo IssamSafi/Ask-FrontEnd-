@@ -40,31 +40,33 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
               </script>
               <script src="/assets/js/design.js"></script>
               <div style="text-align: center;">
-                <p> {{numberOfLikes}} {{numberOfDislike}}</p>
+                <p> {{obj.likee}} {{obj.dislike}}</p>
                 <button class="btn " id="green" color="green" (click)="clickLike()"><i class="fa fa-thumbs-up fa-lg"
                     aria-hidden="true"></i></button>
-                <button class="btn" id="red" color="red" (click)="clickDislike()"><i class="fa fa-thumbs-down fa-lg"
+                <button class="btn" id="red" color="red" (click)="clickLike()"><i class="fa fa-thumbs-down fa-lg"
                     aria-hidden="true"></i></button>
               </div>
               <hr>
-              <div class="comments">
-                <div *ngFor="let x of home.com">
-                  <div class="d-flex flex-row mb-2" *ngIf="x.id==obj.id"> <img
-                      src="../../../assets/img/{{x.image_Path}}" width="40" class="rounded-image">
-                    <div> <span class="name">{{x.fname}} {{x.lname}}</span><br> <small
-                        class="comment-text">{{x.commentt}} </small>
+              <div class="comments" >
+                <div *ngFor="let x of home.com"  class="d-flex flex-row mb-9" >
+                  <div class="d-flex flex-row mb-9" *ngIf="x.id==obj.id"> <img
+                      src="../../../assets/img/{{x.image_Path}}" width="70" class="rounded-image">
+                    <div> <span class="name">{{x.fname}} {{x.lname}}</span><br> 
+                        <span class="comment-text" style="font-size: 22px;">{{x.commentt}}</span>
+                        
 
                         <div class="w3-show-inline-block" style="text-align:right;" *ngIf="check==x.userid">
   
                           <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
           border:none;border-radius:9px;border: none; outline: none;  font-size:8px;margin-left: 6px;width:37%;"
-                            (click)="openUpdateCommentDailog(obj)">Update</button>
+                            (click)="openUpdateCommentDailog(x)">Update</button>
           
                           <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
-          font-size:8px;margin-left: 6px;width:33%;" (click)="openDeleteCommenntDailog(obj.commid)">Delete</button>
-                        </div>
+          font-size:8px;margin-left: 6px;width:33%;" (click)="openDeleteCommenntDailog(x.id)">Delete</button>  
+                        </div> <hr class="new4">
 
                     </div>
+                   
                   </div>
                 </div>
 
@@ -106,9 +108,9 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
         </div>
 
       </div>
-      <br>
-    </div>
 
+    </div>
+    <hr>
 
     <ng-template #callUpdatDailog>
       <h2 style="text-align: center;font-size:23px;font-family:  Times, serif; "><b>Update Question</b></h2>
