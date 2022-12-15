@@ -6,6 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
 import { AdminService } from 'src/app/Services/admin.service';
+import { ToastrService } from 'ngx-toastr';
 
 declare var name: any;
 @Component({
@@ -16,7 +17,7 @@ declare var name: any;
 export class AllQuestionComponent implements OnInit {
  
 
-  constructor(public home: HomeService, private dialog: MatDialog){}
+  constructor(public home: HomeService, private dialog: MatDialog, private toastr: ToastrService){}
   @ViewChild('callUpdatDailog') callUpdate!:TemplateRef<any>
   @ViewChild('callDeleteDailog') callDelete!:TemplateRef<any>
   @ViewChild('callUpdatCommentDailog') callUpdateComment!:TemplateRef<any>
@@ -32,6 +33,27 @@ export class AllQuestionComponent implements OnInit {
   numberOfDislike:number=0;
   check:number=0;
   checkQ:number=0;
+  like:any={};
+
+
+
+
+  createLike :FormGroup =new FormGroup({
+    likee:new FormControl(''),
+    dislike:new FormControl('',),
+    askid:new FormControl(''),
+    userid:new FormControl('')
+  })
+
+ updateLike :FormGroup =new FormGroup({
+  id:new FormControl(''),
+  likee:new FormControl(''),
+  dislike:new FormControl('',),
+    askid:new FormControl(''),
+    userid:new FormControl('')
+  })
+
+
 
 
 
@@ -41,7 +63,9 @@ export class AllQuestionComponent implements OnInit {
     this.home.NewReportComments();
     this.home.Getallcomment();
     this.home.numofcomment();
+    this.home.getAllLike();
    this.CheckQu();
+   this.home.getLikeCount();
    
  
 
@@ -78,31 +102,86 @@ console.log(ev.target.value);
 
   }
 
+p_like:any={};
 
 
- clickLike(){
-  {
-debugger
-      let user:any=localStorage.getItem("user");
-      if(user){
-        user=JSON.parse(user);
-        
-     if(user.ID)
-     this.numberOfLikes++;
-    //  this.home.report[this.numberOfLikes].likee=this.numberOfLikes;
+ Like(askid:number){
+
+  let user:any=localStorage.getItem("user");
+  if(user){
+    user=JSON.parse(user);
+    this.like=this.home.like.find(x=>x.userid==+user.ID&&x.askid==askid);
+    debugger;
+    if(this.like!=undefined){
+     if(this.like.likee==1) {  this.toastr.error('your alaready like this question !!');}
+     else if (this.like.likee==null){
+     this.p_like={
+        id:this.like.id,
+        likee:this.like.likee,
+        dislike:this.like.dislike,
+          askid:this.like.askid,
+          userid:this.like.userid
+       }
+       this.updateLike.controls['id'].setValue(this.p_like.id);
+       this.updateLike.controls['likee'].setValue(1);
+       this.updateLike.controls['dislike'].setValue(null);
+       this.updateLike.controls['askid'].setValue(this.p_like.askid);
+       this.updateLike.controls['userid'].setValue(this.p_like.userid);
+      
+      this.home.updateLike(this.updateLike.value)}
     }
-    
+    else {
+      this.createLike.controls['likee'].setValue(1);
+      this.createLike.controls['dislike'].setValue(null);
+      this.createLike.controls['askid'].setValue(+askid);
+      this.createLike.controls['userid'].setValue(+user.ID);
+      this.home.createLike(this.createLike.value)
+      
+    }
+  }
 
-
-     
- 
-   }
+  
 }
 
-clickDislike(){
-  {
+Dislike(askid:number){
 
- }
+  let user:any=localStorage.getItem("user");
+  if(user){
+    user=JSON.parse(user);
+    this.like=this.home.like.find(x=>x.userid==+user.ID&&x.askid==askid);
+ 
+  
+    if(this.like!=undefined){
+      debugger;
+     if(this.like.dislike==1) {
+      this.toastr.error('your alaready dislike this question !!');}
+     else if (this.like.dislike==null){
+
+
+     this.p_like={
+        id:this.like.id,
+        likee:this.like.likee,
+        dislike:this.like.dislike,
+          askid:this.like.askid,
+          userid:this.like.userid
+       }
+       this.updateLike.controls['id'].setValue(this.p_like.id);
+       this.updateLike.controls['likee'].setValue(null);
+       this.updateLike.controls['dislike'].setValue(1);
+       this.updateLike.controls['askid'].setValue(this.p_like.askid);
+       this.updateLike.controls['userid'].setValue(this.p_like.userid);
+      
+      this.home.updateLike(this.updateLike.value)}
+    }
+    else {
+      this.createLike.controls['likee'].setValue(null);
+      this.createLike.controls['dislike'].setValue(1);
+      this.createLike.controls['askid'].setValue(+askid);
+      this.createLike.controls['userid'].setValue(+user.ID);
+      this.home.createLike(this.createLike.value)
+      
+    }
+  } 
   }
 
 
@@ -131,7 +210,8 @@ debugger;
   askingdate:new FormControl(),
   category_Id:new FormControl(),
   itsapprove:new FormControl(),
-  
+  likee:new FormControl(),
+  dislike:new FormControl(),
 })
 
 
@@ -148,7 +228,8 @@ debugger;
     askingdate:obj.askingdate,
     category_Id:obj.category_Id,
     itsapprove:obj.itsapprove,
-
+    likee:obj.likee,
+    dislike:obj.dislike,
 
    }
    this.updateForm.controls['id'].setValue(this.p_data.id);
@@ -156,8 +237,8 @@ debugger;
    this.updateForm.controls['askingdate'].setValue(this.p_data.askingdate);
    this.updateForm.controls['user_Id'].setValue(+this.p_data.user_Id);
    this.updateForm.controls['itsapprove'].setValue(this.p_data.itsapprove);
-
-
+   this.updateForm.controls['likee'].setValue(this.p_data.likee);
+   this.updateForm.controls['dislike'].setValue(this.p_data.dislike);
 
 
    this.dialog.open(this.callUpdate);
