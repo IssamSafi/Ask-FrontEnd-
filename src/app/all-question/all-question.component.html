@@ -9,29 +9,31 @@
             <div class="d-flex justify-content-between p-2 px-3">
               <div class="d-flex flex-row align-items-center"> <img src="../../../assets/img/{{obj.image_Path}}"
                   width="50" class="rounded-circle">
-                <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><b>{{obj.fname}} {{obj.lname}}
-                    </b></span></div>
-
+                <div > <span class="font-weight-bold"><b>{{obj.fname}} {{obj.lname}}</b></span>
+             
+                    </div>
+                   
 
               </div>
+               <p style="text-align: right;"><b>Category:</b>{{obj.category_Name}}</p>
 
               <!-- Add icon library -->
 
 
-
-              <div class="w3-show-inline-block" style="text-align:right;"  *ngIf="checkQ==obj.user_Id">
-                <small class="mr-2"><b>Category:</b>{{obj.category_Name}}</small>
+             
+              <span  style="text-align:right;"  *ngIf="checkQ==obj.user_Id">
+           
                 <button style="background-color: #4CAF50;;color: rgb(253, 252, 252);color: #fff;
-border:none;border-radius:9px;border: none; outline: none;font-size: 9px; width:15%;margin-left: 9px"
+border:none;border-radius:9px;border: none; outline: none;font-size: 6px; width:42%;margin-left: 9px"
                   (click)="openUpdateDailog(obj)">Update</button>
 
                 <button style="background-color: #f44336;;color: rgb(253, 252, 252);color: #fff;border:none;border-radius:9px; border: none; outline: none;
-font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">Delete</button>
-              </div>
+font-size:6px;margin-left: 5px;width:42%;" (click)="openDeleteDailog(obj.id)">Delete</button>
+              </span>
 
             </div>
 
-            <div class="p-2">
+            <div class="p-1">
               <p class="text-justify">{{obj.messege}}</p>
               <hr>
 
@@ -39,11 +41,14 @@ font-size:10px;margin-left: 9px;width:15%;" (click)="openDeleteDailog(obj.id)">D
 
               </script>
               <script src="/assets/js/design.js"></script>
-              <div style="text-align: center;">
-                <p> {{obj.likee}} {{obj.dislike}}</p>
-                <button class="btn " id="green" color="green" (click)="clickLike()"><i class="fa fa-thumbs-up fa-lg"
+           
+              <div style="text-align: center;" >
+                <span *ngFor="let count of home.likeCount">
+                <p *ngIf="count.askid==obj.id"> {{count.likee}} {{count.dislike}}</p>
+              </span>
+                <button class="btn " id="green" color="green" (click)="Like(obj.id)"><i class="fa fa-thumbs-up fa-lg"
                     aria-hidden="true"></i></button>
-                <button class="btn" id="red" color="red" (click)="clickLike()"><i class="fa fa-thumbs-down fa-lg"
+                <button class="btn" id="red" color="red" (click)="Dislike(obj.id)"><i class="fa fa-thumbs-down fa-lg"
                     aria-hidden="true"></i></button>
               </div>
               <hr>

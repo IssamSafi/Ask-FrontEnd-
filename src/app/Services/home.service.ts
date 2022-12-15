@@ -36,6 +36,8 @@ Alluser:any[]=[];
 Allsearchuser:any[]=[];
 com:any[]=[];
 numcomment:any[]=[];
+like:any[]=[];
+likeCount:any[]=[];
 
 
   display_image: any;
@@ -883,6 +885,76 @@ numofcomment(){
 
 
 }
+updateLike(body:any)
+{
+
+  this.spinner.show();
+  this.http.put('https://localhost:44384/api/asking/UpdateLike',body).subscribe((resp)=>{
+    this.spinner.hide();
+    this.toastr.success('Updated Successfully !!');
+  },err=>{
+    this.spinner.hide();
+   this.toastr.error(err.message, err.status);
+  })
+}
+
+
+createLike(body: any) {
+  
+  this.spinner.show();
+  this.http.post('https://localhost:44384/api/asking/CreateLike', body).subscribe((resp) => {
+    console.log(resp);
+    this.spinner.hide();
+   this.toastr.success('Created !!');
+  }, err => {
+    this.spinner.hide();
+    this.toastr.error(err.message, err.status);
+  }
+  )
+}
+
+getAllLike() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+  this.http.get(`https://localhost:44384/api/asking/GetLike/`).subscribe((resp: any) => {
+    
+  this.like = resp;
+    console.log(this.like);
+    debugger;
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!');
+
+  }, err => {
+    this.spinner.hide();
+this.toastr.error(err.message, err.status); 
+  })
+}
+getLikeCount() {
+  //show Spinner 
+  //Hits Api 
+  //Hide Spinner
+  //Resp=> Toastr 
+
+  this.spinner.show();
+  this.http.get(`https://localhost:44384/api/jwt/CountLike`).subscribe((resp: any) => {
+    
+  this.likeCount = resp;
+    console.log(this.likeCount);
+    debugger;
+   this.spinner.hide();
+   this.toastr.success('Data Retrieved!');
+
+  }, err => {
+    this.spinner.hide();
+this.toastr.error(err.message, err.status); 
+  })
+}
+
+
 }
 
 
