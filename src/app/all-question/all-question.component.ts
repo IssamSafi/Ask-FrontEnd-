@@ -113,7 +113,8 @@ p_like:any={};
     this.like=this.home.like.find(x=>x.userid==+user.ID&&x.askid==askid);
     debugger;
     if(this.like!=undefined){
-     if(this.like.likee==1) {  this.toastr.error('your alaready like this question !!');}
+     if(this.like.likee==1) { 
+       this.toastr.error('your alaready like this question !!');}
      else if (this.like.likee==null){
      this.p_like={
         id:this.like.id,
